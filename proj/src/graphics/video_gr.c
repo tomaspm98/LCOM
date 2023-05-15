@@ -21,6 +21,7 @@ int v_res;
 int bpp;
 int bytes;
 int colorModel;
+uint8_t* backbuffer;
 vbe_mode_info_t vbe;
 
 
@@ -44,6 +45,19 @@ void* (vg_init)(uint16_t mode){
     if(sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr) != OK) return NULL;
 
     if((vram = vm_map_phys(SELF, (void*)mr.mr_base, vram_size)) == MAP_FAILED) return NULL;
+    
+    struct reg86 reg;
+
+    memset(&reg,0,sizeof(reg));
+
+    reg.ax=0x4f02;
+    reg.bx = mode | BIT(14);
+    reg.intno = 0x10;
+
+    if (sys_int86(&reg)) return NULL;
+    
+    backbuffer = (uint8_t*)malloc(h_res*v_res);
+
     return 0;
 }
 

@@ -11,7 +11,7 @@ PROG=proj
 
 
 # Ficheiros ".c" a compilar. Têm de estar contidos nas pastas indicadas no passo anterior.
-SRCS = 	main.c timer.c utils.c video_gr.c kbc.c keyboard.c
+SRCS = 	main.c timer.c utils.c video_gr.c kbc.c keyboard.c entity.c
 
 # Flags de compilação
 CFLAGS += -pedantic -D_LCOM_OPTIMIZED_ -O2

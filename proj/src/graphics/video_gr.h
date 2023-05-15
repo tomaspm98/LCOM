@@ -7,6 +7,11 @@
 
 #endif /* _LCOM_KEYBOARD_H_ */
 
+extern int h_res;
+extern int v_res;
+extern uint8_t* vram;
+extern uint8_t* backbuffer;
+
 void* (vg_init)(uint16_t mode);
 int (vg_drawpixel)(uint16_t x, uint16_t y, uint32_t color);
 int (normalize_color_555)(uint32_t color, uint32_t *new_color);

@@ -3,6 +3,7 @@
 #include "keyboard/keyboard.h"
 #include "graphics/video_gr.h"
 #include "timer/i8254.h"
+#include "entity.h"
 
 uint8_t irq_set_timer;
 
@@ -40,3 +41,22 @@ int end(){
     return 0;
 }
 
+int (proj_main_loop)(int argc, char *argv[]){
+  if (start()) return end();
+
+  /*Entity* myEntity = createEntity(10, 10); // replace 50, 50 with the desired x, y position
+  if (myEntity == NULL) return end();
+
+  //caminho do ficheiro = /home/lcom/labs/g4/proj/images/<nome_ficheiro>
+  //if (addFrame(myEntity, "/home/lcom/labs/g4/proj/images/")) return end(); // replace "path_to_your_image_file" with the path to your image file
+
+  if (renderEntity(myEntity, 0, 0, 0)) return end(); // replace 0, 0 with the desired offset
+
+  // Your main loop code here...
+
+  free(myEntity); // don't forget to free the memory when you're done
+
+  return end();
+  */
+ return 0;
+}
