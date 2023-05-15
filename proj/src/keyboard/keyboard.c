@@ -1,12 +1,11 @@
 #include <lcom/lcf.h>
-#include <lcom/timer.h>
 #include "kbc.h"
-#include "timer/i8042.h"
+#include "timer/i8254.h"
 #include "keyboard.h"
 
 #include <stdint.h>
 
-#include "i8254.h"
+#include "i8042.h"
 
 int keyboard_hook_id = 1;
 uint8_t scancode = 0;

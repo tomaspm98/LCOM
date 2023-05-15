@@ -1,5 +1,5 @@
 #include <lcom/lcf.h>
-#include <lcom/timer.h>
+#include "timer.h"
 
 #include <stdint.h>
 
@@ -44,7 +44,9 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
      return 0;
 }
 
-int (timer_subscribe_int)() {
+int (timer_subscribe_int)(uint8_t *bit_no) {
+  if (bit_no == NULL) return 1;
+  *bit_no = timer_hook_id;
   return sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &timer_hook_id);
 }
 

@@ -1,8 +1,10 @@
 #include <lcom/lcf.h>
-#include <lcom/timer.h>
+#include "timer/timer.h"
 #include "keyboard/keyboard.h"
 #include "graphics/video_gr.h"
 #include "timer/i8254.h"
+
+uint8_t irq_set_timer;
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
@@ -16,10 +18,10 @@ int (main)(int argc, char *argv[]) {
 int start(){
     if (timer_set_frequency(0,TIMER_FREQ)) return 1;
     //iniciar buffers video
-    if(set_graphic_mode(0x115)) return 1;
+    if(vg_init(0x115)) return 1;
     //sprites
     //falta interrupts mouse+rtc+serial port
-    if (timer_subscribe_int()) return 1;
+    if (timer_subscribe_int(&irq_set_timer)) return 1;
     if(keyboard_subscribe_interrupts()) return 1;
 
     return 0;
@@ -31,13 +33,10 @@ int end(){
     if (vg_exit()) return 1;
     //terminar sprites
     //falta interrupts mouse+rtc+serial port
-    if (timer_unsubscribe_interrupts()) return 1;
+    if (timer_unsubscribe_int()) return 1;
     if(keyboard_unsubscribe_interrupts()) return 1;
     //desativar interrupts
 
     return 0;
 }
 
-/*int loop_game(){
-
-}*/

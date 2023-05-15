@@ -12,7 +12,7 @@
 #include "video_gr.h"
 #include <math.h>
 
-#include "i8254.h"
+#include "timer/i8254.h"
 
 
 uint8_t* vram;

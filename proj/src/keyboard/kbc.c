@@ -4,7 +4,7 @@
 
 #include <stdint.h>
 #include "kbc.h"
-#include "i8254.h"
+#include "timer/i8254.h"
 
 int (read_KBC_status)(uint8_t* status){
     if (util_sys_inb(KBC_STATUS_REG, status)) return 1;
