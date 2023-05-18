@@ -25,6 +25,16 @@ uint8_t* backbuffer;
 vbe_mode_info_t vbe;
 
 
+int (set_graphic_mode)(uint16_t submode){
+    reg86_t reg;
+    memset(&reg, 0, sizeof(reg)); 
+    reg.intno = 0x10;                                      // parte menos significativa de AX. 0x02 no caso de modo gráfico
+    reg.ax = 0x4F02;             
+    reg.bx = submode | BIT(14);     
+    if (sys_int86(&reg)) return 1;     
+    return 0;
+}
+
 void* (vg_init)(uint16_t mode){
     
     struct minix_mem_range mr;
@@ -45,18 +55,6 @@ void* (vg_init)(uint16_t mode){
     if(sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr) != OK) return NULL;
 
     if((vram = vm_map_phys(SELF, (void*)mr.mr_base, vram_size)) == MAP_FAILED) return NULL;
-    
-    struct reg86 reg;
-
-    memset(&reg,0,sizeof(reg));
-
-    reg.ax=0x4f02;
-    reg.bx = mode | BIT(14);
-    reg.intno = 0x10;
-
-    if (sys_int86(&reg)) return NULL;
-    
-    backbuffer = (uint8_t*)malloc(h_res*v_res);
 
     return 0;
 }

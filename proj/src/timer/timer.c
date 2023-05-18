@@ -1,5 +1,5 @@
 #include <lcom/lcf.h>
-#include "timer.h"
+//#include "timer.h"
 
 #include <stdint.h>
 
@@ -12,8 +12,8 @@ int timer_irq_counter=0;
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
      uint8_t status;
 
-     if (timer>2 || timer<0 || freq<19) return 1;
-     timer_get_conf(timer, &status);
+     if (timer>2 || timer<0 || freq<19 || freq > TIMER_FREQ) return 1;
+     if (timer_get_conf(timer, &status)) return 1;
      
      status = status & (0x0F);
      uint8_t controlWord = status | TIMER_LSB_MSB;
@@ -30,13 +30,15 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
          default:
             return 1;         
      }
-     if (sys_outb(TIMER_CTRL, controlWord)) return 1;
+     
 
-     uint16_t frequency = TIMER_FREQ/freq;
+     uint32_t frequency = TIMER_FREQ/freq;
      uint8_t lsb, msb;
 
      if (util_get_LSB(frequency, &lsb)) return 1;
      if (util_get_MSB(frequency, &msb)) return 1;
+
+     if (sys_outb(TIMER_CTRL, controlWord)) return 1;
 
      if (sys_outb(TIMER_0+timer,lsb)) return 1;
      if (sys_outb(TIMER_0+timer, msb)) return 1;

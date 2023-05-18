@@ -19,6 +19,6 @@ typedef struct {
 Entity* createEntity(int posX, int posY);
 int addFrame(Entity* entity, char* file);
 int renderEntity(Entity* entity, unsigned int idx, int posX, int posY);
-
+int addFrameXPM(Entity* entity, char* file);
 
 #endif /* ENTITY_H */

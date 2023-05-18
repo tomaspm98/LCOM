@@ -66,3 +66,77 @@ int renderEntity(Entity* entity, unsigned int idx, int posX, int posY){
     return 0;
 }
 
+#include <string.h>
+
+int addFrameXPM(Entity* entity, char* file){
+    printf("Entering addFrameXPM\n");
+
+    FILE* fileHandler;
+
+    if((fileHandler = fopen(file, "r")) == NULL ){ 
+        printf("Failed to open file\n");
+        return 1;
+    }
+
+    if(entity->imgFrames != NULL){
+        entity->imgFrames = realloc(entity->imgFrames, sizeof(Picture) * (entity->frameCount+1));
+    } else {
+        entity->imgFrames = (Picture*)malloc(sizeof(Picture) * (entity->frameCount+1));
+    }
+
+    Picture* newPic = &(entity->imgFrames[entity->frameCount]);
+
+    char buffer[256];
+    uint16_t colors;
+    
+    printf("OK");
+    // read header
+    uint16_t chars;
+    if (fscanf(fileHandler, "%hu %hu %hu %hu", &(newPic->width), &(newPic->height), &colors, &chars) != 4) return 1;
+
+    printf("OK2");
+    
+
+    printf("Read header: %hu, %hu, %hu\n", newPic->width, newPic->height, colors);
+    
+    // skip color table
+    for (int i = 0; i < colors; i++) {
+        if (fgets(buffer, sizeof(buffer), fileHandler) == NULL) return 1;
+    }
+
+    newPic->pixels = (uint8_t*)malloc(newPic->width * newPic->height);
+    if (newPic->pixels == NULL) {
+        printf("Failed to allocate memory for pixels\n");
+        return 1;
+    }
+
+    printf("Allocated memory for pixels\n");
+
+    for(uint16_t i = 0; i < newPic->height; i++) {
+        for(uint16_t j = 0; j < newPic->width; j++) {
+            char pixel;
+            if (fscanf(fileHandler, " %c", &pixel) != 1) {
+                printf("Failed to read pixel at position (%hu, %hu)\n", i, j);
+                return 1;
+            }
+            newPic->pixels[j + i*newPic->width] = (uint8_t)pixel;
+        }
+
+        // Skip newline
+        if (fscanf(fileHandler, "%*[\n]") < 0) {
+            printf("Failed to skip newline after line %hu\n", i);
+            return 1;
+        }
+    }
+
+    if(fclose(fileHandler) != 0) return 1;
+
+    entity->frameCount++;
+
+    printf("EXITING\n");
+
+    return 0;
+}
+
+
+

@@ -9,25 +9,24 @@ uint8_t irq_set_timer;
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
-  lcf_trace_calls("/home/lcom/labs/debug/trace.txt");
-  lcf_log_output("/home/lcom/labs/debug/output.txt");
+  lcf_trace_calls("/home/lcom/labs/g4/proj/src/debug/trace.txt");
+  lcf_log_output("/home/lcom/labs/g4/proj/src/debug/output.txt");
   if (lcf_start(argc, argv)) return 1;
   lcf_cleanup();
   return 0;
 }
 
 int start(){
-    if (timer_set_frequency(0,TIMER_FREQ)) return 1;
+    if (timer_set_frequency(0,GAME_FREQ)) return 1;
     //iniciar buffers video
-    if(vg_init(0x115)) return 1;
+  
+    if(set_graphic_mode(0x115)) return 1;
     //sprites
     //falta interrupts mouse+rtc+serial port
     if (timer_subscribe_int(&irq_set_timer)) return 1;
     if(keyboard_subscribe_interrupts()) return 1;
 
     return 0;
-
-
 }
 
 int end(){
@@ -43,20 +42,19 @@ int end(){
 
 int (proj_main_loop)(int argc, char *argv[]){
   if (start()) return end();
-
+  
   /*Entity* myEntity = createEntity(10, 10); // replace 50, 50 with the desired x, y position
   if (myEntity == NULL) return end();
-
   //caminho do ficheiro = /home/lcom/labs/g4/proj/images/<nome_ficheiro>
-  //if (addFrame(myEntity, "/home/lcom/labs/g4/proj/images/")) return end(); // replace "path_to_your_image_file" with the path to your image file
-
-  if (renderEntity(myEntity, 0, 0, 0)) return end(); // replace 0, 0 with the desired offset
-
-  // Your main loop code here...
+  if (addFrameXPM(myEntity, "/home/lcom/labs/g4/proj/images/transferir.xpm")) return end(); // replace "path_to_your_image_file" with the path to your image file
+  printf("OK4");
+  if (renderEntity(myEntity, 0, 10, 20)) return end(); // replace 0, 0 with the desired offset
 
   free(myEntity); // don't forget to free the memory when you're done
-
-  return end();
   */
- return 0;
+  if (end()) return 1;
+
+  printf("FEZ TUDO");
+
+  return 0;
 }
