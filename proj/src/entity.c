@@ -92,11 +92,11 @@ int addFrameXPM(Entity* entity, char* file){
     printf("OK");
     // read header
     uint16_t chars;
-    if (fscanf(fileHandler, "%hu %hu %hu %hu", &(newPic->width), &(newPic->height), &colors, &chars) != 4) return 1;
-
-    printf("OK2");
+    char header[256];
+    if(fgets(header, sizeof(header), fileHandler) == NULL) return 1;
+    printf("OK");
+    sscanf(header, "%hu %hu %hu %hu", &(newPic->width), &(newPic->height), &colors, &chars);
     
-
     printf("Read header: %hu, %hu, %hu\n", newPic->width, newPic->height, colors);
     
     // skip color table

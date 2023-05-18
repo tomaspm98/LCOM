@@ -43,15 +43,15 @@ int end(){
 int (proj_main_loop)(int argc, char *argv[]){
   if (start()) return end();
   
-  /*Entity* myEntity = createEntity(10, 10); // replace 50, 50 with the desired x, y position
+  Entity* myEntity = createEntity(10, 10); // replace 50, 50 with the desired x, y position
   if (myEntity == NULL) return end();
   //caminho do ficheiro = /home/lcom/labs/g4/proj/images/<nome_ficheiro>
-  if (addFrameXPM(myEntity, "/home/lcom/labs/g4/proj/images/transferir.xpm")) return end(); // replace "path_to_your_image_file" with the path to your image file
+  if (addFrameXPM(myEntity, "/home/lcom/labs/g4/proj/src/images/transferir.xpm")) return end(); // replace "path_to_your_image_file" with the path to your image file
   printf("OK4");
   if (renderEntity(myEntity, 0, 10, 20)) return end(); // replace 0, 0 with the desired offset
 
   free(myEntity); // don't forget to free the memory when you're done
-  */
+  
   if (end()) return 1;
 
   printf("FEZ TUDO");
