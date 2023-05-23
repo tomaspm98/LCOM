@@ -8,7 +8,7 @@
 
 #endif /* _LCOM_KEYBOARD_H_ */
 
-int (keyboard_subscribe_interrupts)();
+int (keyboard_subscribe_interrupts)(uint8_t *bit_no);
 
 int (keyboard_unsubscribe_interrupts)();
 

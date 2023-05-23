@@ -80,10 +80,7 @@ int kbc_restore() { //notificar i i8042 tanto da leitura como da escrita e dps d
   if (write_KBC_command(KBC_WRITE_CMD, controlWord)){
     return 1;
   }
-
-  return 0;
-
-
+  
   return 0;
 }
 
