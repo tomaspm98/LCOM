@@ -1,5 +1,0 @@
-Entering addFrameXPM
-OKOKRead header: hu, hu, hu
-Allocated memory for pixels
-EXITING
-OK4FEZ TUDO

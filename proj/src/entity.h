@@ -1,24 +1,17 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include <lcom/lcf.h>
 #include <stdint.h>
 
 typedef struct {
-    uint16_t width;
-    uint16_t height;
-    uint8_t *pixels;
-} Picture;
-
-typedef struct {
-    int x;
-    int y;
-    Picture *imgFrames;
-    unsigned int frameCount;
+    int width, height; // dimensions
+    uint32_t *colors; // the pixmap
 } Entity;
 
-Entity* createEntity(int posX, int posY);
-int addFrame(Entity* entity, char* file);
-int renderEntity(Entity* entity, unsigned int idx, int posX, int posY);
-int addFrameXPM(Entity* entity, char* file);
+void destroy_sprite (Entity *sp);
+Entity *create_sprite (xpm_map_t sprite);
+int drawSprite(Entity *sprite, int x, int y);
+int draw_xpm(xpm_map_t xpm, int x, int y);
 
 #endif /* ENTITY_H */

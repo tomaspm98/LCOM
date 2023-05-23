@@ -4,8 +4,10 @@
 #include "graphics/video_gr.h"
 #include "timer/i8254.h"
 #include "entity.h"
+#include "images/transferir.xpm"
 
 uint8_t irq_set_timer;
+Entity* teste;
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
@@ -25,6 +27,8 @@ int start(){
     //falta interrupts mouse+rtc+serial port
     if (timer_subscribe_int(&irq_set_timer)) return 1;
     if(keyboard_subscribe_interrupts()) return 1;
+    //teste = create_sprite(transferir_xpm);
+    displayImage();
 
     return 0;
 }
@@ -35,6 +39,7 @@ int end(){
     //falta interrupts mouse+rtc+serial port
     if (timer_unsubscribe_int()) return 1;
     if(keyboard_unsubscribe_interrupts()) return 1;
+    destroy_sprite(teste);
     //desativar interrupts
 
     return 0;
@@ -43,15 +48,8 @@ int end(){
 int (proj_main_loop)(int argc, char *argv[]){
   if (start()) return end();
   
-  Entity* myEntity = createEntity(10, 10); // replace 50, 50 with the desired x, y position
-  if (myEntity == NULL) return end();
-  //caminho do ficheiro = /home/lcom/labs/g4/proj/images/<nome_ficheiro>
-  if (addFrameXPM(myEntity, "/home/lcom/labs/g4/proj/src/images/transferir.xpm")) return end(); // replace "path_to_your_image_file" with the path to your image file
-  printf("OK4");
-  if (renderEntity(myEntity, 0, 10, 20)) return end(); // replace 0, 0 with the desired offset
+  if (draw_xpm((xpm_map_t) transferir_xpm,5,5)) return 1;
 
-  free(myEntity); // don't forget to free the memory when you're done
-  
   if (end()) return 1;
 
   printf("FEZ TUDO");

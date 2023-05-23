@@ -21,7 +21,8 @@ int v_res;
 int bpp;
 int bytes;
 int colorModel;
-uint8_t* backbuffer;
+uint8_t* imBuffer;
+uint8_t* drawBuffer;
 vbe_mode_info_t vbe;
 
 
@@ -64,7 +65,7 @@ int vg_drawpixel(uint16_t x, uint16_t y, uint32_t color){
     return 1;
   }
   int offset = ((y*vbe.XResolution)+x)*bytes;
-  if ((memcpy(&vram[offset],&color,bytes))==NULL) return 1;
+  if ((memcpy(&imBuffer[offset],&color,bytes))==NULL) return 1;
   return 0;  
 }
 
@@ -108,4 +109,16 @@ uint32_t (G)(uint32_t first){
 uint32_t (B)(uint32_t first){
   return ((1 << vbe.BlueMaskSize) - 1) & (first >> vbe.BlueFieldPosition);
 }
+
+void displayImage(){
+  imBuffer = (uint8_t*)malloc(vbe.XResolution*vbe.YResolution*bytes);
+  memcpy(vram,imBuffer,vbe.XResolution*vbe.YResolution*bytes);
+}
+
+void freeImBuffer(){
+  memset(imBuffer,0,vbe.XResolution*vbe.YResolution*bytes);
+  free(imBuffer);
+}
+
+
 
