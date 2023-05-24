@@ -10,6 +10,7 @@
 #include "images/transferir.xpm"
 #include "images/nada.xpm"
 #include "images/piece.xpm"
+#include <stdlib.h>
 
 uint8_t irq_set_timer=0;
 uint8_t irq_set_kbd=1;
@@ -18,7 +19,7 @@ extern uint8_t scancode;
 extern int timer_irq_counter;
 int piece_1_x = 30;
 int piece_1_y = 255;
-int piece_2_x = 770;
+int piece_2_x = 754;
 int piece_2_y = 255;
 int ball_x = 390;
 int ball_y = 290;
@@ -26,6 +27,8 @@ int w_key_state = KEY_STATE_RELEASED;
 int s_key_state = KEY_STATE_RELEASED;
 int up_key_state = KEY_STATE_RELEASED;
 int down_key_state = KEY_STATE_RELEASED;
+bool not_random = false;
+
 
 
 int (main)(int argc, char *argv[]) {
@@ -66,6 +69,24 @@ int end(){
     //desativar interrupts
 
     return 0;
+}
+
+void ball_movement(){
+    int r=-1;
+    //inicial movimento da bola
+    if (!not_random){
+        r = rand() % 2;
+        not_random = true;
+    }
+         if (r == 0 && ball_x>=46){
+                ball_x-=5;
+         }
+         else {
+            if(ball_x<=732){
+                ball_x+=5;
+         }
+    }
+    
 }
 
 int (proj_main_loop)(int argc, char *argv[]){
@@ -110,29 +131,37 @@ int (proj_main_loop)(int argc, char *argv[]){
                         down_key_state = KEY_STATE_RELEASED;
                     }
                     if(w_key_state == KEY_STATE_PRESSED){
-                        piece_1_y-=10;
+                        if(piece_1_y>=LOWER_LIMIT){
+                            piece_1_y-=10;
+                        }
                     }
                     if(s_key_state == KEY_STATE_PRESSED){
-                        piece_1_y+=10;
+                        if (piece_1_y<=UPPER_LIMIT){
+                            piece_1_y+=10;
+                        }
                     }
                     if(up_key_state == KEY_STATE_PRESSED){
-                        piece_2_y-=10;
+                        if(piece_2_y>=LOWER_LIMIT){
+                            piece_2_y-=10;
+                        }
                     }
                     if(down_key_state == KEY_STATE_PRESSED){
-                        piece_2_y+=10;
+                        if (piece_2_y<=UPPER_LIMIT){
+                            piece_2_y+=10;
+                        }
                     }
                 }
                 if (msg.m_notify.interrupts & BIT(irq_set_timer)){
                   timer_int_handler();
-                  if (vg_draw_rectangle(0,0,800,30,BLUE)) return 1;
-                  if (vg_draw_rectangle(0,570,800,30,BLUE)) return 1;
+                  if (vg_draw_rectangle(0,0,800,35,BLUE)) return 1;
+                  if (vg_draw_rectangle(0,565,800,35,BLUE)) return 1;
                   if (vg_draw_rectangle(398,0,4,600,BLUE)) return 1;   
                   if (draw_xpm((xpm_map_t) piece_xpm,piece_1_x,piece_1_y)) return 1; 
                   if (draw_xpm((xpm_map_t) piece_xpm,piece_2_x,piece_2_y)) return 1;
                   if (draw_xpm((xpm_map_t) ball_xpm,ball_x,ball_y)) return 1;
+                  ball_movement();
                   displayImage();
                   freeImBuffer();
-                  
                 }
                 break;
             default:
