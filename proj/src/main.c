@@ -26,6 +26,7 @@ int start(){
     //iniciar buffers video
   
     if(set_graphic_mode(0x115)) return 1;
+    if (vg_init(0x115)) return 1;
     //sprites
     //falta interrupts mouse+rtc+serial port
     if (timer_subscribe_int(&irq_set_timer)) return 1;
@@ -66,6 +67,7 @@ int (proj_main_loop)(int argc, char *argv[]){
             case HARDWARE: /* hardware interrupt notification */				
                 if (msg.m_notify.interrupts & BIT(irq_set_kbd)) { /* subscribed interrupt */
                     kbc_ih();
+                    if (draw_xpm((xpm_map_t) transferir_xpm,5,5)) return 1;
                 }
                 if (msg.m_notify.interrupts & BIT(irq_set_timer)){
                   timer_int_handler();
@@ -81,7 +83,9 @@ int (proj_main_loop)(int argc, char *argv[]){
     }
  }
 
-  //if (draw_xpm((xpm_map_t) transferir_xpm,5,5)) return 1;
+    
+
+
 
   if (end()) return 1;
 
