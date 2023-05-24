@@ -7,6 +7,7 @@
 
 #endif /* _LCOM_KEYBOARD_H_ */
 
+#define WHITE 0xFFFFFF
 extern int h_res;
 extern int v_res;
 extern uint8_t* vram;
@@ -24,3 +25,8 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height,
 int (vg_drawline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
 void displayImage();
 void freeImBuffer();
+void allocateDrawBuffer();
+void copyDrawingToBuffer();
+void clearDrawBuffer();
+void freeDrawBuffer();
+void allocateImgBuffer();

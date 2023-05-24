@@ -116,14 +116,34 @@ uint32_t (B)(uint32_t first){
   return ((1 << vbe.BlueMaskSize) - 1) & (first >> vbe.BlueFieldPosition);
 }
 
-void displayImage(){
+void allocateImgBuffer(){
   imBuffer = (uint8_t*)malloc(vbe.XResolution*vbe.YResolution*bytes);
+}
+
+void displayImage(){
   memcpy(vram,imBuffer,vbe.XResolution*vbe.YResolution*bytes);
 }
 
 void freeImBuffer(){
   memset(imBuffer,0,vbe.XResolution*vbe.YResolution*bytes);
   free(imBuffer);
+}
+
+void allocateDrawBuffer(){
+    drawBuffer = (uint8_t *)malloc(vbe.XResolution*vbe.YResolution*bytes);
+    memset(drawBuffer,WHITE,vbe.XResolution*vbe.YResolution*bytes);
+}
+
+void copyDrawingToBuffer(){
+  memcpy(imBuffer, drawBuffer, vbe.XResolution*vbe.YResolution*bytes); 
+}
+
+void clearDrawBuffer(){
+  memset(drawBuffer,WHITE,vbe.XResolution*vbe.YResolution*bytes);
+}
+
+void freeDrawBuffer(){
+    free(drawBuffer); 
 }
 
 
