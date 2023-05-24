@@ -4,6 +4,7 @@
 #include "keyboard/keyboard.h"
 #include "graphics/video_gr.h"
 #include "timer/i8254.h"
+#include "colors.h"
 #include "entity.h"
 #include "images/transferir.xpm"
 #include "images/nada.xpm"
@@ -82,10 +83,13 @@ int (proj_main_loop)(int argc, char *argv[]){
                 if (msg.m_notify.interrupts & BIT(irq_set_timer)){
                   timer_int_handler();
                   //displayImage();
-                  //freeImBuffer();   
-                  if (draw_xpm((xpm_map_t) piece_xpm,30,250)) return 1; 
-                  if (draw_xpm((xpm_map_t) piece_xpm,770,250)) return 1;
-                  if (draw_xpm((xpm_map_t) ball_xpm,400,300)) return 1;
+                  //freeImBuffer();
+                  if (vg_draw_rectangle(0,0,800,30,BLUE)) return 1;
+                  if (vg_draw_rectangle(0,570,800,30,BLUE)) return 1;
+                  if (vg_draw_rectangle(398,0,4,600,BLUE)) return 1;   
+                  if (draw_xpm((xpm_map_t) piece_xpm,30,255)) return 1; 
+                  if (draw_xpm((xpm_map_t) piece_xpm,770,255)) return 1;
+                  if (draw_xpm((xpm_map_t) ball_xpm,390,290)) return 1;
                   displayImage();
                   
                 }

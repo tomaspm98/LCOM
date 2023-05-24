@@ -62,10 +62,6 @@ void* (vg_init)(uint16_t mode){
 
 int vg_drawpixel(uint16_t x, uint16_t y, uint32_t color){
   if (x<0 || y<0 || x>=vbe.XResolution || y>=vbe.YResolution){
-    printf("%d\n",x);
-    printf("%d\n",y);
-    printf("%d\n",vbe.XResolution);
-    printf("%d\n",vbe.YResolution);
     return 1;
   }
   int offset = ((y*vbe.XResolution)+x)*bytes;
