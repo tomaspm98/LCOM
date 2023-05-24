@@ -6,6 +6,7 @@
 #include "timer/i8254.h"
 #include "colors.h"
 #include "entity.h"
+#include "logic.h"
 #include "images/transferir.xpm"
 #include "images/nada.xpm"
 #include "images/piece.xpm"
@@ -15,6 +16,17 @@ uint8_t irq_set_kbd=1;
 Entity* teste;
 extern uint8_t scancode;
 extern int timer_irq_counter;
+int piece_1_x = 30;
+int piece_1_y = 255;
+int piece_2_x = 770;
+int piece_2_y = 255;
+int ball_x = 390;
+int ball_y = 290;
+int w_key_state = KEY_STATE_RELEASED;
+int s_key_state = KEY_STATE_RELEASED;
+int up_key_state = KEY_STATE_RELEASED;
+int down_key_state = KEY_STATE_RELEASED;
+
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
@@ -48,7 +60,7 @@ int end(){
     if (timer_unsubscribe_int()) return 1;
     if(keyboard_unsubscribe_interrupts()) return 1;
      freeDrawBuffer();
-     freeImBuffer();
+     //freeImBuffer();
     //destroy_sprite(teste);
     //freeImBuffer();
     //desativar interrupts
@@ -73,24 +85,53 @@ int (proj_main_loop)(int argc, char *argv[]){
             case HARDWARE: /* hardware interrupt notification */				
                 if (msg.m_notify.interrupts & BIT(irq_set_kbd)) { /* subscribed interrupt */
                     kbc_ih();
-                    //freeImBuffer();   
-                    /*if (draw_xpm((xpm_map_t) piece_xpm,30,250)) return 1;
-                    if (draw_xpm((xpm_map_t) piece_xpm,770,250)) return 1;
-                    if (draw_xpm((xpm_map_t) ball_xpm,400,300)) return 1;
-                */
-                    
+                    if (scancode==KBC_MAKE_W_KEY){
+                        w_key_state = KEY_STATE_PRESSED;
+                    }
+                    if (scancode==KBC_BREAK_W_KEY){
+                        w_key_state = KEY_STATE_RELEASED;
+                    }
+                    if (scancode==KBC_MAKE_S_KEY){
+                        s_key_state = KEY_STATE_PRESSED;
+                    }
+                    if (scancode==KBC_BREAK_S_KEY){
+                        s_key_state = KEY_STATE_RELEASED;
+                    }
+                    if (scancode==KBC_MAKE_UP_KEY){
+                        up_key_state = KEY_STATE_PRESSED;
+                    }
+                    if (scancode==KBC_BREAK_UP_KEY){
+                        up_key_state = KEY_STATE_RELEASED;
+                    }
+                    if (scancode==KBC_MAKE_DOWN_KEY){
+                        down_key_state = KEY_STATE_PRESSED;
+                    }
+                    if (scancode==KBC_BREAK_DOWN_KEY){
+                        down_key_state = KEY_STATE_RELEASED;
+                    }
+                    if(w_key_state == KEY_STATE_PRESSED){
+                        piece_1_y-=10;
+                    }
+                    if(s_key_state == KEY_STATE_PRESSED){
+                        piece_1_y+=10;
+                    }
+                    if(up_key_state == KEY_STATE_PRESSED){
+                        piece_2_y-=10;
+                    }
+                    if(down_key_state == KEY_STATE_PRESSED){
+                        piece_2_y+=10;
+                    }
                 }
                 if (msg.m_notify.interrupts & BIT(irq_set_timer)){
                   timer_int_handler();
-                  //displayImage();
-                  //freeImBuffer();
                   if (vg_draw_rectangle(0,0,800,30,BLUE)) return 1;
                   if (vg_draw_rectangle(0,570,800,30,BLUE)) return 1;
                   if (vg_draw_rectangle(398,0,4,600,BLUE)) return 1;   
-                  if (draw_xpm((xpm_map_t) piece_xpm,30,255)) return 1; 
-                  if (draw_xpm((xpm_map_t) piece_xpm,770,255)) return 1;
-                  if (draw_xpm((xpm_map_t) ball_xpm,390,290)) return 1;
+                  if (draw_xpm((xpm_map_t) piece_xpm,piece_1_x,piece_1_y)) return 1; 
+                  if (draw_xpm((xpm_map_t) piece_xpm,piece_2_x,piece_2_y)) return 1;
+                  if (draw_xpm((xpm_map_t) ball_xpm,ball_x,ball_y)) return 1;
                   displayImage();
+                  freeImBuffer();
                   
                 }
                 break;
