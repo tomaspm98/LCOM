@@ -6,6 +6,8 @@
 #include "timer/i8254.h"
 #include "entity.h"
 #include "images/transferir.xpm"
+#include "images/nada.xpm"
+#include "images/piece.xpm"
 
 uint8_t irq_set_timer=0;
 uint8_t irq_set_kbd=1;
@@ -32,7 +34,7 @@ int start(){
     if (timer_subscribe_int(&irq_set_timer)) return 1;
     if(keyboard_subscribe_interrupts(&irq_set_kbd)) return 1;
     //teste = create_sprite(transferir_xpm);
-    displayImage();
+    //displayImage();
 
     return 0;
 }
@@ -43,8 +45,8 @@ int end(){
     //falta interrupts mouse+rtc+serial port
     if (timer_unsubscribe_int()) return 1;
     if(keyboard_unsubscribe_interrupts()) return 1;
-    destroy_sprite(teste);
-    freeImBuffer();
+    //destroy_sprite(teste);
+    //freeImBuffer();
     //desativar interrupts
 
     return 0;
@@ -67,12 +69,13 @@ int (proj_main_loop)(int argc, char *argv[]){
             case HARDWARE: /* hardware interrupt notification */				
                 if (msg.m_notify.interrupts & BIT(irq_set_kbd)) { /* subscribed interrupt */
                     kbc_ih();
-                    if (draw_xpm((xpm_map_t) transferir_xpm,5,5)) return 1;
+                    displayImage();
+                    freeImBuffer();   
+                    if (draw_xpm((xpm_map_t) piece_xpm,10,15)) return 1;
                 }
                 if (msg.m_notify.interrupts & BIT(irq_set_timer)){
                   timer_int_handler();
-                  displayImage();
-                  freeImBuffer();
+                  
                 }
                 break;
             default:
