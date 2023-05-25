@@ -78,9 +78,8 @@ int end(){
 void ball_movement(){
    if (startBall){ 
     if (!not_random){
-        /*srand(time(NULL));
-        r = rand() % 2;*/
-        r = 0;
+        srand(time(NULL));
+        r = rand() % 2;
         not_random = true;
     }
          if (r == 0 && ball_x>=50){
@@ -103,45 +102,153 @@ void ball_movement(){
    if (ball_x == 45){
     int meio = piece_1_y + 46-11;
     int topo_1 = piece_1_y-11+36;
-    int topo_2 = piece_1_y-11+26; //45 - meio da barra e 10 metade da bola
+    int topo_2 = piece_1_y-11+26;
+    int topo_3 = piece_1_y-11+16;
+    int topo_4 = piece_1_y-11+6;
+    int topo_5 = piece_1_y-12;
+    int baixo_1 = piece_1_y-11+46;
+    int baixo_2 = piece_1_y-11+56;
+    int baixo_3 = piece_1_y-11+66;
+    int baixo_4 = piece_1_y-11+76;
+    int baixo_5 = piece_1_y-11+86;
+    int baixo_6 = piece_1_y - 11 + 96; 
+     //45 - meio da barra e 10 metade da bola
     if (ball_y == meio){
         ball_var_y=0;
         ball_var_x=5;
     }
     else if (ball_y<meio && ball_y>=topo_1){
         ball_var_x=5;
+        ball_var_y=-1; 
+    }
+
+    else if (ball_y<topo_1 && ball_y>=topo_2){
+        ball_var_x=5;
         ball_var_y=-2; 
     }
 
-    else if (ball_var_y<topo_1 && ball_y>=topo_2){
+    else if (ball_y<topo_2 && ball_y>=topo_3){
+        ball_var_x=5;
+        ball_var_y=-3; 
+    }
+
+    else if (ball_y<topo_3 && ball_y>=topo_4){
         ball_var_x=5;
         ball_var_y=-4; 
     }
+    else if (ball_y<topo_4 && ball_y>=topo_5){
+        ball_var_x=5;
+        ball_var_y=-5; 
+    }
+    else if (ball_y>meio && ball_y<=baixo_1){
+        ball_var_x=5;
+        ball_var_y=1; 
+    }
+    else if (ball_y>baixo_1 && ball_y<=baixo_2){
+        ball_var_x=5;
+        ball_var_y=2; 
+    }
+    else if (ball_y>baixo_2 && ball_y<=baixo_3){
+        ball_var_x=5;
+        ball_var_y=3; 
+    }
+    else if (ball_y>baixo_3 && ball_y<=baixo_4){
+        ball_var_x=5;
+        ball_var_y=4; 
+    }
+    else if (ball_y>baixo_4 && ball_y<=baixo_5){
+        ball_var_x=5;
+        ball_var_y=5; 
+    }
+    else if (ball_y>baixo_5 && ball_y<=baixo_6){
+        ball_var_x=5;
+        ball_var_y=6; 
+    }
+
+    
    }
    if (ball_x == 735){
     int meio = piece_2_y +46-11;
     int topo_1 = piece_2_y-11+36;
     int topo_2 = piece_2_y-11+26;
+    int topo_3 = piece_2_y-11+16;
+    int topo_4 = piece_2_y-11+6;
+    int topo_5 = piece_2_y-12;
+    int baixo_1 = piece_2_y-11+46;
+    int baixo_2 = piece_2_y-11+56;
+    int baixo_3 = piece_2_y-11+66;
+    int baixo_4 = piece_2_y-11+76;
+    int baixo_5 = piece_2_y-11+86;
+    int baixo_6 = piece_2_y - 11 + 96; 
     if (ball_y == meio){
         ball_var_y=0;
         ball_var_x=-5;
     }
     else if (ball_y<meio && ball_y>=topo_1){
         ball_var_x=-5;
-        ball_var_y=-2; 
+        ball_var_y=-1; 
     }
     
 
-    else if (ball_var_y<topo_1 && ball_y>=topo_2){
+    else if (ball_y<topo_1 && ball_y>=topo_2){
+        ball_var_x=-5;
+        ball_var_y=-2; 
+    }
+
+    else if (ball_y<topo_2 && ball_y>=topo_3){
+        ball_var_x=-5;
+        ball_var_y=-3; 
+    }
+
+    else if (ball_y<topo_3 && ball_y>=topo_4){
         ball_var_x=-5;
         ball_var_y=-4; 
     }
+
+    else if (ball_y>meio && ball_y<=baixo_1){
+        ball_var_x=-5;
+        ball_var_y=1; 
+    }
+    else if (ball_y>baixo_1 && ball_y<=baixo_2){
+        ball_var_x=-5;
+        ball_var_y=2; 
+    }
+    else if (ball_y>baixo_2 && ball_y<=baixo_3){
+        ball_var_x=-5;
+        ball_var_y=3; 
+    }
+    else if (ball_y>baixo_3 && ball_y<=baixo_4){
+        ball_var_x=-5;
+        ball_var_y=4; 
+    }
+    else if (ball_y>baixo_4 && ball_y<=baixo_5){
+        ball_var_x=-5;
+        ball_var_y=5; 
+    }
+    else if (ball_y>baixo_5 && ball_y<=baixo_6){
+        ball_var_x=-5;
+        ball_var_y=6; 
+    }
+    else if (ball_y<topo_4 && ball_y>=topo_5){
+        ball_var_x=5;
+        ball_var_y=-5; 
+    }
     
    }
+   if ((ball_y>=34 && ball_y<=40) || (ball_y >= 540 && ball_y<=546)){
+    if(ball_var_x<0){
+        ball_var_x = -5;
+        ball_var_y = -ball_var_y;
+    }
+    else {
+        ball_var_x = 5;
+        ball_var_y = -ball_var_y;
+    }
+   }
+   
    ball_x+=ball_var_x;
    ball_y+=ball_var_y;
-
-    
+   
 }
 
 int (proj_main_loop)(int argc, char *argv[]){
@@ -187,22 +294,22 @@ int (proj_main_loop)(int argc, char *argv[]){
                     }
                     if(w_key_state == KEY_STATE_PRESSED){
                         if(piece_1_y>=LOWER_LIMIT){
-                            piece_1_y-=10;
+                            piece_1_y-=20;
                         }
                     }
                     if(s_key_state == KEY_STATE_PRESSED){
                         if (piece_1_y<=UPPER_LIMIT){
-                            piece_1_y+=10;
+                            piece_1_y+=20;
                         }
                     }
                     if(up_key_state == KEY_STATE_PRESSED){
                         if(piece_2_y>=LOWER_LIMIT){
-                            piece_2_y-=10;
+                            piece_2_y-=20;
                         }
                     }
                     if(down_key_state == KEY_STATE_PRESSED){
                         if (piece_2_y<=UPPER_LIMIT){
-                            piece_2_y+=10;
+                            piece_2_y+=20;
                         }
                     }
                 }
