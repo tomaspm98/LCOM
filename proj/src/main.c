@@ -10,6 +10,10 @@
 #include "images/transferir.xpm"
 #include "images/nada.xpm"
 #include "images/piece.xpm"
+#include "images/letter_g.xpm"
+#include "images/letter_o.xpm"
+#include "images/letter_a.xpm"
+#include "images/letter_l.xpm"
 #include <stdlib.h>
 
 uint8_t irq_set_timer=0;
@@ -125,24 +129,20 @@ void ball_movement(){
     if (ball_y == meio){
         ball_var_y=0;
         ball_var_x=5;
-        printf("meio");
     }
     else if (ball_y<meio && ball_y>=topo_1){
         ball_var_x=5;
         ball_var_y=-1; 
-        printf("topo1");
     }
 
     else if (ball_y<topo_1 && ball_y>=topo_2){
         ball_var_x=5;
         ball_var_y=-2; 
-        printf("topo2");
     }
 
     else if (ball_y<topo_2 && ball_y>=topo_3){
         ball_var_x=5;
         ball_var_y=-3; 
-        printf("topo3");
     }
     else if (ball_y<topo_3 && ball_y>=topo_4){
         ball_var_x=5;
@@ -155,27 +155,22 @@ void ball_movement(){
     else if (ball_y>meio && ball_y<=baixo_2){
         ball_var_x=5;
         ball_var_y=1;
-        printf("baixo2"); 
     }
     else if (ball_y>baixo_2 && ball_y<=baixo_3){
         ball_var_x=5;
         ball_var_y=2; 
-        printf("baixo3"); 
     }
     else if (ball_y>baixo_3 && ball_y<=baixo_4){
         ball_var_x=5;
         ball_var_y=3; 
-        printf("baixo4"); 
     }
     else if (ball_y>baixo_4 && ball_y<=baixo_5){
         ball_var_x=5;
         ball_var_y=4; 
-        printf("baixo5"); 
     }
     else if (ball_y>baixo_5 && ball_y<=baixo_6){
         ball_var_x=5;
         ball_var_y=5; 
-        printf("baixo6"); 
     }
    }
 
@@ -261,12 +256,20 @@ void ball_movement(){
         startBall = true;
         not_random = true;
         goal_left++;
+        if (draw_xpm((xpm_map_t) letter_g_xpm,373,40)) return;
+        if (draw_xpm((xpm_map_t) letter_o_xpm,391,40)) return;
+        if (draw_xpm((xpm_map_t) letter_a_xpm,409,40)) return;
+        if (draw_xpm((xpm_map_t) letter_l_xpm,427,40)) return;
     }
     else if (ball_x == 770){
         goal = true;
         startBall = true;
         not_random = true;
         goal_right++;
+        if (draw_xpm((xpm_map_t) letter_g_xpm,373,40)) return;
+        if (draw_xpm((xpm_map_t) letter_o_xpm,391,40)) return;
+        if (draw_xpm((xpm_map_t) letter_a_xpm,409,40)) return;
+        if (draw_xpm((xpm_map_t) letter_l_xpm,427,40)) return;
     }
    
    ball_x+=ball_var_x;
