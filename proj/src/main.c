@@ -19,7 +19,7 @@ extern uint8_t scancode;
 extern int timer_irq_counter;
 int piece_1_x = 30;
 int piece_1_y = 255;
-int piece_2_x = 754;
+int piece_2_x = 757;
 int piece_2_y = 255;
 int ball_x = 390;
 int ball_y = 290;
@@ -28,6 +28,10 @@ int s_key_state = KEY_STATE_RELEASED;
 int up_key_state = KEY_STATE_RELEASED;
 int down_key_state = KEY_STATE_RELEASED;
 bool not_random = false;
+int r=-1;
+bool startBall = true;
+int ball_var_y;
+int ball_var_x;
 
 
 
@@ -72,20 +76,71 @@ int end(){
 }
 
 void ball_movement(){
-    int r=-1;
-    //inicial movimento da bola
+   if (startBall){ 
     if (!not_random){
-        r = rand() % 2;
+        /*srand(time(NULL));
+        r = rand() % 2;*/
+        r = 0;
         not_random = true;
     }
-         if (r == 0 && ball_x>=46){
+         if (r == 0 && ball_x>=50){
                 ball_x-=5;
          }
          else {
-            if(ball_x<=732){
+            if(r==1 && ball_x<=731){
                 ball_x+=5;
+                
          }
     }
+    if (ball_x == 45 || ball_x== 735){ 
+        startBall = false;
+    }
+
+   }
+
+
+   //ver lcombola.txt pra tratar movimentação
+   if (ball_x == 45){
+    int meio = piece_1_y + 46-11;
+    int topo_1 = piece_1_y-11+36;
+    int topo_2 = piece_1_y-11+26; //45 - meio da barra e 10 metade da bola
+    if (ball_y == meio){
+        ball_var_y=0;
+        ball_var_x=5;
+    }
+    else if (ball_y<meio && ball_y>=topo_1){
+        ball_var_x=5;
+        ball_var_y=-2; 
+    }
+
+    else if (ball_var_y<topo_1 && ball_y>=topo_2){
+        ball_var_x=5;
+        ball_var_y=-4; 
+    }
+   }
+   if (ball_x == 735){
+    int meio = piece_2_y +46-11;
+    int topo_1 = piece_2_y-11+36;
+    int topo_2 = piece_2_y-11+26;
+    if (ball_y == meio){
+        ball_var_y=0;
+        ball_var_x=-5;
+    }
+    else if (ball_y<meio && ball_y>=topo_1){
+        ball_var_x=-5;
+        ball_var_y=-2; 
+    }
+    
+
+    else if (ball_var_y<topo_1 && ball_y>=topo_2){
+        ball_var_x=-5;
+        ball_var_y=-4; 
+    }
+    
+   }
+   ball_x+=ball_var_x;
+   ball_y+=ball_var_y;
+
     
 }
 
