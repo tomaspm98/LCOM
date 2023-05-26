@@ -14,6 +14,10 @@
 #include "images/letter_o.xpm"
 #include "images/letter_a.xpm"
 #include "images/letter_l.xpm"
+#include "images/number_zero.xpm"
+#include "images/number_one.xpm"
+#include "images/number_two.xpm"
+#include "images/number_three.xpm"
 #include <stdlib.h>
 
 uint8_t irq_set_timer=0;
@@ -38,7 +42,7 @@ int ball_var_y;
 int ball_var_x;
 bool goal = false;
 int goal_left = 0;
-int goal_right = 0;
+int goal_right=0;
 
 
 
@@ -256,20 +260,20 @@ void ball_movement(){
         startBall = true;
         not_random = true;
         goal_left++;
-        if (draw_xpm((xpm_map_t) letter_g_xpm,373,40)) return;
-        if (draw_xpm((xpm_map_t) letter_o_xpm,391,40)) return;
-        if (draw_xpm((xpm_map_t) letter_a_xpm,409,40)) return;
-        if (draw_xpm((xpm_map_t) letter_l_xpm,427,40)) return;
+        if (draw_xpm((xpm_map_t) letter_g_xpm,327,284)) return;
+        if (draw_xpm((xpm_map_t) letter_o_xpm,365,284)) return;
+        if (draw_xpm((xpm_map_t) letter_a_xpm,403,284)) return;
+        if (draw_xpm((xpm_map_t) letter_l_xpm,441,284)) return;
     }
     else if (ball_x == 770){
         goal = true;
         startBall = true;
         not_random = true;
         goal_right++;
-        if (draw_xpm((xpm_map_t) letter_g_xpm,373,40)) return;
-        if (draw_xpm((xpm_map_t) letter_o_xpm,391,40)) return;
-        if (draw_xpm((xpm_map_t) letter_a_xpm,409,40)) return;
-        if (draw_xpm((xpm_map_t) letter_l_xpm,427,40)) return;
+        if (draw_xpm((xpm_map_t) letter_g_xpm,327,284)) return;
+        if (draw_xpm((xpm_map_t) letter_o_xpm,365,284)) return;
+        if (draw_xpm((xpm_map_t) letter_a_xpm,403,284)) return;
+        if (draw_xpm((xpm_map_t) letter_l_xpm,441,284)) return;
     }
    
    ball_x+=ball_var_x;
@@ -340,6 +344,39 @@ int (proj_main_loop)(int argc, char *argv[]){
                 }
                 if (msg.m_notify.interrupts & BIT(irq_set_timer)){
                   timer_int_handler();
+                  switch(goal_right){
+                    case 0:
+                        if(draw_xpm((xpm_map_t)zero_xpm,365,40)) return 1;
+                        break;
+                    case 1:
+                        if(draw_xpm((xpm_map_t)one_xpm,365,40)) return 1;
+                        break;
+                    case 2:
+                        if(draw_xpm((xpm_map_t)two_xpm,365,40)) return 1;
+                        break;
+                    case 3:
+                        if(draw_xpm((xpm_map_t)three_xpm,365,40)) return 1;
+                        break; 
+                    default:
+                        return 1;       
+                  }
+
+                  switch(goal_left){
+                    case 0:
+                        if(draw_xpm((xpm_map_t)zero_xpm,405,40)) return 1;
+                        break;
+                    case 1:
+                        if(draw_xpm((xpm_map_t)one_xpm,405,40)) return 1;
+                        break;
+                    case 2:
+                        if(draw_xpm((xpm_map_t)two_xpm,405,40)) return 1;
+                        break;
+                    case 3:
+                        if(draw_xpm((xpm_map_t)three_xpm,405,40)) return 1;
+                        break; 
+                    default:
+                        return 1;       
+                  }
                   if (vg_draw_rectangle(0,0,800,35,BLUE)) return 1;
                   if (vg_draw_rectangle(0,565,800,35,BLUE)) return 1;
                   if (vg_draw_rectangle(398,0,4,600,BLUE)) return 1;   
