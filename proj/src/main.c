@@ -97,9 +97,8 @@ void ball_movement(){
         tickdelay(100);
     }
     if (!not_random){
-        /*srand(time(NULL));
-        r = rand() % 2;*/
-        r = 0;
+        srand(time(NULL));
+        r = rand() % 2;
         not_random = true;
     }
          if (r==0){
