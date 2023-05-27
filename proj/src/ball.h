@@ -19,8 +19,8 @@ int start_ball();
 int collision_ball_piece1();
 int ball_movement();
 int draw_ball();
-int goal_leftPiece();
-int goal_rightPiece();
+int goal_left_piece();
+int goal_right_piece();
 int score();
 
 #endif

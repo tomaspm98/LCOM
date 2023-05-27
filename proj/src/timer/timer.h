@@ -43,7 +43,7 @@ int(timer_unsubscribe_int)();
  *
  * Increments counter
  */
-void(timer_int_handler)();
+void(timer_ih)();
 
 /**
  * @brief Reads the input timer configuration (status) via read-back command

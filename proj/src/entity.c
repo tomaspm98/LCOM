@@ -33,10 +33,10 @@ void destroy_sprite(Entity *sp) {
 
 }
 
-int drawSprite(Entity *sprite, int x, int y){
+int draw_sprite(Entity *sprite, int x, int y){
     for (int i=0;i<sprite->height;i++){
         for (int j=0;j<sprite->width;j++){
-            if (vg_drawpixel(x+j,y+i,sprite->colors[i*sprite->width + j])) return 1;
+            if (vg_draw_pixel(x+j,y+i,sprite->colors[i*sprite->width + j])) return 1;
         }
     }
     return 0;
@@ -47,7 +47,7 @@ int draw_xpm(xpm_map_t xpm, int x, int y){
     uint32_t* colors = (uint32_t *) xpm_load(xpm, XPM_8_8_8_8, &pic);
     for (int i=0;i<pic.height;i++){
         for (int j=0;j<pic.width;j++){
-            if (vg_drawpixel(x+j,y+i,colors[i*pic.width + j])) return 1;
+            if (vg_draw_pixel(x+j,y+i,colors[i*pic.width + j])) return 1;
         }
     }
     return 0;

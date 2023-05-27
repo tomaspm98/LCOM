@@ -42,8 +42,8 @@ int start(){
     if (vg_init(0x115)) return 1;
     //falta interrupts mouse+rtc+serial port
     if (subscribe_interrupts()) return 1; 
-    allocateImgBuffer();
-    allocateDrawBuffer();
+    alloc_img_buffer();
+    alloc_draw_buffer();
 
     return 0;
 }
@@ -53,7 +53,7 @@ int end(){
     //terminar sprites
     //falta interrupts mouse+rtc+serial port
     if (unsubscribe_interrupts()) return 1;
-    freeDrawBuffer();
+    free_draw_buffer();
     //desativar interrupts
 
     return 0;

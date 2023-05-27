@@ -17,7 +17,7 @@ extern int goal_right;
 
 int subscribe_interrupts(){
     if (timer_subscribe_int(&irq_set_timer)) return 1;
-    if(keyboard_subscribe_interrupts(&irq_set_kbd)) return 1;
+    if(keyboard_subscribe_intrpt(&irq_set_kbd)) return 1;
     //falta mouse
 
     return 0;
@@ -25,7 +25,7 @@ int subscribe_interrupts(){
 
 int unsubscribe_interrupts(){
     if (timer_unsubscribe_int()) return 1;
-    if(keyboard_unsubscribe_interrupts()) return 1;
+    if(keyboard_unsubscribe_intrpt()) return 1;
     //falta mouse
 
     return 0;
@@ -69,7 +69,7 @@ int interrupts(){
                     }
                 }
                 if (msg.m_notify.interrupts & BIT(irq_set_timer)){
-                  timer_int_handler();
+                  timer_ih();
                   if (score()) return 1;
                   if (vg_draw_rectangle(0,0,800,35,BLUE)) return 1;
                   if (vg_draw_rectangle(0,565,800,35,BLUE)) return 1;
@@ -78,8 +78,8 @@ int interrupts(){
                   if (draw_piece_2()) return 1;
                   if (draw_ball()) return 1;
                   if (ball_movement()) return 1;
-                  displayImage();
-                  freeImBuffer();
+                  display_img();
+                  free_img_buffer();
                 }
                 break;
             default:

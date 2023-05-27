@@ -11,7 +11,7 @@ typedef struct {
 
 void destroy_sprite (Entity *sp);
 Entity *create_sprite (xpm_map_t sprite);
-int drawSprite(Entity *sprite, int x, int y);
+int draw_sprite(Entity *sprite, int x, int y);
 int draw_xpm(xpm_map_t xpm, int x, int y);
 
 #endif /* ENTITY_H */

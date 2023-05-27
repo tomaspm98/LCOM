@@ -60,7 +60,7 @@ void* (vg_init)(uint16_t mode){
     return 0;
 }
 
-int vg_drawpixel(uint16_t x, uint16_t y, uint32_t color){
+int vg_draw_pixel(uint16_t x, uint16_t y, uint32_t color){
   if (x<0 || y<0 || x>=vbe.XResolution || y>=vbe.YResolution){
     return 1;
   }
@@ -71,7 +71,7 @@ int vg_drawpixel(uint16_t x, uint16_t y, uint32_t color){
   return 0;  
 }
 
-int vg_drawline(uint16_t x, uint16_t y, uint16_t len, uint32_t color){
+int vg_draw_line(uint16_t x, uint16_t y, uint16_t len, uint32_t color){
   int compr;
   if (x+len > vbe.XResolution){
     compr = vbe.XResolution - x;
@@ -80,14 +80,14 @@ int vg_drawline(uint16_t x, uint16_t y, uint16_t len, uint32_t color){
     compr = len;
   }
   for (int i=0;i<compr;i++){
-    if (vg_drawpixel(x+i,y,color)) return 1;
+    if (vg_draw_pixel(x+i,y,color)) return 1;
   }
   return 0;
 }
 
 int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color){
     for (int i = 0;i<height;i++){
-      if (vg_drawline(x,y+i,width,color)) return 1;
+      if (vg_draw_line(x,y+i,width,color)) return 1;
     }  
     return 0;
 }
@@ -104,33 +104,33 @@ uint32_t (B)(uint32_t first){
   return ((1 << vbe.BlueMaskSize) - 1) & (first >> vbe.BlueFieldPosition);
 }
 
-void allocateImgBuffer(){
+void alloc_img_buffer(){
   imBuffer = (uint8_t*)malloc(vbe.XResolution*vbe.YResolution*bytes);
 }
 
-void displayImage(){
+void display_img(){
   memcpy(vram,imBuffer,vbe.XResolution*vbe.YResolution*bytes);
 }
 
-void freeImBuffer(){
+void free_img_buffer(){
   memset(imBuffer,0,vbe.XResolution*vbe.YResolution*bytes);
   free(imBuffer);
 }
 
-void allocateDrawBuffer(){
+void alloc_draw_buffer(){
     drawBuffer = (uint8_t *)malloc(vbe.XResolution*vbe.YResolution*bytes);
     memset(drawBuffer,WHITE,vbe.XResolution*vbe.YResolution*bytes);
 }
 
-void copyDrawingToBuffer(){
+void copy_drawing_buffer(){
   memcpy(imBuffer, drawBuffer, vbe.XResolution*vbe.YResolution*bytes); 
 }
 
-void clearDrawBuffer(){
+void clear_draw_buffer(){
   memset(drawBuffer,WHITE,vbe.XResolution*vbe.YResolution*bytes);
 }
 
-void freeDrawBuffer(){
+void free_draw_buffer(){
     free(drawBuffer); 
 }
 

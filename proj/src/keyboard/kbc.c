@@ -6,15 +6,15 @@
 #include "kbc.h"
 #include "timer/i8254.h"
 
-int (read_KBC_status)(uint8_t* status){
+int (kbc_read_stat)(uint8_t* status){
     if (util_sys_inb(KBC_STATUS_REG, status)) return 1;
     return 0;
 }
 
-int (read_KBC_output)(uint8_t port, uint8_t *output){ //ver se podes ler e dps ler e verificar erros
+int (kbc_read_out)(uint8_t port, uint8_t *output){ //ver se podes ler e dps ler e verificar erros
     uint8_t status, attempts=10;
     while(attempts){
-        if (read_KBC_status(&status)){ 
+        if (kbc_read_stat(&status)){ 
             return 1;
         }
 
@@ -37,19 +37,19 @@ int (read_KBC_output)(uint8_t port, uint8_t *output){ //ver se podes ler e dps l
     return 1;
 }
 
-int (write_KBC_command)(uint8_t port, uint8_t commandByte){ //verifiar se podes escrever e dps escreves
+int (kbc_write_cmd)(uint8_t port, uint8_t command_byte){ //verifiar se podes escrever e dps escreves
     uint8_t attempts=10;
     uint8_t status;
 
     while(attempts){
-        if (read_KBC_status(&status)){
+        if (kbc_read_stat(&status)){
             return 1;
         }
 
         if (status & FULL_IN_BUFFER){
             return 1;
         } else {
-            if (sys_outb(port,commandByte)){
+            if (sys_outb(port,command_byte)){
                 return 1;
             }
             return 0;
@@ -61,23 +61,23 @@ int (write_KBC_command)(uint8_t port, uint8_t commandByte){ //verifiar se podes 
 }
 
 int kbc_restore() { //notificar i i8042 tanto da leitura como da escrita e dps de cada uma fazer efetivamente isso
-  uint8_t controlWord;
+  uint8_t control_word;
 
-  if (write_KBC_command(KBC_STATUS_REG, 0x20)){
+  if (kbc_write_cmd(KBC_STATUS_REG, 0x20)){
     return 1;
   }
 
-  if (read_KBC_output(KBC_OUT_CMD, &controlWord)){
+  if (kbc_read_out(KBC_OUT_CMD, &control_word)){
     return 1;
   }
 
-  controlWord = controlWord | BIT(0);
+  control_word = control_word | BIT(0);
 
-  if (write_KBC_command(KBC_STATUS_REG, 0x60)){
+  if (kbc_write_cmd(KBC_STATUS_REG, 0x60)){
     return 1;
   }
 
-  if (write_KBC_command(KBC_WRITE_CMD, controlWord)){
+  if (kbc_write_cmd(KBC_WRITE_CMD, control_word)){
     return 1;
   }
   

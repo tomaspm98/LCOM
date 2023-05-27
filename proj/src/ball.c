@@ -55,71 +55,71 @@ int start_ball(){
 
 int collision_ball_piece1(){
     if (ball_x == 45){    
-    int meio = piece_1_y + 46-11;
-    int topo_1 = piece_1_y-11+36;
-    int topo_2 = piece_1_y-11+26;
-    int topo_3 = piece_1_y-11+16;
-    int topo_4 = piece_1_y-11+6;
-    int topo_5 = piece_1_y-15;
-    int topo_6 = piece_1_y -21;
-    int baixo_1 = piece_1_y-11+46;
-    int baixo_2 = piece_1_y-11+56;
-    int baixo_3 = piece_1_y-11+66;
-    int baixo_4 = piece_1_y-11+76;
-    int baixo_5 = piece_1_y-11+86;
-    int baixo_6 = piece_1_y-11+96; 
+    int mid = piece_1_y + 46-11;
+    int top1 = piece_1_y-11+36;
+    int top2 = piece_1_y-11+26;
+    int top3 = piece_1_y-11+16;
+    int top4 = piece_1_y-11+6;
+    int top5 = piece_1_y-15;
+    int top6 = piece_1_y -21;
+    int bot1 = piece_1_y-11+46;
+    int bot2 = piece_1_y-11+56;
+    int bot3 = piece_1_y-11+66;
+    int bot4 = piece_1_y-11+76;
+    int bot5 = piece_1_y-11+86;
+    int bot6 = piece_1_y-11+96; 
 
-    if (ball_y == meio){
+    if (ball_y == mid){
         ball_var_y=0;
         ball_var_x=5;
     }
-    else if (ball_y<meio && ball_y>=topo_1){
+    else if (ball_y<mid && ball_y>=top1){
         ball_var_x=5;
         ball_var_y=-1; 
     }
 
-    else if (ball_y<topo_1 && ball_y>=topo_2){
+    else if (ball_y<top1 && ball_y>=top2){
         ball_var_x=5;
         ball_var_y=-2; 
     }
 
-    else if (ball_y<topo_2 && ball_y>=topo_3){
+    else if (ball_y<top2 && ball_y>=top3){
         ball_var_x=5;
         ball_var_y=-3; 
     }
-    else if (ball_y<topo_3 && ball_y>=topo_4){
+    else if (ball_y<top3 && ball_y>=top4){
         ball_var_x=5;
         ball_var_y=-4;
     }
-    else if (ball_y<topo_4 && ball_y>=topo_5){
+    else if (ball_y<top4 && ball_y>=top5){
         ball_var_x=5;
         ball_var_y=-5; 
     }
-    else if (ball_y<topo_5 && ball_y>=topo_6){
+    else if (ball_y<top5 && ball_y>=top6){
         ball_var_x=5;
         ball_var_y=-6; 
     }
-    else if (ball_y>meio && ball_y<=baixo_1){
+    else if (ball_y>mid && ball_y<=bot1){
         ball_var_x=5;
         ball_var_y=1; 
     }
-    else if (ball_y>baixo_1 && ball_y<=baixo_2){
+    else if (ball_y>bot1 && ball_y<=bot2){
         ball_var_x=5;
         ball_var_y=2; 
     }
-    else if (ball_y>baixo_2 && ball_y<=baixo_3){
+    else if (ball_y>bot2 && ball_y<=bot3){
         ball_var_x=5;
         ball_var_y=3; 
     }
-    else if (ball_y>baixo_3 && ball_y<=baixo_4){
+    else if (ball_y>bot3 && ball_y<=bot4){
         ball_var_x=5;
         ball_var_y=4; 
     }
-    else if (ball_y>baixo_4 && ball_y<=baixo_5){
+    else if (ball_y>bot4 && ball_y<=bot5){
         ball_var_x=5;
         ball_var_y=5; 
     }
-    else if (ball_y>baixo_5 && ball_y<=baixo_6){
+    else if (ball_y>bot5 && ball_y<=bot6){
         ball_var_x=5;
         ball_var_y=6; 
     }    
@@ -130,71 +130,71 @@ int collision_ball_piece1(){
 
 int collision_ball_piece2(){
     if (ball_x == 735){
-    int meio = piece_2_y +46-11;
-    int topo_1 = piece_2_y-11+36;
-    int topo_2 = piece_2_y-11+26;
-    int topo_3 = piece_2_y-11+16;
-    int topo_4 = piece_2_y-11+6;
-    int topo_5 = piece_2_y-15;
-    int topo_6 = piece_2_y -21;
-    int baixo_1 = piece_2_y-11+46;
-    int baixo_2 = piece_2_y-11+56;
-    int baixo_3 = piece_2_y-11+66;
-    int baixo_4 = piece_2_y-11+76;
-    int baixo_5 = piece_2_y-11+86;
-    int baixo_6 = piece_2_y-11+96; 
-    if (ball_y == meio){
+    int mid = piece_2_y +46-11;
+    int top1 = piece_2_y-11+36;
+    int top2 = piece_2_y-11+26;
+    int top3 = piece_2_y-11+16;
+    int top4 = piece_2_y-11+6;
+    int top5 = piece_2_y-15;
+    int top6 = piece_2_y -21;
+    int bot1 = piece_2_y-11+46;
+    int bot2 = piece_2_y-11+56;
+    int bot3 = piece_2_y-11+66;
+    int bot4 = piece_2_y-11+76;
+    int bot5 = piece_2_y-11+86;
+    int bot6 = piece_2_y-11+96; 
+    if (ball_y == mid){
         ball_var_y=0;
         ball_var_x=-5;
     }
-    else if (ball_y<meio && ball_y>=topo_1){
+    else if (ball_y<mid && ball_y>=top1){
         ball_var_x=-5;
         ball_var_y=-1; 
     }
 
-    else if (ball_y<topo_1 && ball_y>=topo_2){
+    else if (ball_y<top1 && ball_y>=top2){
         ball_var_x=-5;
         ball_var_y=-2; 
     }
 
-    else if (ball_y<topo_2 && ball_y>=topo_3){
+    else if (ball_y<top2 && ball_y>=top3){
         ball_var_x=-5;
         ball_var_y=-3; 
     }
 
-    else if (ball_y<topo_3 && ball_y>=topo_4){
+    else if (ball_y<top3 && ball_y>=top4){
         ball_var_x=-5;
         ball_var_y=-4; 
     }
-    else if (ball_y<topo_4 && ball_y>=topo_5){
+    else if (ball_y<top4 && ball_y>=top5){
         ball_var_x=-5;
         ball_var_y=-5; 
     }
-    else if (ball_y<topo_5 && ball_y>=topo_6){
+    else if (ball_y<top5 && ball_y>=top6){
         ball_var_x=-5;
         ball_var_y=-6; 
     }
-    else if (ball_y>meio && ball_y<=baixo_1){
+    else if (ball_y>mid && ball_y<=bot1){
         ball_var_x=-5;
         ball_var_y=1; 
     }
-    else if (ball_y>baixo_1 && ball_y<=baixo_2){
+    else if (ball_y>bot1 && ball_y<=bot2){
         ball_var_x=-5;
         ball_var_y=2; 
     }
-    else if (ball_y>baixo_2 && ball_y<=baixo_3){
+    else if (ball_y>bot2 && ball_y<=bot3){
         ball_var_x=-5;
         ball_var_y=3; 
     }
-    else if (ball_y>baixo_3 && ball_y<=baixo_4){
+    else if (ball_y>bot3 && ball_y<=bot4){
         ball_var_x=-5;
         ball_var_y=4; 
     }
-    else if (ball_y>baixo_4 && ball_y<=baixo_5){
+    else if (ball_y>bot4 && ball_y<=bot5){
         ball_var_x=-5;
         ball_var_y=5; 
     }
-    else if (ball_y>baixo_5 && ball_y<=baixo_6){
+    else if (ball_y>bot5 && ball_y<=bot6){
         ball_var_x=-5;
         ball_var_y=6; 
     }    
@@ -213,7 +213,7 @@ int collision_ball_piece2(){
    return 0;
 }
 
-int goal_leftPiece(){
+int goal_left_piece(){
     goal = true;
     startBall = true;
     not_random = true;
@@ -226,7 +226,7 @@ int goal_leftPiece(){
     return 0;
 }
 
-int goal_rightPiece(){
+int goal_right_piece(){
     goal = true;
     startBall = true;
     not_random = true;
@@ -255,10 +255,10 @@ int ball_movement(){
    collision_ball_piece2();
 
    if (ball_x == 0){
-        goal_leftPiece();
+        goal_left_piece();
     }
     else if (ball_x == 770){
-        goal_rightPiece();
+        goal_right_piece();
     }
    
    ball_pos_variation();

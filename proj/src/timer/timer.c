@@ -16,16 +16,16 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
      if (timer_get_conf(timer, &status)) return 1;
      
      status = status & (0x0F);
-     uint8_t controlWord = status | TIMER_LSB_MSB;
+     uint8_t control_word = status | TIMER_LSB_MSB;
      switch(timer){
          case 0:
-            controlWord = controlWord | TIMER_SEL0;
+            control_word = control_word | TIMER_SEL0;
             break;
          case 1:
-            controlWord = controlWord | TIMER_SEL1;
+            control_word = control_word | TIMER_SEL1;
             break;
          case 2:
-            controlWord = controlWord | TIMER_SEL2;
+            control_word = control_word | TIMER_SEL2;
             break;
          default:
             return 1;         
@@ -38,7 +38,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
      if (util_get_LSB(frequency, &lsb)) return 1;
      if (util_get_MSB(frequency, &msb)) return 1;
 
-     if (sys_outb(TIMER_CTRL, controlWord)) return 1;
+     if (sys_outb(TIMER_CTRL, control_word)) return 1;
 
      if (sys_outb(TIMER_0+timer,lsb)) return 1;
      if (sys_outb(TIMER_0+timer, msb)) return 1;
@@ -56,7 +56,7 @@ int (timer_unsubscribe_int)() {
   return sys_irqrmpolicy(&timer_hook_id);
 }
 
-void (timer_int_handler)() {
+void (timer_ih)() {
    timer_irq_counter++;
 }
 
@@ -65,8 +65,8 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
       return 1;
    }
 
-   uint8_t readBack = TIMER_RB_CMD | TIMER_RB_COUNT_|TIMER_RB_SEL(timer);
-   if (sys_outb(TIMER_CTRL, readBack)) return 1;
+   uint8_t rb_cmd = TIMER_RB_CMD | TIMER_RB_COUNT_|TIMER_RB_SEL(timer);
+   if (sys_outb(TIMER_CTRL, rb_cmd)) return 1;
    if (util_sys_inb(TIMER_0+timer,st)) return 1;
    return 0;
       
