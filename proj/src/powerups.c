@@ -11,6 +11,8 @@ extern int ball_y;
 extern int ball_var_y;
 extern int ball_var_x;
 extern int timer_irq_counter;
+int powerup_number = -1;
+bool powerup_number_bool = false;
 
 int draw_powerup(){
     powerup = true;
@@ -19,8 +21,16 @@ int draw_powerup(){
         powerup_y = rand() % 501 + 35;
         no_pos = true;
     }
-
-    if (draw_xpm((xpm_map_t) powerup_piece_velocity__xpm, powerup_x,powerup_y)) return 1;
+    if (!powerup_number_bool){
+        powerup_number = rand() % 2;
+        powerup_number_bool = true;
+    }
+    
+    if (powerup_number == 0){
+        if (draw_xpm((xpm_map_t) powerup_piece_velocity__xpm, powerup_x,powerup_y)) return 1;
+    } else if (powerup_number == 1){
+        if (draw_xpm((xpm_map_t) powerup_limits__xpm, powerup_x,powerup_y)) return 1;
+    }
 
     catched_right = false;  
     catched_left = false;  

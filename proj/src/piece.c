@@ -9,9 +9,10 @@ int piece_2_y = 255;
 extern bool catched_left;
 extern bool catched_right;
 extern int timer_irq_counter;
+extern int powerup_number;
 
 int move_piece1_up(){
-    if (catched_right && timer_irq_counter<=1000){
+    if (catched_right && powerup_number == 0 && timer_irq_counter<=1000){
         piece_1_y-=10;
     }
     else {
@@ -21,7 +22,7 @@ int move_piece1_up(){
 }
 
 int move_piece1_down(){
-    if (catched_right && timer_irq_counter<=1000){
+    if (catched_right && powerup_number == 0 && timer_irq_counter<=1000){
         piece_1_y+=10;
     }
     else {
@@ -31,7 +32,7 @@ int move_piece1_down(){
 }
 
 int move_piece2_up(){
-    if (catched_left && timer_irq_counter<=500){
+    if (catched_left && powerup_number == 0 && timer_irq_counter<=1000){
         piece_2_y-=10;
     }
     else {
@@ -41,7 +42,7 @@ int move_piece2_up(){
 }
 
 int move_piece2_down(){
-    if (catched_left && timer_irq_counter<=500){
+    if (catched_left && powerup_number == 0 && timer_irq_counter<=1000){
         piece_2_y+=10;
     }
     else {
