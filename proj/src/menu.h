@@ -1,11 +1,12 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef __MENU_H
+#define __MENU_H
+
+#include <stdint.h>
 
 
-void startmenu();
-void displaymenu();
-void handleInput();
+void loadSprites();
+void destroySprites();
+void displayMenu();
+void handleMouse();
 
-
-
-#endif
+#endif 

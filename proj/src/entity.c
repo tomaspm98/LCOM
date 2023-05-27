@@ -55,5 +55,17 @@ int draw_xpm(xpm_map_t xpm, int x, int y){
 
 
 
+void loadSprites(){
+    game_title = create_sprite((xpm_map_t) game_name_xpm);
+    mouse = create_sprite((xpm_map_t) mouse_xpm);
+    start_button = create_sprite((xpm_map_t) startbutton_xpm);
+    quit_button = create_sprite((xpm_map_t) quitbutton_xpm)
+}
 
-
+void destroySprites(){
+    destroy_sprite(game_title);
+    destroy_sprite(mouse);
+    destroy_sprite(start_button);
+    destroy_sprite(quit_button);
+}
+    

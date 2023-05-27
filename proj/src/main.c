@@ -5,6 +5,7 @@
 #include "colors.h"
 #include "entity.h"
 #include "piece.h"
+#include "menu.h"
 #include "ball.h"
 #include "interrupts.h"
 #include "images/transferir.xpm"
@@ -44,7 +45,7 @@ int start(){
     if (subscribe_interrupts()) return 1; 
     allocateImgBuffer();
     allocateDrawBuffer();
-
+    displayMenu();
     return 0;
 }
 
@@ -61,10 +62,13 @@ int end(){
 
 int (proj_main_loop)(int argc, char *argv[]){
   if (start()) return end();
+  while(true){
+    handleMouse();
+    interrupts();
+  }
+  //not sure about this
 
 
-  startmenu();
-  interrupts();
 
   if (end()) return 1;
 

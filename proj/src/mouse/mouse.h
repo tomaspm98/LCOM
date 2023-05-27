@@ -13,7 +13,7 @@ int mouse_read();
 int mouse_write(uint8_t cmd, uint8_t port);
 int mouse_command(uint8_t cmd);
 int mouse_discard();
-
+int mouse_packet_process(uint8_t* data, struct packet* pp);
 
 
 

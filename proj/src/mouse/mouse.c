@@ -111,7 +111,19 @@ int mouse_discard(){
     while(counter){
         if(util_sys_inb(KBC_STATUS_REG, &status) != 0) return 1;
         delay(1);
-        counter--
+        counter--;
     }
     return 0;
+}
+void mouse_packet_process(uint8_t* data, struct packet* pp) {
+  pp->bytes[0] = data[0];
+  pp->bytes[1] = data[1];
+  pp->bytes[2] = data[2];
+  pp->delta_x = sign_extend_byte((data[0] & BIT(4)) != 0, data[1]);
+  pp->delta_y = sign_extend_byte((data[0] & BIT(5)) != 0, data[2]);
+  pp->lb = data[0] & BIT(0);
+  pp->mb = data[0] & BIT(2);
+  pp->rb = data[0] & BIT(1);
+  pp->x_ov = data[0] & BIT(6);
+  pp->y_ov = data[0] & BIT(7);
 }

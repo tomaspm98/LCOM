@@ -2,6 +2,7 @@
 
 uint8_t irq_set_timer=0;
 uint8_t irq_set_kbd=1;
+uint8_t irq_set_mouse = 2;
 extern uint8_t scancode;
 extern int timer_irq_counter;
 int w_key_state = KEY_STATE_RELEASED;
@@ -18,7 +19,7 @@ extern int goal_right;
 int subscribe_interrupts(){
     if (timer_subscribe_int(&irq_set_timer)) return 1;
     if(keyboard_subscribe_interrupts(&irq_set_kbd)) return 1;
-    //falta mouse
+    if(mouse_subscribe_int(&irq_set_mouse)) return 1;
 
     return 0;
 }
@@ -26,7 +27,7 @@ int subscribe_interrupts(){
 int unsubscribe_interrupts(){
     if (timer_unsubscribe_int()) return 1;
     if(keyboard_unsubscribe_interrupts()) return 1;
-    //falta mouse
+    if(mouse_unsubscribe_int()) return 1;
 
     return 0;
 }
