@@ -71,14 +71,6 @@ int vg_drawpixel(uint16_t x, uint16_t y, uint32_t color){
   return 0;  
 }
 
-int normalize_color_565(uint32_t color, uint32_t *new_color) {
-    return 1; 
-}
-
-int normalize_color_555(uint32_t color, uint32_t *new_color) {
-   return 1; 
-}
-
 int vg_drawline(uint16_t x, uint16_t y, uint16_t len, uint32_t color){
   int compr;
   if (x+len > vbe.XResolution){

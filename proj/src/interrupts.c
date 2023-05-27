@@ -70,7 +70,7 @@ int interrupts(){
                 }
                 if (msg.m_notify.interrupts & BIT(irq_set_timer)){
                   timer_int_handler();
-                  if (score()) return 0;
+                  if (score()) return 1;
                   if (vg_draw_rectangle(0,0,800,35,BLUE)) return 1;
                   if (vg_draw_rectangle(0,565,800,35,BLUE)) return 1;
                   if (vg_draw_rectangle(398,0,4,600,BLUE)) return 1;   
