@@ -81,7 +81,7 @@ int interrupts(){
                   if (draw_piece_2()) return 1;
                   if (draw_ball()) return 1;
                   if (ball_movement()) return 1;
-                  if (!catched_right && !catched_left){
+                  if ((!catched_right && !catched_left) && timer_irq_counter<=1000){
                     if (draw_powerup()) return 1;
                   }
                   if (catch_powerup()) return 1;

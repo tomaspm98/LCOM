@@ -24,6 +24,8 @@ extern int piece_2_y;
 bool not_random = false;
 extern bool catched_left;
 extern bool catched_right;
+extern int timer_irq_counter;
+extern bool no_pos;
 
 int start_ball(){
     if (goal){
@@ -35,6 +37,8 @@ int start_ball(){
         tickdelay(100);
         catched_right = false;
         catched_left = false;
+        no_pos=false;
+        timer_irq_counter=0;
     }
     if (!not_random){
         srand(time(NULL));
