@@ -9,6 +9,7 @@
 #include "ball.h"
 #include "graphics/video_gr.h"
 #include "colors.h"
+#include "powerups.h"
 
 int subscribe_interrupts();
 int unsubscribe_interrupts();

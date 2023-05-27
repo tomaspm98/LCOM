@@ -14,6 +14,9 @@ extern int piece_2_x;
 extern int piece_2_y;
 extern int goal_left;
 extern int goal_right;
+extern bool powerup;
+extern bool catched_left;
+extern bool catched_right;
 
 int subscribe_interrupts(){
     if (timer_subscribe_int(&irq_set_timer)) return 1;
@@ -78,6 +81,10 @@ int interrupts(){
                   if (draw_piece_2()) return 1;
                   if (draw_ball()) return 1;
                   if (ball_movement()) return 1;
+                  if (!catched_right && !catched_left){
+                    if (draw_powerup()) return 1;
+                  }
+                  if (catch_powerup()) return 1;
                   displayImage();
                   freeImBuffer();
                 }

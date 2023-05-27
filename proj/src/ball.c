@@ -22,6 +22,8 @@ extern int piece_1_y;
 extern int piece_2_x;
 extern int piece_2_y;
 bool not_random = false;
+extern bool catched_left;
+extern bool catched_right;
 
 int start_ball(){
     if (goal){
@@ -31,6 +33,8 @@ int start_ball(){
         ball_var_x = 0;
         ball_var_y = 0;
         tickdelay(100);
+        catched_right = false;
+        catched_left = false;
     }
     if (!not_random){
         srand(time(NULL));
@@ -240,8 +244,15 @@ int goal_rightPiece(){
 }
 
 int ball_pos_variation(){
+
+   /*if (catched){ 
+    ball_x+=ball_var_x*2;
+    ball_y+=ball_var_y*2;
+   }
+   else {*/
     ball_x+=ball_var_x;
     ball_y+=ball_var_y;
+   //}
 
     return 0; 
 }
