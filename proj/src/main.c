@@ -62,6 +62,8 @@ int end(){
 int (proj_main_loop)(int argc, char *argv[]){
   if (start()) return end();
 
+
+  startmenu();
   interrupts();
 
   if (end()) return 1;
