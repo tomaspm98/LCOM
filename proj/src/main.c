@@ -10,21 +10,13 @@
 #include "images/transferir.xpm"
 #include <stdlib.h>
 
-//uint8_t irq_set_timer=0;
-//uint8_t irq_set_kbd=1;
-Entity* teste;
-//extern uint8_t scancode;
-//extern int timer_irq_counter;
+
 extern int piece_1_x;
 extern int piece_1_y;
 extern int piece_2_x;
 extern int piece_2_y;
 extern int ball_x;
 extern int ball_y;
-/*int w_key_state = KEY_STATE_RELEASED;
-int s_key_state = KEY_STATE_RELEASED;
-int up_key_state = KEY_STATE_RELEASED;
-int down_key_state = KEY_STATE_RELEASED;*/
 extern bool not_random;
 extern int side_start;
 extern bool startBall;
@@ -33,8 +25,6 @@ extern int ball_var_x;
 extern bool goal;
 extern int goal_left;
 extern int goal_right;
-
-
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");

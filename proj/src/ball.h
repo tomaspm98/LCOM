@@ -15,8 +15,13 @@
 
 #include "piece.h"
 
-void ball_movement();
+int start_ball();
+int collision_ball_piece1();
+int ball_movement();
 int draw_ball();
+int goal_leftPiece();
+int goal_rightPiece();
+int score();
 
 #endif
 

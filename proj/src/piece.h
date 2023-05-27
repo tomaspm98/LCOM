@@ -24,10 +24,10 @@
 #define KEY_STATE_PRESSED 1
 #define KEY_STATE_RELEASED 0
 
-void move_piece1_up(); //transformar pra int e ver limites do ecra (retangulos)
-void move_piece1_down();
-void move_piece2_up();
-void move_piece2_down();
+int move_piece1_up(); //transformar pra int e ver limites do ecra (retangulos)
+int move_piece1_down();
+int move_piece2_up();
+int move_piece2_down();
 int draw_piece_1();
 int draw_piece_2();
 

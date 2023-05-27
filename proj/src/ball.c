@@ -23,8 +23,7 @@ extern int piece_2_x;
 extern int piece_2_y;
 bool not_random = false;
 
-void ball_movement(){
-   if (startBall){ 
+int start_ball(){
     if (goal){
         goal = false;
         ball_x = 390;
@@ -51,9 +50,11 @@ void ball_movement(){
         startBall = false;
     }
 
-   }
+    return 0;
+}
 
-   if (ball_x == 45){    
+int collision_ball_piece1(){
+    if (ball_x == 45){    
     int meio = piece_1_y + 46-11;
     int topo_1 = piece_1_y-11+36;
     int topo_2 = piece_1_y-11+26;
@@ -112,9 +113,14 @@ void ball_movement(){
         ball_var_x=5;
         ball_var_y=5; 
     }
+    else return 1;
    }
 
-   if (ball_x == 735){
+   return 0;
+}
+
+int collision_ball_piece2(){
+    if (ball_x == 735){
     int meio = piece_2_y +46-11;
     int topo_1 = piece_2_y-11+36;
     int topo_2 = piece_2_y-11+26;
@@ -191,29 +197,60 @@ void ball_movement(){
     }
    }
 
+   return 0;
+}
+
+int goal_leftPiece(){
+    goal = true;
+    startBall = true;
+    not_random = true;
+    goal_left++;
+    if (draw_xpm((xpm_map_t) letter_g_xpm,327,284)) return 1;
+    if (draw_xpm((xpm_map_t) letter_o_xpm,365,284)) return 1;
+    if (draw_xpm((xpm_map_t) letter_a_xpm,403,284)) return 1;
+    if (draw_xpm((xpm_map_t) letter_l_xpm,441,284)) return 1;
+
+    return 0;
+}
+
+int goal_rightPiece(){
+    goal = true;
+    startBall = true;
+    not_random = true;
+    goal_right++;
+    if (draw_xpm((xpm_map_t) letter_g_xpm,327,284)) return 1;
+    if (draw_xpm((xpm_map_t) letter_o_xpm,365,284)) return 1;
+    if (draw_xpm((xpm_map_t) letter_a_xpm,403,284)) return 1;
+    if (draw_xpm((xpm_map_t) letter_l_xpm,441,284)) return 1;
+
+    return 0;
+}
+
+int ball_pos_variation(){
+    ball_x+=ball_var_x;
+    ball_y+=ball_var_y;
+
+    return 0; 
+}
+int ball_movement(){
+   if (startBall){ 
+    if (start_ball()) return 1;
+   }
+
+   if (collision_ball_piece1()) return 1;
+
+   if (collision_ball_piece2()) return 1;
+
    if (ball_x == 0){
-        goal = true;
-        startBall = true;
-        not_random = true;
-        goal_left++;
-        if (draw_xpm((xpm_map_t) letter_g_xpm,327,284)) return;
-        if (draw_xpm((xpm_map_t) letter_o_xpm,365,284)) return;
-        if (draw_xpm((xpm_map_t) letter_a_xpm,403,284)) return;
-        if (draw_xpm((xpm_map_t) letter_l_xpm,441,284)) return;
+        if (goal_leftPiece()) return 1;
     }
     else if (ball_x == 770){
-        goal = true;
-        startBall = true;
-        not_random = true;
-        goal_right++;
-        if (draw_xpm((xpm_map_t) letter_g_xpm,327,284)) return;
-        if (draw_xpm((xpm_map_t) letter_o_xpm,365,284)) return;
-        if (draw_xpm((xpm_map_t) letter_a_xpm,403,284)) return;
-        if (draw_xpm((xpm_map_t) letter_l_xpm,441,284)) return;
+        if (goal_rightPiece()) return 1;
     }
    
-   ball_x+=ball_var_x;
-   ball_y+=ball_var_y;
+   if (ball_pos_variation()) return 1;
+
+   return 0;
 }
 
 int draw_ball(){
@@ -221,4 +258,43 @@ int draw_ball(){
         if (draw_xpm((xpm_map_t) ball_xpm,ball_x,ball_y)) return 1;
    }
    return 0;
+}
+
+int score(){
+    switch(goal_right){
+        case 0:
+            if(draw_xpm((xpm_map_t)zero_xpm,365,40)) return 1;
+            break;
+        case 1:
+            if(draw_xpm((xpm_map_t)one_xpm,365,40)) return 1;
+            break;
+        case 2:
+            if(draw_xpm((xpm_map_t)two_xpm,365,40)) return 1;
+            break;
+        case 3:
+            if(draw_xpm((xpm_map_t)three_xpm,365,40)) return 1;
+            break; 
+        default:
+            return 1;       
+    }
+
+    switch(goal_left){
+        case 0:
+            if(draw_xpm((xpm_map_t)zero_xpm,405,40)) return 1;
+            break;
+        case 1:
+            if(draw_xpm((xpm_map_t)one_xpm,405,40)) return 1;
+            break;
+        case 2:
+            if(draw_xpm((xpm_map_t)two_xpm,405,40)) return 1;
+            break;
+        case 3:
+            if(draw_xpm((xpm_map_t)three_xpm,405,40)) return 1;
+            break; 
+        default:
+        return 1;       
+    }
+
+    return 0;
+
 }

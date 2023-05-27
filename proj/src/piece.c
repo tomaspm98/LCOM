@@ -7,20 +7,24 @@ int piece_1_y = 255;
 int piece_2_x = 757;
 int piece_2_y = 255;
 
-void move_piece1_up(){
+int move_piece1_up(){
     piece_1_y-=20;
+    return 0;
 }
 
-void move_piece1_down(){
+int move_piece1_down(){
     piece_1_y+=20;
+    return 0;
 }
 
-void move_piece2_up(){
+int move_piece2_up(){
     piece_2_y-=20;
+    return 0;
 }
 
-void move_piece2_down(){
+int move_piece2_down(){
     piece_2_y+=20;
+    return 0;
 }
 
 int draw_piece_1(){

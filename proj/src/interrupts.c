@@ -46,93 +46,38 @@ int interrupts(){
             case HARDWARE: /* hardware interrupt notification */				
                 if (msg.m_notify.interrupts & BIT(irq_set_kbd)) { /* subscribed interrupt */
                     kbc_ih();
-                    if (scancode==KBC_MAKE_W_KEY){
-                        w_key_state = KEY_STATE_PRESSED;
-                    }
-                    if (scancode==KBC_BREAK_W_KEY){
-                        w_key_state = KEY_STATE_RELEASED;
-                    }
-                    if (scancode==KBC_MAKE_S_KEY){
-                        s_key_state = KEY_STATE_PRESSED;
-                    }
-                    if (scancode==KBC_BREAK_S_KEY){
-                        s_key_state = KEY_STATE_RELEASED;
-                    }
-                    if (scancode==KBC_MAKE_UP_KEY){
-                        up_key_state = KEY_STATE_PRESSED;
-                    }
-                    if (scancode==KBC_BREAK_UP_KEY){
-                        up_key_state = KEY_STATE_RELEASED;
-                    }
-                    if (scancode==KBC_MAKE_DOWN_KEY){
-                        down_key_state = KEY_STATE_PRESSED;
-                    }
-                    if (scancode==KBC_BREAK_DOWN_KEY){
-                        down_key_state = KEY_STATE_RELEASED;
-                    }
+                    handle_keys();
                     if(w_key_state == KEY_STATE_PRESSED){
                         if(piece_1_y>=LOWER_LIMIT){
-                            move_piece1_up();
+                            if (move_piece1_up()) return 1;
                         }
                     }
                     if(s_key_state == KEY_STATE_PRESSED){
                         if (piece_1_y<=UPPER_LIMIT){
-                            move_piece1_down();
+                            if (move_piece1_down()) return 1;
                         }
                     }
                     if(up_key_state == KEY_STATE_PRESSED){
                         if(piece_2_y>=LOWER_LIMIT){
-                            move_piece2_up();
+                            if (move_piece2_up()) return 1;
                         }
                     }
                     if(down_key_state == KEY_STATE_PRESSED){
                         if (piece_2_y<=UPPER_LIMIT){
-                            move_piece2_down();
+                            if (move_piece2_down()) return 1;
                         }
                     }
                 }
                 if (msg.m_notify.interrupts & BIT(irq_set_timer)){
                   timer_int_handler();
-                  switch(goal_right){
-                    case 0:
-                        if(draw_xpm((xpm_map_t)zero_xpm,365,40)) return 1;
-                        break;
-                    case 1:
-                        if(draw_xpm((xpm_map_t)one_xpm,365,40)) return 1;
-                        break;
-                    case 2:
-                        if(draw_xpm((xpm_map_t)two_xpm,365,40)) return 1;
-                        break;
-                    case 3:
-                        if(draw_xpm((xpm_map_t)three_xpm,365,40)) return 1;
-                        break; 
-                    default:
-                        return 1;       
-                  }
-
-                  switch(goal_left){
-                    case 0:
-                        if(draw_xpm((xpm_map_t)zero_xpm,405,40)) return 1;
-                        break;
-                    case 1:
-                        if(draw_xpm((xpm_map_t)one_xpm,405,40)) return 1;
-                        break;
-                    case 2:
-                        if(draw_xpm((xpm_map_t)two_xpm,405,40)) return 1;
-                        break;
-                    case 3:
-                        if(draw_xpm((xpm_map_t)three_xpm,405,40)) return 1;
-                        break; 
-                    default:
-                        return 1;       
-                  }
+                  if (score()) return 0;
                   if (vg_draw_rectangle(0,0,800,35,BLUE)) return 1;
                   if (vg_draw_rectangle(0,565,800,35,BLUE)) return 1;
                   if (vg_draw_rectangle(398,0,4,600,BLUE)) return 1;   
                   if (draw_piece_1()) return 1;
                   if (draw_piece_2()) return 1;
                   if (draw_ball()) return 1;
-                  ball_movement();
+                  if (ball_movement()) return 1;
                   displayImage();
                   freeImBuffer();
                 }
@@ -147,4 +92,31 @@ int interrupts(){
 
  return 0;
 
+}
+
+void handle_keys(){
+    if (scancode==KBC_MAKE_W_KEY){
+        w_key_state = KEY_STATE_PRESSED;
+    }
+    if (scancode==KBC_BREAK_W_KEY){
+        w_key_state = KEY_STATE_RELEASED;
+    }
+    if (scancode==KBC_MAKE_S_KEY){
+        s_key_state = KEY_STATE_PRESSED;
+    }
+    if (scancode==KBC_BREAK_S_KEY){
+        s_key_state = KEY_STATE_RELEASED;
+    }
+    if (scancode==KBC_MAKE_UP_KEY){
+        up_key_state = KEY_STATE_PRESSED;
+    }
+    if (scancode==KBC_BREAK_UP_KEY){
+        up_key_state = KEY_STATE_RELEASED;
+    }
+    if (scancode==KBC_MAKE_DOWN_KEY){
+        down_key_state = KEY_STATE_PRESSED;
+    }
+    if (scancode==KBC_BREAK_DOWN_KEY){
+        down_key_state = KEY_STATE_RELEASED;
+    }
 }

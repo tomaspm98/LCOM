@@ -13,5 +13,6 @@
 int subscribe_interrupts();
 int unsubscribe_interrupts();
 int interrupts();
+void handle_keys();
 
 #endif
