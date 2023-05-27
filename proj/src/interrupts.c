@@ -4,6 +4,7 @@ uint8_t irq_set_timer=0;
 uint8_t irq_set_kbd=1;
 extern uint8_t scancode;
 extern int timer_irq_counter;
+extern bool powerup;
 int w_key_state = KEY_STATE_RELEASED;
 int s_key_state = KEY_STATE_RELEASED;
 int up_key_state = KEY_STATE_RELEASED;
@@ -84,7 +85,9 @@ int interrupts(){
                   if ((!catched_right && !catched_left) && timer_irq_counter<=1000){
                     if (draw_powerup()) return 1;
                   }
-                  if (catch_powerup()) return 1;
+                  if (powerup){
+                    if (catch_powerup()) return 1;
+                  }
                   displayImage();
                   freeImBuffer();
                 }
