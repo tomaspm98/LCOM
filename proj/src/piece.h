@@ -1,8 +1,10 @@
-#ifndef __LOGIC_H
-#define __LOGIC_H
+#ifndef __PIECE_H
+#define __PIECE_H
 
 #include <lcom/lcf.h>
 #include <stdint.h>
+#include "images/piece.xpm"
+#include "entity.h"
 
 #define KBC_MAKE_A_KEY 0x1e
 #define KBC_BREAK_A_KEY 0x9e
@@ -22,10 +24,12 @@
 #define KEY_STATE_PRESSED 1
 #define KEY_STATE_RELEASED 0
 
-
-
-void move_piece_up(int y); //transformar pra int e ver limites do ecra (retangulos)
-void move_piece_down(int y);
+void move_piece1_up(); //transformar pra int e ver limites do ecra (retangulos)
+void move_piece1_down();
+void move_piece2_up();
+void move_piece2_down();
+int draw_piece_1();
+int draw_piece_2();
 
 #endif
 
