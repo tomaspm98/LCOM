@@ -4,8 +4,7 @@
 #include <stdint.h>
 
 
-void loadSprites();
-void destroySprites();
+
 void displayMenu();
 void handleMouse();
 
