@@ -37,6 +37,10 @@ int start_ball(){
         ball_y = 290;
         ball_var_x = 0;
         ball_var_y = 0;
+        piece_1_x = 30;
+        piece_1_y = 255;
+        piece_2_x = 757;
+        piece_2_y = 255;
         tickdelay(100);
         catched_right = false;
         catched_left = false;
