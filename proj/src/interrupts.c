@@ -2,12 +2,14 @@
 
 uint8_t irq_set_timer=0;
 uint8_t irq_set_kbd=1;
+uint8_t irq_set_rtc=4;
 extern uint8_t scancode;
 extern int timer_irq_counter;
 int w_key_state = KEY_STATE_RELEASED;
 int s_key_state = KEY_STATE_RELEASED;
 int up_key_state = KEY_STATE_RELEASED;
 int down_key_state = KEY_STATE_RELEASED;
+extern uint8_t year, month, day, hours, minutes, seconds;
 extern int piece_1_x;
 extern int piece_1_y;
 extern int piece_2_x;
@@ -18,6 +20,7 @@ extern int goal_right;
 int subscribe_interrupts(){
     if (timer_subscribe_int(&irq_set_timer)) return 1;
     if(keyboard_subscribe_interrupts(&irq_set_kbd)) return 1;
+    if(rtc_subscribe_intrpt(&irq_set_rtc)) return 1;
     //falta mouse
 
     return 0;
@@ -26,6 +29,7 @@ int subscribe_interrupts(){
 int unsubscribe_interrupts(){
     if (timer_unsubscribe_int()) return 1;
     if(keyboard_unsubscribe_interrupts()) return 1;
+    if(rtc_unsubscribe_intrpt()) return 1;
     //falta mouse
 
     return 0;
@@ -44,6 +48,10 @@ int interrupts(){
     if (is_ipc_notify(ipc_status)) { /* received notification */
         switch (_ENDPOINT_P(msg.m_source)) {
             case HARDWARE: /* hardware interrupt notification */				
+                if (msg.m_notify.interrupts & BIT(irq_set_rtc)){
+                    rtc_ih();
+                    printf("%u", year);
+                }
                 if (msg.m_notify.interrupts & BIT(irq_set_kbd)) { /* subscribed interrupt */
                     kbc_ih();
                     handle_keys();

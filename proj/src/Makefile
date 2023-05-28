@@ -6,12 +6,12 @@ PROG=proj
 #.PATH: ${.CURDIR}/mouse
 .PATH: ${.CURDIR}/timer
 .PATH: ${.CURDIR}/graphics
-#.PATH: ${.CURDIR}/rtc
+.PATH: ${.CURDIR}/rtc
 
 
 
 # Ficheiros ".c" a compilar. Têm de estar contidos nas pastas indicadas no passo anterior.
-SRCS = piece.c interrupts.c ball.c main.c timer.c utils.c video_gr.c kbc.c keyboard.c entity.c 
+SRCS = piece.c interrupts.c ball.c main.c timer.c utils.c video_gr.c kbc.c keyboard.c entity.c rtc.c
 
 # Flags de compilação
 CFLAGS += -pedantic -D_LCOM_OPTIMIZED_ -O2

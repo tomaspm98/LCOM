@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include "timer/timer.h"
 #include "keyboard/keyboard.h"
+#include "rtc/rtc.h"
 #include "piece.h"
 #include "ball.h"
 #include "graphics/video_gr.h"

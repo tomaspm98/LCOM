@@ -2,6 +2,7 @@
 #include <string.h>
 #include "graphics/video_gr.h"
 #include "timer/i8254.h"
+#include "rtc/rtc.h"
 #include "colors.h"
 #include "entity.h"
 #include "piece.h"
@@ -25,6 +26,7 @@ extern int ball_var_x;
 extern bool goal;
 extern int goal_left;
 extern int goal_right;
+extern uint8_t year, month, day, hours, minutes, seconds;
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
@@ -44,7 +46,6 @@ int start(){
     if (subscribe_interrupts()) return 1; 
     allocateImgBuffer();
     allocateDrawBuffer();
-
     return 0;
 }
 
