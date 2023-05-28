@@ -15,12 +15,36 @@
 
 #include "piece.h"
 
+/// @brief Handles the ball start when is goal or the game is starting
+/// @return 0 if success, 1 if no success
 int start_ball();
+
+/// @brief Checks if the ball collided with piece 1 and its zone of collision
+/// @return 0 if success, 1 if no success
 int collision_ball_piece1();
+
+/// @brief Checks if the ball collided with piece 2 and its zone of collision
+/// @return 0 if success, 1 if no success
+int collision_ball_piece2();
+
+/// @brief Implement all the useful functions in this class to control the ball movement
+/// @return 0 if success, 1 if no success
 int ball_movement();
+
+/// @brief Draws the ball in its position
+/// @return 0 if success, 1 if no success
 int draw_ball();
+
+/// @brief Checks if left piece scored goal
+/// @return 0 if success, 1 if no success
 int goal_leftPiece();
+
+/// @brief Checks if right piece scored goal
+/// @return 0 if success, 1 if no success
 int goal_rightPiece();
+
+/// @brief Handles the score in the top of the field
+/// @return 0 if success, 1 if no success
 int score();
 
 #endif

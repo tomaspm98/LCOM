@@ -8,11 +8,20 @@
 
 #endif /* _LCOM_KEYBOARD_H_ */
 
+/// @brief Subscribe the keyboard interrupts
+/// @param bit_no keyboard_hook_id to bits
+/// @return 0 if success, 1 if no success
 int (keyboard_subscribe_interrupts)(uint8_t *bit_no);
 
+/// @brief Unsubscribe the kwyboard interrupts
+/// @return 0 if success, 1 if no success
 int (keyboard_unsubscribe_interrupts)();
 
+/// @brief Interrupt handler of the keyboard
+/// @return 
 void (kbc_ih)();
+
+
 
 
 

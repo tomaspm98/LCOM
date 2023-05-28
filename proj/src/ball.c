@@ -22,6 +22,13 @@ extern int piece_1_y;
 extern int piece_2_x;
 extern int piece_2_y;
 bool not_random = false;
+extern bool catched_left;
+extern bool catched_right;
+extern int timer_irq_counter;
+extern bool no_pos;
+extern bool powerup_number_bool;
+extern int powerup_number;
+extern int timer_irq_counter;
 
 int start_ball(){
     if (goal){
@@ -30,7 +37,16 @@ int start_ball(){
         ball_y = 290;
         ball_var_x = 0;
         ball_var_y = 0;
+        piece_1_x = 30;
+        piece_1_y = 255;
+        piece_2_x = 757;
+        piece_2_y = 255;
         tickdelay(100);
+        catched_right = false;
+        catched_left = false;
+        no_pos=false;
+        powerup_number_bool = false;
+        timer_irq_counter=0;
     }
     if (!not_random){
         srand(time(NULL));
@@ -199,7 +215,8 @@ int collision_ball_piece2(){
         ball_var_y=6; 
     }    
    }
-   if ((ball_y>=34 && ball_y<=40) || (ball_y >= 540 && ball_y<=546)){
+
+   if (((ball_y>=99 && ball_y<=105) || (ball_y >= 475 && ball_y<=481)) && powerup_number == 1 && (catched_left || catched_right) && timer_irq_counter<=1000){
     if(ball_var_x<0){
         ball_var_x = -5;
         ball_var_y = -ball_var_y;
@@ -209,6 +226,17 @@ int collision_ball_piece2(){
         ball_var_y = -ball_var_y;
     }
    }
+   else if (((ball_y>=34 && ball_y<=40) || (ball_y >= 540 && ball_y<=546))){
+    if(ball_var_x<0){
+        ball_var_x = -5;
+        ball_var_y = -ball_var_y;
+    }
+    else {
+        ball_var_x = 5;
+        ball_var_y = -ball_var_y;
+    }
+   }
+
 
    return 0;
 }
@@ -240,8 +268,15 @@ int goal_rightPiece(){
 }
 
 int ball_pos_variation(){
+
+   /*if (catched){ 
+    ball_x+=ball_var_x*2;
+    ball_y+=ball_var_y*2;
+   }
+   else {*/
     ball_x+=ball_var_x;
     ball_y+=ball_var_y;
+   //}
 
     return 0; 
 }

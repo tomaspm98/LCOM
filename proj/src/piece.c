@@ -6,24 +6,48 @@ int piece_1_x = 30;
 int piece_1_y = 255;
 int piece_2_x = 757;
 int piece_2_y = 255;
+extern bool catched_left;
+extern bool catched_right;
+extern int timer_irq_counter;
+extern int powerup_number;
 
 int move_piece1_up(){
-    piece_1_y-=20;
+    if (catched_right && powerup_number == 0 && timer_irq_counter<=1000){
+        piece_1_y-=10;
+    }
+    else {
+        piece_1_y-=20;
+    }
     return 0;
 }
 
 int move_piece1_down(){
-    piece_1_y+=20;
+    if (catched_right && powerup_number == 0 && timer_irq_counter<=1000){
+        piece_1_y+=10;
+    }
+    else {
+        piece_1_y+=20;
+    }
     return 0;
 }
 
 int move_piece2_up(){
-    piece_2_y-=20;
+    if (catched_left && powerup_number == 0 && timer_irq_counter<=1000){
+        piece_2_y-=10;
+    }
+    else {
+        piece_2_y-=20;
+    }
     return 0;
 }
 
 int move_piece2_down(){
-    piece_2_y+=20;
+    if (catched_left && powerup_number == 0 && timer_irq_counter<=1000){
+        piece_2_y+=10;
+    }
+    else {
+        piece_2_y+=20;
+    }
     return 0;
 }
 
