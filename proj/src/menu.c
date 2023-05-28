@@ -48,7 +48,7 @@ void handleMouse() {
     struct packet pp;
     if (mouse_read_packet(&pp) != 0) {
         printf("Error: Failed to read mouse packet\n");
-        return;
+        return 1;
     }
     if (pp.lb) {
 
