@@ -1,0 +1,4 @@
+<map id="score" name="score">
+<area shape="rect" id="node1" title="Handles the score in the top of the field." alt="" coords="5,5,63,32"/>
+<area shape="rect" id="node2" href="$entity_8c.html#af99cb4545f1bbbec763c37028ae30dd9" title="Draws a xpm file int the screen with top left corner in position x,y." alt="" coords="111,5,201,32"/>
+</map>

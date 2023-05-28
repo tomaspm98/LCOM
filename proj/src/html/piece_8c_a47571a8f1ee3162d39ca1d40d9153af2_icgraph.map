@@ -1,0 +1,5 @@
+<map id="move_piece2_down" name="move_piece2_down">
+<area shape="rect" id="node1" title="Moves the piece 2 down." alt="" coords="309,5,460,32"/>
+<area shape="rect" id="node2" href="$interrupts_8c.html#a2aa691bb3a06384f2f304c9ff2946d41" title="Handles the interrupts of all the devices used." alt="" coords="176,5,261,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+</map>

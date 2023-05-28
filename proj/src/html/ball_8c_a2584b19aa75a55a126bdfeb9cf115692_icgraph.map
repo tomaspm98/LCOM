@@ -1,0 +1,6 @@
+<map id="goal_leftPiece" name="goal_leftPiece">
+<area shape="rect" id="node1" title="Checks if left piece scored goal." alt="" coords="481,5,595,32"/>
+<area shape="rect" id="node2" href="$ball_8c.html#a600fdb177cba954c38f6b43e84c75e67" title="Implement all the useful functions in this class to control the ball movement." alt="" coords="309,5,433,32"/>
+<area shape="rect" id="node3" href="$interrupts_8c.html#a2aa691bb3a06384f2f304c9ff2946d41" title="Handles the interrupts of all the devices used." alt="" coords="176,5,261,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+</map>

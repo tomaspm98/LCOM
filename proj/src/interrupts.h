@@ -20,7 +20,7 @@ int subscribe_interrupts();
 int unsubscribe_interrupts();
 
 /// @brief Handles the interrupts of all the devices used
-/// @return 
+/// @return 0 if success, 1 if no success
 int interrupts();
 
 /// @brief Sets the state of the keys pressed or released

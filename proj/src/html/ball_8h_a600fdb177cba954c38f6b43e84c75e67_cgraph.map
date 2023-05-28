@@ -1,0 +1,10 @@
+<map id="ball_movement" name="ball_movement">
+<area shape="rect" id="node1" title="Implement all the useful functions in this class to control the ball movement." alt="" coords="5,132,129,159"/>
+<area shape="rect" id="node2" href="$ball_8c.html#a1a7f2885d7901ebd3f969f2bfc69175c" title=" " alt="" coords="185,5,327,32"/>
+<area shape="rect" id="node3" href="$ball_8c.html#ab7fba3007583d5f76359b23c2ab6bbff" title="Checks if the ball collided with piece 1 and its zone of collision." alt="" coords="177,56,335,83"/>
+<area shape="rect" id="node4" href="$ball_8c.html#ac71ad87d1ae1a2b66cfc8f8ab4f9664e" title="Checks if the ball collided with piece 2 and its zone of collision." alt="" coords="177,107,335,133"/>
+<area shape="rect" id="node5" href="$ball_8c.html#a2584b19aa75a55a126bdfeb9cf115692" title="Checks if left piece scored goal." alt="" coords="199,157,313,184"/>
+<area shape="rect" id="node7" href="$ball_8c.html#af5f7509be94548608d6d24424b9f2fd1" title="Checks if right piece scored goal." alt="" coords="195,208,317,235"/>
+<area shape="rect" id="node8" href="$ball_8c.html#a9f5404fb16563297e6ed6dc17e959d10" title="Handles the ball start when is goal or the game is starting." alt="" coords="215,259,297,285"/>
+<area shape="rect" id="node6" href="$entity_8c.html#af99cb4545f1bbbec763c37028ae30dd9" title="Draws a xpm file int the screen with top left corner in position x,y." alt="" coords="383,183,473,209"/>
+</map>

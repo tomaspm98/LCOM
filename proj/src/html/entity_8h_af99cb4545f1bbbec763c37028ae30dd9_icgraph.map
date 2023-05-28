@@ -1,0 +1,13 @@
+<map id="draw_xpm" name="draw_xpm">
+<area shape="rect" id="node1" title="Draws a xpm file int the screen with top left corner in position x,y." alt="" coords="652,157,743,184"/>
+<area shape="rect" id="node2" href="$ball_8c.html#ad2fc6b6c546619f78de864a6cfcfd413" title="Draws the ball in its position." alt="" coords="329,5,414,32"/>
+<area shape="rect" id="node5" href="$piece_8c.html#a4e873d0ce296f61059c03f938c6869ba" title="Draws the piece 1." alt="" coords="316,56,427,83"/>
+<area shape="rect" id="node6" href="$piece_8c.html#ac55fec6aec96ccb3e43fbd0d6d63ff93" title="Draws the piece 2." alt="" coords="316,107,427,133"/>
+<area shape="rect" id="node7" href="$powerups_8c.html#a9285c3630989b9d5d12844c368cbb722" title="Selects the powerup of the round and draws it in the screen." alt="" coords="484,157,601,184"/>
+<area shape="rect" id="node8" href="$ball_8c.html#a2584b19aa75a55a126bdfeb9cf115692" title="Checks if left piece scored goal." alt="" coords="486,208,599,235"/>
+<area shape="rect" id="node10" href="$ball_8c.html#af5f7509be94548608d6d24424b9f2fd1" title="Checks if right piece scored goal." alt="" coords="481,259,604,285"/>
+<area shape="rect" id="node11" href="$ball_8c.html#a4d5fd372772bf7406808f8b27f572a5d" title="Handles the score in the top of the field." alt="" coords="514,309,571,336"/>
+<area shape="rect" id="node3" href="$interrupts_8c.html#a2aa691bb3a06384f2f304c9ff2946d41" title="Handles the interrupts of all the devices used." alt="" coords="176,132,261,159"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,132,128,159"/>
+<area shape="rect" id="node9" href="$ball_8c.html#a600fdb177cba954c38f6b43e84c75e67" title="Implement all the useful functions in this class to control the ball movement." alt="" coords="309,208,433,235"/>
+</map>

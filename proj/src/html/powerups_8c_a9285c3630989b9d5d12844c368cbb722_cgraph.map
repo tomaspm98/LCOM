@@ -1,0 +1,4 @@
+<map id="draw_powerup" name="draw_powerup">
+<area shape="rect" id="node1" title="Selects the powerup of the round and draws it in the screen." alt="" coords="5,5,123,32"/>
+<area shape="rect" id="node2" href="$entity_8c.html#af99cb4545f1bbbec763c37028ae30dd9" title="Draws a xpm file int the screen with top left corner in position x,y." alt="" coords="171,5,261,32"/>
+</map>

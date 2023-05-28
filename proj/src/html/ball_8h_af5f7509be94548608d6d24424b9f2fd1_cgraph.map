@@ -1,0 +1,4 @@
+<map id="goal_rightPiece" name="goal_rightPiece">
+<area shape="rect" id="node1" title="Checks if right piece scored goal." alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$entity_8c.html#af99cb4545f1bbbec763c37028ae30dd9" title="Draws a xpm file int the screen with top left corner in position x,y." alt="" coords="176,5,267,32"/>
+</map>
