@@ -24,11 +24,28 @@
 #define KEY_STATE_PRESSED 1
 #define KEY_STATE_RELEASED 0
 
-int move_piece1_up(); //transformar pra int e ver limites do ecra (retangulos)
+/// @brief Moves the piece 1 up
+/// @return 0 if success, 1 if no success
+int move_piece1_up(); 
+
+/// @brief Moves the piece 1 down
+/// @return 0 if success, 1 if no success
 int move_piece1_down();
+
+/// @brief Moves the piece 2 up
+/// @return 0 if success, 1 if no success
 int move_piece2_up();
+
+/// @brief Moves the piece 2 down
+/// @return 0 if success, 1 if no success
 int move_piece2_down();
+
+/// @brief Draws the piece 1
+/// @return 0 if success, 1 if no success
 int draw_piece_1();
+
+/// @brief Draws the piece 2
+/// @return 0 if success, 1 if no success
 int draw_piece_2();
 
 #endif
