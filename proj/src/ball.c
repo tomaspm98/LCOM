@@ -268,15 +268,8 @@ int goal_rightPiece(){
 }
 
 int ball_pos_variation(){
-
-   /*if (catched){ 
-    ball_x+=ball_var_x*2;
-    ball_y+=ball_var_y*2;
-   }
-   else {*/
     ball_x+=ball_var_x;
     ball_y+=ball_var_y;
-   //}
 
     return 0; 
 }

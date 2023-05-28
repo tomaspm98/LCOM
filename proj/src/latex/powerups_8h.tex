@@ -1,0 +1,60 @@
+\hypertarget{powerups_8h}{}\doxysection{powerups.\+h File Reference}
+\label{powerups_8h}\index{powerups.h@{powerups.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}images/powerup\+\_\+ball.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}images/powerup\+\_\+limits.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}entity.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ball.\+h\char`\"{}}\newline
+Include dependency graph for powerups.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{powerups_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{powerups_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{powerups_8h_a9285c3630989b9d5d12844c368cbb722}{draw\+\_\+powerup}} ()
+\begin{DoxyCompactList}\small\item\em Selects the powerup of the round and draws it in the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{powerups_8h_a95850feb05e1ec685d89a8a72c71c527}{catch\+\_\+powerup}} ()
+\begin{DoxyCompactList}\small\item\em Detects the collision between the ball and the powerup and which player gets it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{powerups_8h_a95850feb05e1ec685d89a8a72c71c527}\label{powerups_8h_a95850feb05e1ec685d89a8a72c71c527}} 
+\index{powerups.h@{powerups.h}!catch\_powerup@{catch\_powerup}}
+\index{catch\_powerup@{catch\_powerup}!powerups.h@{powerups.h}}
+\doxysubsubsection{\texorpdfstring{catch\_powerup()}{catch\_powerup()}}
+{\footnotesize\ttfamily int catch\+\_\+powerup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Detects the collision between the ball and the powerup and which player gets it. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{powerups_8h_a9285c3630989b9d5d12844c368cbb722}\label{powerups_8h_a9285c3630989b9d5d12844c368cbb722}} 
+\index{powerups.h@{powerups.h}!draw\_powerup@{draw\_powerup}}
+\index{draw\_powerup@{draw\_powerup}!powerups.h@{powerups.h}}
+\doxysubsubsection{\texorpdfstring{draw\_powerup()}{draw\_powerup()}}
+{\footnotesize\ttfamily int draw\+\_\+powerup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Selects the powerup of the round and draws it in the screen. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}

@@ -47,6 +47,6 @@ int goal_rightPiece();
 /// @return 0 if success, 1 if no success
 int score();
 
-#endif
+#endif /* _BALL_H_ */
 
 

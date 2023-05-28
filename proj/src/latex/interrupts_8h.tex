@@ -1,0 +1,91 @@
+\hypertarget{interrupts_8h}{}\doxysection{interrupts.\+h File Reference}
+\label{interrupts_8h}\index{interrupts.h@{interrupts.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}timer/timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}keyboard/keyboard.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}piece.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ball.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graphics/video\+\_\+gr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}colors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}powerups.\+h\char`\"{}}\newline
+Include dependency graph for interrupts.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interrupts_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{interrupts_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interrupts_8h_ab570339ba658dea7f08a99b9374e605f}{subscribe\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Subscribes the interrupts of all the devices used in the project. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interrupts_8h_a39ca4da537e3c0062ada871f99b91b8d}{unsubscribe\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes the interrupts of all the devices used in the project. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interrupts_8h_a2aa691bb3a06384f2f304c9ff2946d41}{interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Handles the interrupts of all the devices used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interrupts_8h_a071fa74150ed6eccfe6e791c209c3871}{handle\+\_\+keys}} ()
+\begin{DoxyCompactList}\small\item\em Sets the state of the keys pressed or released. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{interrupts_8h_a071fa74150ed6eccfe6e791c209c3871}\label{interrupts_8h_a071fa74150ed6eccfe6e791c209c3871}} 
+\index{interrupts.h@{interrupts.h}!handle\_keys@{handle\_keys}}
+\index{handle\_keys@{handle\_keys}!interrupts.h@{interrupts.h}}
+\doxysubsubsection{\texorpdfstring{handle\_keys()}{handle\_keys()}}
+{\footnotesize\ttfamily void handle\+\_\+keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the state of the keys pressed or released. 
+
+\mbox{\Hypertarget{interrupts_8h_a2aa691bb3a06384f2f304c9ff2946d41}\label{interrupts_8h_a2aa691bb3a06384f2f304c9ff2946d41}} 
+\index{interrupts.h@{interrupts.h}!interrupts@{interrupts}}
+\index{interrupts@{interrupts}!interrupts.h@{interrupts.h}}
+\doxysubsubsection{\texorpdfstring{interrupts()}{interrupts()}}
+{\footnotesize\ttfamily int interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles the interrupts of all the devices used. 
+
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interrupts_8h_ab570339ba658dea7f08a99b9374e605f}\label{interrupts_8h_ab570339ba658dea7f08a99b9374e605f}} 
+\index{interrupts.h@{interrupts.h}!subscribe\_interrupts@{subscribe\_interrupts}}
+\index{subscribe\_interrupts@{subscribe\_interrupts}!interrupts.h@{interrupts.h}}
+\doxysubsubsection{\texorpdfstring{subscribe\_interrupts()}{subscribe\_interrupts()}}
+{\footnotesize\ttfamily int subscribe\+\_\+interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Subscribes the interrupts of all the devices used in the project. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interrupts_8h_a39ca4da537e3c0062ada871f99b91b8d}\label{interrupts_8h_a39ca4da537e3c0062ada871f99b91b8d}} 
+\index{interrupts.h@{interrupts.h}!unsubscribe\_interrupts@{unsubscribe\_interrupts}}
+\index{unsubscribe\_interrupts@{unsubscribe\_interrupts}!interrupts.h@{interrupts.h}}
+\doxysubsubsection{\texorpdfstring{unsubscribe\_interrupts()}{unsubscribe\_interrupts()}}
+{\footnotesize\ttfamily int unsubscribe\+\_\+interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes the interrupts of all the devices used in the project. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}

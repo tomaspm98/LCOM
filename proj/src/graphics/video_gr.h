@@ -5,7 +5,6 @@
 #include "keyboard/i8042.h"
 #include <lcom/lcf.h>
 
-#endif /* _LCOM_KEYBOARD_H_ */
 
 #define WHITE 0xFFFFFF
 extern int h_res;
@@ -53,17 +52,7 @@ void displayImage();
 /// @brief Sets the buffer with color white (0) and frees its memory
 void freeImBuffer();
 
-/// @brief Allocates memory to the draw buffer
-void allocateDrawBuffer();
-
-/// @brief Displays something we want by copying it from draw buffer to the main buffer
-void copyDrawingToBuffer();
-
-/// @brief Sets the buffer with color white (0)
-void clearDrawBuffer();
-
-/// @brief Free the memory of the draw buffer
-void freeDrawBuffer();
-
 /// @brief Allocates memory to the image buffer
 void allocateImgBuffer();
+
+#endif /* _LCOM_VIDEO_GR_H_ */

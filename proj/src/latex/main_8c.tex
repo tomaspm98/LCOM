@@ -1,0 +1,177 @@
+\hypertarget{main_8c}{}\doxysection{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}graphics/video\+\_\+gr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}timer/i8254.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}colors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}entity.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}piece.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ball.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}interrupts.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}images/transferir.\+xpm\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{main_8c_af397c014b1ca8ac21809c7b1262fbe81}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{main_8c_ac92d3b835636641550b12b0f93daf21d}{start}} ()
+\item 
+int \mbox{\hyperlink{main_8c_a882067407682fbb5472b9ebaed581708}{end}} ()
+\item 
+int() \mbox{\hyperlink{main_8c_a2a16f651eccbd248e1ad3b3b924b143b}{proj\+\_\+main\+\_\+loop}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_ab8431b729f617e024d93abd5e7f92767}{piece\+\_\+1\+\_\+x}}
+\item 
+int \mbox{\hyperlink{main_8c_a6fb6e9e0e606536f68274be22b07e8f9}{piece\+\_\+1\+\_\+y}}
+\item 
+int \mbox{\hyperlink{main_8c_a7a612cf77786fc7e7cd255a7a8bac85d}{piece\+\_\+2\+\_\+x}}
+\item 
+int \mbox{\hyperlink{main_8c_ab77b75a2a7317944c56163fe972fb45e}{piece\+\_\+2\+\_\+y}}
+\item 
+int \mbox{\hyperlink{main_8c_a2d251dbc2a15f6a1e815adbdba049d47}{ball\+\_\+x}}
+\item 
+int \mbox{\hyperlink{main_8c_afb7bcf260f6b3bb1b1da29d0f413946d}{ball\+\_\+y}}
+\item 
+bool \mbox{\hyperlink{main_8c_a013bd709da60cf257b1599a13d8fc516}{not\+\_\+random}}
+\item 
+int \mbox{\hyperlink{main_8c_afcb838b77280a13912dd779412da5fca}{side\+\_\+start}}
+\item 
+bool \mbox{\hyperlink{main_8c_a6bfb1d7bdd324f9818bc0f9ba46bb7fb}{start\+Ball}}
+\item 
+int \mbox{\hyperlink{main_8c_a736c6701baf1e374432e9f0e95b7f68f}{ball\+\_\+var\+\_\+y}}
+\item 
+int \mbox{\hyperlink{main_8c_ac4d8c8f0232a00de9b1168879cdc482b}{ball\+\_\+var\+\_\+x}}
+\item 
+bool \mbox{\hyperlink{main_8c_a1292e042df88fd7461a4dc998912f6d1}{goal}}
+\item 
+int \mbox{\hyperlink{main_8c_a51c1caf1db33d830fb70a4f719b16063}{goal\+\_\+left}}
+\item 
+int \mbox{\hyperlink{main_8c_af280bc6f71669eca620e3217810ac153}{goal\+\_\+right}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a882067407682fbb5472b9ebaed581708}\label{main_8c_a882067407682fbb5472b9ebaed581708}} 
+\index{main.c@{main.c}!end@{end}}
+\index{end@{end}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily int end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_af397c014b1ca8ac21809c7b1262fbe81}\label{main_8c_af397c014b1ca8ac21809c7b1262fbe81}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int() main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a2a16f651eccbd248e1ad3b3b924b143b}\label{main_8c_a2a16f651eccbd248e1ad3b3b924b143b}} 
+\index{main.c@{main.c}!proj\_main\_loop@{proj\_main\_loop}}
+\index{proj\_main\_loop@{proj\_main\_loop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{proj\_main\_loop()}{proj\_main\_loop()}}
+{\footnotesize\ttfamily int() proj\+\_\+main\+\_\+loop (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_ac92d3b835636641550b12b0f93daf21d}\label{main_8c_ac92d3b835636641550b12b0f93daf21d}} 
+\index{main.c@{main.c}!start@{start}}
+\index{start@{start}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily int start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_ac4d8c8f0232a00de9b1168879cdc482b}\label{main_8c_ac4d8c8f0232a00de9b1168879cdc482b}} 
+\index{main.c@{main.c}!ball\_var\_x@{ball\_var\_x}}
+\index{ball\_var\_x@{ball\_var\_x}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ball\_var\_x}{ball\_var\_x}}
+{\footnotesize\ttfamily int ball\+\_\+var\+\_\+x\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a736c6701baf1e374432e9f0e95b7f68f}\label{main_8c_a736c6701baf1e374432e9f0e95b7f68f}} 
+\index{main.c@{main.c}!ball\_var\_y@{ball\_var\_y}}
+\index{ball\_var\_y@{ball\_var\_y}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ball\_var\_y}{ball\_var\_y}}
+{\footnotesize\ttfamily int ball\+\_\+var\+\_\+y\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a2d251dbc2a15f6a1e815adbdba049d47}\label{main_8c_a2d251dbc2a15f6a1e815adbdba049d47}} 
+\index{main.c@{main.c}!ball\_x@{ball\_x}}
+\index{ball\_x@{ball\_x}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ball\_x}{ball\_x}}
+{\footnotesize\ttfamily int ball\+\_\+x\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_afb7bcf260f6b3bb1b1da29d0f413946d}\label{main_8c_afb7bcf260f6b3bb1b1da29d0f413946d}} 
+\index{main.c@{main.c}!ball\_y@{ball\_y}}
+\index{ball\_y@{ball\_y}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ball\_y}{ball\_y}}
+{\footnotesize\ttfamily int ball\+\_\+y\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a1292e042df88fd7461a4dc998912f6d1}\label{main_8c_a1292e042df88fd7461a4dc998912f6d1}} 
+\index{main.c@{main.c}!goal@{goal}}
+\index{goal@{goal}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{goal}{goal}}
+{\footnotesize\ttfamily bool goal\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a51c1caf1db33d830fb70a4f719b16063}\label{main_8c_a51c1caf1db33d830fb70a4f719b16063}} 
+\index{main.c@{main.c}!goal\_left@{goal\_left}}
+\index{goal\_left@{goal\_left}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{goal\_left}{goal\_left}}
+{\footnotesize\ttfamily int goal\+\_\+left\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_af280bc6f71669eca620e3217810ac153}\label{main_8c_af280bc6f71669eca620e3217810ac153}} 
+\index{main.c@{main.c}!goal\_right@{goal\_right}}
+\index{goal\_right@{goal\_right}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{goal\_right}{goal\_right}}
+{\footnotesize\ttfamily int goal\+\_\+right\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a013bd709da60cf257b1599a13d8fc516}\label{main_8c_a013bd709da60cf257b1599a13d8fc516}} 
+\index{main.c@{main.c}!not\_random@{not\_random}}
+\index{not\_random@{not\_random}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{not\_random}{not\_random}}
+{\footnotesize\ttfamily bool not\+\_\+random\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_ab8431b729f617e024d93abd5e7f92767}\label{main_8c_ab8431b729f617e024d93abd5e7f92767}} 
+\index{main.c@{main.c}!piece\_1\_x@{piece\_1\_x}}
+\index{piece\_1\_x@{piece\_1\_x}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{piece\_1\_x}{piece\_1\_x}}
+{\footnotesize\ttfamily int piece\+\_\+1\+\_\+x\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a6fb6e9e0e606536f68274be22b07e8f9}\label{main_8c_a6fb6e9e0e606536f68274be22b07e8f9}} 
+\index{main.c@{main.c}!piece\_1\_y@{piece\_1\_y}}
+\index{piece\_1\_y@{piece\_1\_y}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{piece\_1\_y}{piece\_1\_y}}
+{\footnotesize\ttfamily int piece\+\_\+1\+\_\+y\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a7a612cf77786fc7e7cd255a7a8bac85d}\label{main_8c_a7a612cf77786fc7e7cd255a7a8bac85d}} 
+\index{main.c@{main.c}!piece\_2\_x@{piece\_2\_x}}
+\index{piece\_2\_x@{piece\_2\_x}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{piece\_2\_x}{piece\_2\_x}}
+{\footnotesize\ttfamily int piece\+\_\+2\+\_\+x\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_ab77b75a2a7317944c56163fe972fb45e}\label{main_8c_ab77b75a2a7317944c56163fe972fb45e}} 
+\index{main.c@{main.c}!piece\_2\_y@{piece\_2\_y}}
+\index{piece\_2\_y@{piece\_2\_y}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{piece\_2\_y}{piece\_2\_y}}
+{\footnotesize\ttfamily int piece\+\_\+2\+\_\+y\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_afcb838b77280a13912dd779412da5fca}\label{main_8c_afcb838b77280a13912dd779412da5fca}} 
+\index{main.c@{main.c}!side\_start@{side\_start}}
+\index{side\_start@{side\_start}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{side\_start}{side\_start}}
+{\footnotesize\ttfamily int side\+\_\+start\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a6bfb1d7bdd324f9818bc0f9ba46bb7fb}\label{main_8c_a6bfb1d7bdd324f9818bc0f9ba46bb7fb}} 
+\index{main.c@{main.c}!startBall@{startBall}}
+\index{startBall@{startBall}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{startBall}{startBall}}
+{\footnotesize\ttfamily bool start\+Ball\hspace{0.3cm}{\ttfamily [extern]}}
+

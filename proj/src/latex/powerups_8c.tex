@@ -1,0 +1,157 @@
+\hypertarget{powerups_8c}{}\doxysection{powerups.\+c File Reference}
+\label{powerups_8c}\index{powerups.c@{powerups.c}}
+{\ttfamily \#include \char`\"{}powerups.\+h\char`\"{}}\newline
+Include dependency graph for powerups.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{powerups_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{powerups_8c_a9285c3630989b9d5d12844c368cbb722}{draw\+\_\+powerup}} ()
+\begin{DoxyCompactList}\small\item\em Selects the powerup of the round and draws it in the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{powerups_8c_a95850feb05e1ec685d89a8a72c71c527}{catch\+\_\+powerup}} ()
+\begin{DoxyCompactList}\small\item\em Detects the collision between the ball and the powerup and which player gets it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{powerups_8c_a11a1c11661280e250a92911dc83e4d1a}{powerup\+\_\+x}}
+\item 
+int \mbox{\hyperlink{powerups_8c_a4824d5e5cddfc7fd42d3aa5fed8bfa0f}{powerup\+\_\+y}}
+\item 
+bool \mbox{\hyperlink{powerups_8c_affe5b9eec75ca83dc05c26c7bf8bde68}{powerup}}
+\item 
+bool \mbox{\hyperlink{powerups_8c_a6fc7cb76955082a095ce870006a27355}{no\+\_\+pos}} = false
+\item 
+bool \mbox{\hyperlink{powerups_8c_ac0becabdf41b268b1a30e3ca0abe0404}{catched\+\_\+left}}
+\item 
+bool \mbox{\hyperlink{powerups_8c_aaf3f69c2c136b82417a643094e830276}{catched\+\_\+right}}
+\item 
+int \mbox{\hyperlink{powerups_8c_a2d251dbc2a15f6a1e815adbdba049d47}{ball\+\_\+x}}
+\item 
+int \mbox{\hyperlink{powerups_8c_afb7bcf260f6b3bb1b1da29d0f413946d}{ball\+\_\+y}}
+\item 
+int \mbox{\hyperlink{powerups_8c_a736c6701baf1e374432e9f0e95b7f68f}{ball\+\_\+var\+\_\+y}}
+\item 
+int \mbox{\hyperlink{powerups_8c_ac4d8c8f0232a00de9b1168879cdc482b}{ball\+\_\+var\+\_\+x}}
+\item 
+int \mbox{\hyperlink{powerups_8c_aa08ec88e64e28a30b58e77893b45fd5a}{timer\+\_\+irq\+\_\+counter}}
+\item 
+int \mbox{\hyperlink{powerups_8c_afa43aa16b73af0c36532ba9d941299d9}{powerup\+\_\+number}} = -\/1
+\item 
+bool \mbox{\hyperlink{powerups_8c_ad3105cb2a758c1f96194ffbfcfe947c3}{powerup\+\_\+number\+\_\+bool}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{powerups_8c_a95850feb05e1ec685d89a8a72c71c527}\label{powerups_8c_a95850feb05e1ec685d89a8a72c71c527}} 
+\index{powerups.c@{powerups.c}!catch\_powerup@{catch\_powerup}}
+\index{catch\_powerup@{catch\_powerup}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{catch\_powerup()}{catch\_powerup()}}
+{\footnotesize\ttfamily int catch\+\_\+powerup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Detects the collision between the ball and the powerup and which player gets it. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{powerups_8c_a9285c3630989b9d5d12844c368cbb722}\label{powerups_8c_a9285c3630989b9d5d12844c368cbb722}} 
+\index{powerups.c@{powerups.c}!draw\_powerup@{draw\_powerup}}
+\index{draw\_powerup@{draw\_powerup}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{draw\_powerup()}{draw\_powerup()}}
+{\footnotesize\ttfamily int draw\+\_\+powerup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Selects the powerup of the round and draws it in the screen. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{powerups_8c_ac4d8c8f0232a00de9b1168879cdc482b}\label{powerups_8c_ac4d8c8f0232a00de9b1168879cdc482b}} 
+\index{powerups.c@{powerups.c}!ball\_var\_x@{ball\_var\_x}}
+\index{ball\_var\_x@{ball\_var\_x}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{ball\_var\_x}{ball\_var\_x}}
+{\footnotesize\ttfamily int ball\+\_\+var\+\_\+x\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{powerups_8c_a736c6701baf1e374432e9f0e95b7f68f}\label{powerups_8c_a736c6701baf1e374432e9f0e95b7f68f}} 
+\index{powerups.c@{powerups.c}!ball\_var\_y@{ball\_var\_y}}
+\index{ball\_var\_y@{ball\_var\_y}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{ball\_var\_y}{ball\_var\_y}}
+{\footnotesize\ttfamily int ball\+\_\+var\+\_\+y\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{powerups_8c_a2d251dbc2a15f6a1e815adbdba049d47}\label{powerups_8c_a2d251dbc2a15f6a1e815adbdba049d47}} 
+\index{powerups.c@{powerups.c}!ball\_x@{ball\_x}}
+\index{ball\_x@{ball\_x}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{ball\_x}{ball\_x}}
+{\footnotesize\ttfamily int ball\+\_\+x\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{powerups_8c_afb7bcf260f6b3bb1b1da29d0f413946d}\label{powerups_8c_afb7bcf260f6b3bb1b1da29d0f413946d}} 
+\index{powerups.c@{powerups.c}!ball\_y@{ball\_y}}
+\index{ball\_y@{ball\_y}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{ball\_y}{ball\_y}}
+{\footnotesize\ttfamily int ball\+\_\+y\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{powerups_8c_ac0becabdf41b268b1a30e3ca0abe0404}\label{powerups_8c_ac0becabdf41b268b1a30e3ca0abe0404}} 
+\index{powerups.c@{powerups.c}!catched\_left@{catched\_left}}
+\index{catched\_left@{catched\_left}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{catched\_left}{catched\_left}}
+{\footnotesize\ttfamily bool catched\+\_\+left}
+
+\mbox{\Hypertarget{powerups_8c_aaf3f69c2c136b82417a643094e830276}\label{powerups_8c_aaf3f69c2c136b82417a643094e830276}} 
+\index{powerups.c@{powerups.c}!catched\_right@{catched\_right}}
+\index{catched\_right@{catched\_right}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{catched\_right}{catched\_right}}
+{\footnotesize\ttfamily bool catched\+\_\+right}
+
+\mbox{\Hypertarget{powerups_8c_a6fc7cb76955082a095ce870006a27355}\label{powerups_8c_a6fc7cb76955082a095ce870006a27355}} 
+\index{powerups.c@{powerups.c}!no\_pos@{no\_pos}}
+\index{no\_pos@{no\_pos}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{no\_pos}{no\_pos}}
+{\footnotesize\ttfamily bool no\+\_\+pos = false}
+
+\mbox{\Hypertarget{powerups_8c_affe5b9eec75ca83dc05c26c7bf8bde68}\label{powerups_8c_affe5b9eec75ca83dc05c26c7bf8bde68}} 
+\index{powerups.c@{powerups.c}!powerup@{powerup}}
+\index{powerup@{powerup}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{powerup}{powerup}}
+{\footnotesize\ttfamily bool powerup}
+
+\mbox{\Hypertarget{powerups_8c_afa43aa16b73af0c36532ba9d941299d9}\label{powerups_8c_afa43aa16b73af0c36532ba9d941299d9}} 
+\index{powerups.c@{powerups.c}!powerup\_number@{powerup\_number}}
+\index{powerup\_number@{powerup\_number}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{powerup\_number}{powerup\_number}}
+{\footnotesize\ttfamily int powerup\+\_\+number = -\/1}
+
+\mbox{\Hypertarget{powerups_8c_ad3105cb2a758c1f96194ffbfcfe947c3}\label{powerups_8c_ad3105cb2a758c1f96194ffbfcfe947c3}} 
+\index{powerups.c@{powerups.c}!powerup\_number\_bool@{powerup\_number\_bool}}
+\index{powerup\_number\_bool@{powerup\_number\_bool}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{powerup\_number\_bool}{powerup\_number\_bool}}
+{\footnotesize\ttfamily bool powerup\+\_\+number\+\_\+bool = false}
+
+\mbox{\Hypertarget{powerups_8c_a11a1c11661280e250a92911dc83e4d1a}\label{powerups_8c_a11a1c11661280e250a92911dc83e4d1a}} 
+\index{powerups.c@{powerups.c}!powerup\_x@{powerup\_x}}
+\index{powerup\_x@{powerup\_x}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{powerup\_x}{powerup\_x}}
+{\footnotesize\ttfamily int powerup\+\_\+x}
+
+\mbox{\Hypertarget{powerups_8c_a4824d5e5cddfc7fd42d3aa5fed8bfa0f}\label{powerups_8c_a4824d5e5cddfc7fd42d3aa5fed8bfa0f}} 
+\index{powerups.c@{powerups.c}!powerup\_y@{powerup\_y}}
+\index{powerup\_y@{powerup\_y}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{powerup\_y}{powerup\_y}}
+{\footnotesize\ttfamily int powerup\+\_\+y}
+
+\mbox{\Hypertarget{powerups_8c_aa08ec88e64e28a30b58e77893b45fd5a}\label{powerups_8c_aa08ec88e64e28a30b58e77893b45fd5a}} 
+\index{powerups.c@{powerups.c}!timer\_irq\_counter@{timer\_irq\_counter}}
+\index{timer\_irq\_counter@{timer\_irq\_counter}!powerups.c@{powerups.c}}
+\doxysubsubsection{\texorpdfstring{timer\_irq\_counter}{timer\_irq\_counter}}
+{\footnotesize\ttfamily int timer\+\_\+irq\+\_\+counter\hspace{0.3cm}{\ttfamily [extern]}}
+

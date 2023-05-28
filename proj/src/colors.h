@@ -6,4 +6,4 @@
 #define WHITE 0xFFFFFF
 #define BLUE 0x21749F
 
-#endif
+#endif /* _COLORS_H_ */

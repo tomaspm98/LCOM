@@ -1,0 +1,178 @@
+\hypertarget{piece_8c}{}\doxysection{piece.\+c File Reference}
+\label{piece_8c}\index{piece.c@{piece.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}piece.\+h\char`\"{}}\newline
+Include dependency graph for piece.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{piece_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{piece_8c_a81f1f154d07f9a6a1b04be0f6faa7eb2}{move\+\_\+piece1\+\_\+up}} ()
+\begin{DoxyCompactList}\small\item\em Moves the piece 1 up. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{piece_8c_aca58fe7bb7f7871a733113f29352ff59}{move\+\_\+piece1\+\_\+down}} ()
+\begin{DoxyCompactList}\small\item\em Moves the piece 1 down. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{piece_8c_a5361ff1de40c0c9ad099bcfb51a98fe9}{move\+\_\+piece2\+\_\+up}} ()
+\begin{DoxyCompactList}\small\item\em Moves the piece 2 up. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{piece_8c_a47571a8f1ee3162d39ca1d40d9153af2}{move\+\_\+piece2\+\_\+down}} ()
+\begin{DoxyCompactList}\small\item\em Moves the piece 2 down. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{piece_8c_a4e873d0ce296f61059c03f938c6869ba}{draw\+\_\+piece\+\_\+1}} ()
+\begin{DoxyCompactList}\small\item\em Draws the piece 1. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{piece_8c_ac55fec6aec96ccb3e43fbd0d6d63ff93}{draw\+\_\+piece\+\_\+2}} ()
+\begin{DoxyCompactList}\small\item\em Draws the piece 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{piece_8c_ab8431b729f617e024d93abd5e7f92767}{piece\+\_\+1\+\_\+x}} = 30
+\item 
+int \mbox{\hyperlink{piece_8c_a6fb6e9e0e606536f68274be22b07e8f9}{piece\+\_\+1\+\_\+y}} = 255
+\item 
+int \mbox{\hyperlink{piece_8c_a7a612cf77786fc7e7cd255a7a8bac85d}{piece\+\_\+2\+\_\+x}} = 757
+\item 
+int \mbox{\hyperlink{piece_8c_ab77b75a2a7317944c56163fe972fb45e}{piece\+\_\+2\+\_\+y}} = 255
+\item 
+bool \mbox{\hyperlink{piece_8c_ac0becabdf41b268b1a30e3ca0abe0404}{catched\+\_\+left}}
+\item 
+bool \mbox{\hyperlink{piece_8c_aaf3f69c2c136b82417a643094e830276}{catched\+\_\+right}}
+\item 
+int \mbox{\hyperlink{piece_8c_aa08ec88e64e28a30b58e77893b45fd5a}{timer\+\_\+irq\+\_\+counter}}
+\item 
+int \mbox{\hyperlink{piece_8c_afa43aa16b73af0c36532ba9d941299d9}{powerup\+\_\+number}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{piece_8c_a4e873d0ce296f61059c03f938c6869ba}\label{piece_8c_a4e873d0ce296f61059c03f938c6869ba}} 
+\index{piece.c@{piece.c}!draw\_piece\_1@{draw\_piece\_1}}
+\index{draw\_piece\_1@{draw\_piece\_1}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{draw\_piece\_1()}{draw\_piece\_1()}}
+{\footnotesize\ttfamily int draw\+\_\+piece\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the piece 1. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{piece_8c_ac55fec6aec96ccb3e43fbd0d6d63ff93}\label{piece_8c_ac55fec6aec96ccb3e43fbd0d6d63ff93}} 
+\index{piece.c@{piece.c}!draw\_piece\_2@{draw\_piece\_2}}
+\index{draw\_piece\_2@{draw\_piece\_2}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{draw\_piece\_2()}{draw\_piece\_2()}}
+{\footnotesize\ttfamily int draw\+\_\+piece\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the piece 2. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{piece_8c_aca58fe7bb7f7871a733113f29352ff59}\label{piece_8c_aca58fe7bb7f7871a733113f29352ff59}} 
+\index{piece.c@{piece.c}!move\_piece1\_down@{move\_piece1\_down}}
+\index{move\_piece1\_down@{move\_piece1\_down}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{move\_piece1\_down()}{move\_piece1\_down()}}
+{\footnotesize\ttfamily int move\+\_\+piece1\+\_\+down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves the piece 1 down. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{piece_8c_a81f1f154d07f9a6a1b04be0f6faa7eb2}\label{piece_8c_a81f1f154d07f9a6a1b04be0f6faa7eb2}} 
+\index{piece.c@{piece.c}!move\_piece1\_up@{move\_piece1\_up}}
+\index{move\_piece1\_up@{move\_piece1\_up}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{move\_piece1\_up()}{move\_piece1\_up()}}
+{\footnotesize\ttfamily int move\+\_\+piece1\+\_\+up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves the piece 1 up. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{piece_8c_a47571a8f1ee3162d39ca1d40d9153af2}\label{piece_8c_a47571a8f1ee3162d39ca1d40d9153af2}} 
+\index{piece.c@{piece.c}!move\_piece2\_down@{move\_piece2\_down}}
+\index{move\_piece2\_down@{move\_piece2\_down}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{move\_piece2\_down()}{move\_piece2\_down()}}
+{\footnotesize\ttfamily int move\+\_\+piece2\+\_\+down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves the piece 2 down. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{piece_8c_a5361ff1de40c0c9ad099bcfb51a98fe9}\label{piece_8c_a5361ff1de40c0c9ad099bcfb51a98fe9}} 
+\index{piece.c@{piece.c}!move\_piece2\_up@{move\_piece2\_up}}
+\index{move\_piece2\_up@{move\_piece2\_up}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{move\_piece2\_up()}{move\_piece2\_up()}}
+{\footnotesize\ttfamily int move\+\_\+piece2\+\_\+up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves the piece 2 up. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{piece_8c_ac0becabdf41b268b1a30e3ca0abe0404}\label{piece_8c_ac0becabdf41b268b1a30e3ca0abe0404}} 
+\index{piece.c@{piece.c}!catched\_left@{catched\_left}}
+\index{catched\_left@{catched\_left}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{catched\_left}{catched\_left}}
+{\footnotesize\ttfamily bool catched\+\_\+left\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{piece_8c_aaf3f69c2c136b82417a643094e830276}\label{piece_8c_aaf3f69c2c136b82417a643094e830276}} 
+\index{piece.c@{piece.c}!catched\_right@{catched\_right}}
+\index{catched\_right@{catched\_right}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{catched\_right}{catched\_right}}
+{\footnotesize\ttfamily bool catched\+\_\+right\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{piece_8c_ab8431b729f617e024d93abd5e7f92767}\label{piece_8c_ab8431b729f617e024d93abd5e7f92767}} 
+\index{piece.c@{piece.c}!piece\_1\_x@{piece\_1\_x}}
+\index{piece\_1\_x@{piece\_1\_x}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{piece\_1\_x}{piece\_1\_x}}
+{\footnotesize\ttfamily int piece\+\_\+1\+\_\+x = 30}
+
+\mbox{\Hypertarget{piece_8c_a6fb6e9e0e606536f68274be22b07e8f9}\label{piece_8c_a6fb6e9e0e606536f68274be22b07e8f9}} 
+\index{piece.c@{piece.c}!piece\_1\_y@{piece\_1\_y}}
+\index{piece\_1\_y@{piece\_1\_y}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{piece\_1\_y}{piece\_1\_y}}
+{\footnotesize\ttfamily int piece\+\_\+1\+\_\+y = 255}
+
+\mbox{\Hypertarget{piece_8c_a7a612cf77786fc7e7cd255a7a8bac85d}\label{piece_8c_a7a612cf77786fc7e7cd255a7a8bac85d}} 
+\index{piece.c@{piece.c}!piece\_2\_x@{piece\_2\_x}}
+\index{piece\_2\_x@{piece\_2\_x}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{piece\_2\_x}{piece\_2\_x}}
+{\footnotesize\ttfamily int piece\+\_\+2\+\_\+x = 757}
+
+\mbox{\Hypertarget{piece_8c_ab77b75a2a7317944c56163fe972fb45e}\label{piece_8c_ab77b75a2a7317944c56163fe972fb45e}} 
+\index{piece.c@{piece.c}!piece\_2\_y@{piece\_2\_y}}
+\index{piece\_2\_y@{piece\_2\_y}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{piece\_2\_y}{piece\_2\_y}}
+{\footnotesize\ttfamily int piece\+\_\+2\+\_\+y = 255}
+
+\mbox{\Hypertarget{piece_8c_afa43aa16b73af0c36532ba9d941299d9}\label{piece_8c_afa43aa16b73af0c36532ba9d941299d9}} 
+\index{piece.c@{piece.c}!powerup\_number@{powerup\_number}}
+\index{powerup\_number@{powerup\_number}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{powerup\_number}{powerup\_number}}
+{\footnotesize\ttfamily int powerup\+\_\+number\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{piece_8c_aa08ec88e64e28a30b58e77893b45fd5a}\label{piece_8c_aa08ec88e64e28a30b58e77893b45fd5a}} 
+\index{piece.c@{piece.c}!timer\_irq\_counter@{timer\_irq\_counter}}
+\index{timer\_irq\_counter@{timer\_irq\_counter}!piece.c@{piece.c}}
+\doxysubsubsection{\texorpdfstring{timer\_irq\_counter}{timer\_irq\_counter}}
+{\footnotesize\ttfamily int timer\+\_\+irq\+\_\+counter\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,225 @@
+\hypertarget{interrupts_8c}{}\doxysection{interrupts.\+c File Reference}
+\label{interrupts_8c}\index{interrupts.c@{interrupts.c}}
+{\ttfamily \#include \char`\"{}interrupts.\+h\char`\"{}}\newline
+Include dependency graph for interrupts.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interrupts_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interrupts_8c_ab570339ba658dea7f08a99b9374e605f}{subscribe\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Subscribes the interrupts of all the devices used in the project. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interrupts_8c_a39ca4da537e3c0062ada871f99b91b8d}{unsubscribe\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes the interrupts of all the devices used in the project. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interrupts_8c_a2aa691bb3a06384f2f304c9ff2946d41}{interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Handles the interrupts of all the devices used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interrupts_8c_a071fa74150ed6eccfe6e791c209c3871}{handle\+\_\+keys}} ()
+\begin{DoxyCompactList}\small\item\em Sets the state of the keys pressed or released. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{interrupts_8c_a8be64d00347cadbd31bf44162c2954eb}{irq\+\_\+set\+\_\+timer}} =0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{interrupts_8c_aa82b8f38683ac2fb12f97c4b71573b00}{irq\+\_\+set\+\_\+kbd}} =1
+\item 
+uint8\+\_\+t \mbox{\hyperlink{interrupts_8c_aa1de7a5557e9d96b83cf03f73c92163f}{scancode}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_aa08ec88e64e28a30b58e77893b45fd5a}{timer\+\_\+irq\+\_\+counter}}
+\item 
+bool \mbox{\hyperlink{interrupts_8c_affe5b9eec75ca83dc05c26c7bf8bde68}{powerup}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_a02ac1e02fe591ad45842a21baa7aa397}{w\+\_\+key\+\_\+state}} = \mbox{\hyperlink{piece_8h_a12bf41c47f17c7629ea09f8679fe2895}{KEY\+\_\+\+STATE\+\_\+\+RELEASED}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_a314763e3cc4cfc828cd98f35b6bbb1b3}{s\+\_\+key\+\_\+state}} = \mbox{\hyperlink{piece_8h_a12bf41c47f17c7629ea09f8679fe2895}{KEY\+\_\+\+STATE\+\_\+\+RELEASED}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_a53c139c05202fe633b6b36665c33acc8}{up\+\_\+key\+\_\+state}} = \mbox{\hyperlink{piece_8h_a12bf41c47f17c7629ea09f8679fe2895}{KEY\+\_\+\+STATE\+\_\+\+RELEASED}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_a6a11f6c24c520f953d88b74437e66ca6}{down\+\_\+key\+\_\+state}} = \mbox{\hyperlink{piece_8h_a12bf41c47f17c7629ea09f8679fe2895}{KEY\+\_\+\+STATE\+\_\+\+RELEASED}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_ab8431b729f617e024d93abd5e7f92767}{piece\+\_\+1\+\_\+x}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_a6fb6e9e0e606536f68274be22b07e8f9}{piece\+\_\+1\+\_\+y}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_a7a612cf77786fc7e7cd255a7a8bac85d}{piece\+\_\+2\+\_\+x}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_ab77b75a2a7317944c56163fe972fb45e}{piece\+\_\+2\+\_\+y}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_a51c1caf1db33d830fb70a4f719b16063}{goal\+\_\+left}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_af280bc6f71669eca620e3217810ac153}{goal\+\_\+right}}
+\item 
+bool \mbox{\hyperlink{interrupts_8c_ac0becabdf41b268b1a30e3ca0abe0404}{catched\+\_\+left}}
+\item 
+bool \mbox{\hyperlink{interrupts_8c_aaf3f69c2c136b82417a643094e830276}{catched\+\_\+right}}
+\item 
+int \mbox{\hyperlink{interrupts_8c_afa43aa16b73af0c36532ba9d941299d9}{powerup\+\_\+number}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{interrupts_8c_a071fa74150ed6eccfe6e791c209c3871}\label{interrupts_8c_a071fa74150ed6eccfe6e791c209c3871}} 
+\index{interrupts.c@{interrupts.c}!handle\_keys@{handle\_keys}}
+\index{handle\_keys@{handle\_keys}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{handle\_keys()}{handle\_keys()}}
+{\footnotesize\ttfamily void handle\+\_\+keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the state of the keys pressed or released. 
+
+\mbox{\Hypertarget{interrupts_8c_a2aa691bb3a06384f2f304c9ff2946d41}\label{interrupts_8c_a2aa691bb3a06384f2f304c9ff2946d41}} 
+\index{interrupts.c@{interrupts.c}!interrupts@{interrupts}}
+\index{interrupts@{interrupts}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{interrupts()}{interrupts()}}
+{\footnotesize\ttfamily int interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles the interrupts of all the devices used. 
+
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interrupts_8c_ab570339ba658dea7f08a99b9374e605f}\label{interrupts_8c_ab570339ba658dea7f08a99b9374e605f}} 
+\index{interrupts.c@{interrupts.c}!subscribe\_interrupts@{subscribe\_interrupts}}
+\index{subscribe\_interrupts@{subscribe\_interrupts}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{subscribe\_interrupts()}{subscribe\_interrupts()}}
+{\footnotesize\ttfamily int subscribe\+\_\+interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Subscribes the interrupts of all the devices used in the project. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interrupts_8c_a39ca4da537e3c0062ada871f99b91b8d}\label{interrupts_8c_a39ca4da537e3c0062ada871f99b91b8d}} 
+\index{interrupts.c@{interrupts.c}!unsubscribe\_interrupts@{unsubscribe\_interrupts}}
+\index{unsubscribe\_interrupts@{unsubscribe\_interrupts}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{unsubscribe\_interrupts()}{unsubscribe\_interrupts()}}
+{\footnotesize\ttfamily int unsubscribe\+\_\+interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes the interrupts of all the devices used in the project. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{interrupts_8c_ac0becabdf41b268b1a30e3ca0abe0404}\label{interrupts_8c_ac0becabdf41b268b1a30e3ca0abe0404}} 
+\index{interrupts.c@{interrupts.c}!catched\_left@{catched\_left}}
+\index{catched\_left@{catched\_left}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{catched\_left}{catched\_left}}
+{\footnotesize\ttfamily bool catched\+\_\+left\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_aaf3f69c2c136b82417a643094e830276}\label{interrupts_8c_aaf3f69c2c136b82417a643094e830276}} 
+\index{interrupts.c@{interrupts.c}!catched\_right@{catched\_right}}
+\index{catched\_right@{catched\_right}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{catched\_right}{catched\_right}}
+{\footnotesize\ttfamily bool catched\+\_\+right\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_a6a11f6c24c520f953d88b74437e66ca6}\label{interrupts_8c_a6a11f6c24c520f953d88b74437e66ca6}} 
+\index{interrupts.c@{interrupts.c}!down\_key\_state@{down\_key\_state}}
+\index{down\_key\_state@{down\_key\_state}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{down\_key\_state}{down\_key\_state}}
+{\footnotesize\ttfamily int down\+\_\+key\+\_\+state = \mbox{\hyperlink{piece_8h_a12bf41c47f17c7629ea09f8679fe2895}{KEY\+\_\+\+STATE\+\_\+\+RELEASED}}}
+
+\mbox{\Hypertarget{interrupts_8c_a51c1caf1db33d830fb70a4f719b16063}\label{interrupts_8c_a51c1caf1db33d830fb70a4f719b16063}} 
+\index{interrupts.c@{interrupts.c}!goal\_left@{goal\_left}}
+\index{goal\_left@{goal\_left}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{goal\_left}{goal\_left}}
+{\footnotesize\ttfamily int goal\+\_\+left\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_af280bc6f71669eca620e3217810ac153}\label{interrupts_8c_af280bc6f71669eca620e3217810ac153}} 
+\index{interrupts.c@{interrupts.c}!goal\_right@{goal\_right}}
+\index{goal\_right@{goal\_right}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{goal\_right}{goal\_right}}
+{\footnotesize\ttfamily int goal\+\_\+right\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_aa82b8f38683ac2fb12f97c4b71573b00}\label{interrupts_8c_aa82b8f38683ac2fb12f97c4b71573b00}} 
+\index{interrupts.c@{interrupts.c}!irq\_set\_kbd@{irq\_set\_kbd}}
+\index{irq\_set\_kbd@{irq\_set\_kbd}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{irq\_set\_kbd}{irq\_set\_kbd}}
+{\footnotesize\ttfamily uint8\+\_\+t irq\+\_\+set\+\_\+kbd =1}
+
+\mbox{\Hypertarget{interrupts_8c_a8be64d00347cadbd31bf44162c2954eb}\label{interrupts_8c_a8be64d00347cadbd31bf44162c2954eb}} 
+\index{interrupts.c@{interrupts.c}!irq\_set\_timer@{irq\_set\_timer}}
+\index{irq\_set\_timer@{irq\_set\_timer}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{irq\_set\_timer}{irq\_set\_timer}}
+{\footnotesize\ttfamily uint8\+\_\+t irq\+\_\+set\+\_\+timer =0}
+
+\mbox{\Hypertarget{interrupts_8c_ab8431b729f617e024d93abd5e7f92767}\label{interrupts_8c_ab8431b729f617e024d93abd5e7f92767}} 
+\index{interrupts.c@{interrupts.c}!piece\_1\_x@{piece\_1\_x}}
+\index{piece\_1\_x@{piece\_1\_x}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{piece\_1\_x}{piece\_1\_x}}
+{\footnotesize\ttfamily int piece\+\_\+1\+\_\+x\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_a6fb6e9e0e606536f68274be22b07e8f9}\label{interrupts_8c_a6fb6e9e0e606536f68274be22b07e8f9}} 
+\index{interrupts.c@{interrupts.c}!piece\_1\_y@{piece\_1\_y}}
+\index{piece\_1\_y@{piece\_1\_y}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{piece\_1\_y}{piece\_1\_y}}
+{\footnotesize\ttfamily int piece\+\_\+1\+\_\+y\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_a7a612cf77786fc7e7cd255a7a8bac85d}\label{interrupts_8c_a7a612cf77786fc7e7cd255a7a8bac85d}} 
+\index{interrupts.c@{interrupts.c}!piece\_2\_x@{piece\_2\_x}}
+\index{piece\_2\_x@{piece\_2\_x}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{piece\_2\_x}{piece\_2\_x}}
+{\footnotesize\ttfamily int piece\+\_\+2\+\_\+x\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_ab77b75a2a7317944c56163fe972fb45e}\label{interrupts_8c_ab77b75a2a7317944c56163fe972fb45e}} 
+\index{interrupts.c@{interrupts.c}!piece\_2\_y@{piece\_2\_y}}
+\index{piece\_2\_y@{piece\_2\_y}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{piece\_2\_y}{piece\_2\_y}}
+{\footnotesize\ttfamily int piece\+\_\+2\+\_\+y\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_affe5b9eec75ca83dc05c26c7bf8bde68}\label{interrupts_8c_affe5b9eec75ca83dc05c26c7bf8bde68}} 
+\index{interrupts.c@{interrupts.c}!powerup@{powerup}}
+\index{powerup@{powerup}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{powerup}{powerup}}
+{\footnotesize\ttfamily bool powerup\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_afa43aa16b73af0c36532ba9d941299d9}\label{interrupts_8c_afa43aa16b73af0c36532ba9d941299d9}} 
+\index{interrupts.c@{interrupts.c}!powerup\_number@{powerup\_number}}
+\index{powerup\_number@{powerup\_number}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{powerup\_number}{powerup\_number}}
+{\footnotesize\ttfamily int powerup\+\_\+number\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_a314763e3cc4cfc828cd98f35b6bbb1b3}\label{interrupts_8c_a314763e3cc4cfc828cd98f35b6bbb1b3}} 
+\index{interrupts.c@{interrupts.c}!s\_key\_state@{s\_key\_state}}
+\index{s\_key\_state@{s\_key\_state}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{s\_key\_state}{s\_key\_state}}
+{\footnotesize\ttfamily int s\+\_\+key\+\_\+state = \mbox{\hyperlink{piece_8h_a12bf41c47f17c7629ea09f8679fe2895}{KEY\+\_\+\+STATE\+\_\+\+RELEASED}}}
+
+\mbox{\Hypertarget{interrupts_8c_aa1de7a5557e9d96b83cf03f73c92163f}\label{interrupts_8c_aa1de7a5557e9d96b83cf03f73c92163f}} 
+\index{interrupts.c@{interrupts.c}!scancode@{scancode}}
+\index{scancode@{scancode}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{scancode}{scancode}}
+{\footnotesize\ttfamily uint8\+\_\+t scancode\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_aa08ec88e64e28a30b58e77893b45fd5a}\label{interrupts_8c_aa08ec88e64e28a30b58e77893b45fd5a}} 
+\index{interrupts.c@{interrupts.c}!timer\_irq\_counter@{timer\_irq\_counter}}
+\index{timer\_irq\_counter@{timer\_irq\_counter}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{timer\_irq\_counter}{timer\_irq\_counter}}
+{\footnotesize\ttfamily int timer\+\_\+irq\+\_\+counter\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{interrupts_8c_a53c139c05202fe633b6b36665c33acc8}\label{interrupts_8c_a53c139c05202fe633b6b36665c33acc8}} 
+\index{interrupts.c@{interrupts.c}!up\_key\_state@{up\_key\_state}}
+\index{up\_key\_state@{up\_key\_state}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{up\_key\_state}{up\_key\_state}}
+{\footnotesize\ttfamily int up\+\_\+key\+\_\+state = \mbox{\hyperlink{piece_8h_a12bf41c47f17c7629ea09f8679fe2895}{KEY\+\_\+\+STATE\+\_\+\+RELEASED}}}
+
+\mbox{\Hypertarget{interrupts_8c_a02ac1e02fe591ad45842a21baa7aa397}\label{interrupts_8c_a02ac1e02fe591ad45842a21baa7aa397}} 
+\index{interrupts.c@{interrupts.c}!w\_key\_state@{w\_key\_state}}
+\index{w\_key\_state@{w\_key\_state}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{w\_key\_state}{w\_key\_state}}
+{\footnotesize\ttfamily int w\+\_\+key\+\_\+state = \mbox{\hyperlink{piece_8h_a12bf41c47f17c7629ea09f8679fe2895}{KEY\+\_\+\+STATE\+\_\+\+RELEASED}}}
+

@@ -1,0 +1,156 @@
+\hypertarget{ball_8h}{}\doxysection{ball.\+h File Reference}
+\label{ball_8h}\index{ball.h@{ball.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}images/letter\+\_\+g.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}images/letter\+\_\+o.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}images/letter\+\_\+a.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}images/letter\+\_\+l.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}images/number\+\_\+zero.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}images/number\+\_\+one.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}images/number\+\_\+two.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}images/number\+\_\+three.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}images/nada.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}piece.\+h\char`\"{}}\newline
+Include dependency graph for ball.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ball_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{ball_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ball_8h_a9f5404fb16563297e6ed6dc17e959d10}{start\+\_\+ball}} ()
+\begin{DoxyCompactList}\small\item\em Handles the ball start when is goal or the game is starting. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8h_ab7fba3007583d5f76359b23c2ab6bbff}{collision\+\_\+ball\+\_\+piece1}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the ball collided with piece 1 and its zone of collision. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8h_ac71ad87d1ae1a2b66cfc8f8ab4f9664e}{collision\+\_\+ball\+\_\+piece2}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the ball collided with piece 2 and its zone of collision. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8h_a600fdb177cba954c38f6b43e84c75e67}{ball\+\_\+movement}} ()
+\begin{DoxyCompactList}\small\item\em Implement all the useful functions in this class to control the ball movement. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8h_ad2fc6b6c546619f78de864a6cfcfd413}{draw\+\_\+ball}} ()
+\begin{DoxyCompactList}\small\item\em Draws the ball in its position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8h_a2584b19aa75a55a126bdfeb9cf115692}{goal\+\_\+left\+Piece}} ()
+\begin{DoxyCompactList}\small\item\em Checks if left piece scored goal. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8h_af5f7509be94548608d6d24424b9f2fd1}{goal\+\_\+right\+Piece}} ()
+\begin{DoxyCompactList}\small\item\em Checks if right piece scored goal. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8h_a4d5fd372772bf7406808f8b27f572a5d}{score}} ()
+\begin{DoxyCompactList}\small\item\em Handles the score in the top of the field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ball_8h_a600fdb177cba954c38f6b43e84c75e67}\label{ball_8h_a600fdb177cba954c38f6b43e84c75e67}} 
+\index{ball.h@{ball.h}!ball\_movement@{ball\_movement}}
+\index{ball\_movement@{ball\_movement}!ball.h@{ball.h}}
+\doxysubsubsection{\texorpdfstring{ball\_movement()}{ball\_movement()}}
+{\footnotesize\ttfamily int ball\+\_\+movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implement all the useful functions in this class to control the ball movement. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8h_ab7fba3007583d5f76359b23c2ab6bbff}\label{ball_8h_ab7fba3007583d5f76359b23c2ab6bbff}} 
+\index{ball.h@{ball.h}!collision\_ball\_piece1@{collision\_ball\_piece1}}
+\index{collision\_ball\_piece1@{collision\_ball\_piece1}!ball.h@{ball.h}}
+\doxysubsubsection{\texorpdfstring{collision\_ball\_piece1()}{collision\_ball\_piece1()}}
+{\footnotesize\ttfamily int collision\+\_\+ball\+\_\+piece1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the ball collided with piece 1 and its zone of collision. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8h_ac71ad87d1ae1a2b66cfc8f8ab4f9664e}\label{ball_8h_ac71ad87d1ae1a2b66cfc8f8ab4f9664e}} 
+\index{ball.h@{ball.h}!collision\_ball\_piece2@{collision\_ball\_piece2}}
+\index{collision\_ball\_piece2@{collision\_ball\_piece2}!ball.h@{ball.h}}
+\doxysubsubsection{\texorpdfstring{collision\_ball\_piece2()}{collision\_ball\_piece2()}}
+{\footnotesize\ttfamily int collision\+\_\+ball\+\_\+piece2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the ball collided with piece 2 and its zone of collision. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8h_ad2fc6b6c546619f78de864a6cfcfd413}\label{ball_8h_ad2fc6b6c546619f78de864a6cfcfd413}} 
+\index{ball.h@{ball.h}!draw\_ball@{draw\_ball}}
+\index{draw\_ball@{draw\_ball}!ball.h@{ball.h}}
+\doxysubsubsection{\texorpdfstring{draw\_ball()}{draw\_ball()}}
+{\footnotesize\ttfamily int draw\+\_\+ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the ball in its position. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8h_a2584b19aa75a55a126bdfeb9cf115692}\label{ball_8h_a2584b19aa75a55a126bdfeb9cf115692}} 
+\index{ball.h@{ball.h}!goal\_leftPiece@{goal\_leftPiece}}
+\index{goal\_leftPiece@{goal\_leftPiece}!ball.h@{ball.h}}
+\doxysubsubsection{\texorpdfstring{goal\_leftPiece()}{goal\_leftPiece()}}
+{\footnotesize\ttfamily int goal\+\_\+left\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if left piece scored goal. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8h_af5f7509be94548608d6d24424b9f2fd1}\label{ball_8h_af5f7509be94548608d6d24424b9f2fd1}} 
+\index{ball.h@{ball.h}!goal\_rightPiece@{goal\_rightPiece}}
+\index{goal\_rightPiece@{goal\_rightPiece}!ball.h@{ball.h}}
+\doxysubsubsection{\texorpdfstring{goal\_rightPiece()}{goal\_rightPiece()}}
+{\footnotesize\ttfamily int goal\+\_\+right\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if right piece scored goal. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8h_a4d5fd372772bf7406808f8b27f572a5d}\label{ball_8h_a4d5fd372772bf7406808f8b27f572a5d}} 
+\index{ball.h@{ball.h}!score@{score}}
+\index{score@{score}!ball.h@{ball.h}}
+\doxysubsubsection{\texorpdfstring{score()}{score()}}
+{\footnotesize\ttfamily int score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles the score in the top of the field. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8h_a9f5404fb16563297e6ed6dc17e959d10}\label{ball_8h_a9f5404fb16563297e6ed6dc17e959d10}} 
+\index{ball.h@{ball.h}!start\_ball@{start\_ball}}
+\index{start\_ball@{start\_ball}!ball.h@{ball.h}}
+\doxysubsubsection{\texorpdfstring{start\_ball()}{start\_ball()}}
+{\footnotesize\ttfamily int start\+\_\+ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles the ball start when is goal or the game is starting. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}

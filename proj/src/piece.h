@@ -48,5 +48,5 @@ int draw_piece_1();
 /// @return 0 if success, 1 if no success
 int draw_piece_2();
 
-#endif
+#endif /* _PIECE_H_ */
 

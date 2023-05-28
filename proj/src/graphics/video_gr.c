@@ -105,22 +105,6 @@ void freeImBuffer(){
   free(imBuffer);
 }
 
-void allocateDrawBuffer(){
-    drawBuffer = (uint8_t *)malloc(vbe.XResolution*vbe.YResolution*bytes);
-    memset(drawBuffer,WHITE,vbe.XResolution*vbe.YResolution*bytes);
-}
-
-void copyDrawingToBuffer(){
-  memcpy(imBuffer, drawBuffer, vbe.XResolution*vbe.YResolution*bytes); 
-}
-
-void clearDrawBuffer(){
-  memset(drawBuffer,WHITE,vbe.XResolution*vbe.YResolution*bytes);
-}
-
-void freeDrawBuffer(){
-    free(drawBuffer); 
-}
 
 
 

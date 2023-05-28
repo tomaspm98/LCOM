@@ -6,7 +6,7 @@
 #include "i8042.h"
 #include "kbc.h"
 
-#endif /* _LCOM_KEYBOARD_H_ */
+
 
 /// @brief Subscribe the keyboard interrupts
 /// @param bit_no keyboard_hook_id to bits
@@ -20,6 +20,8 @@ int (keyboard_unsubscribe_interrupts)();
 /// @brief Interrupt handler of the keyboard
 /// @return 
 void (kbc_ih)();
+
+#endif /* _LCOM_KEYBOARD_H_ */
 
 
 

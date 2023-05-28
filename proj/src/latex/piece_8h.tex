@@ -1,0 +1,252 @@
+\hypertarget{piece_8h}{}\doxysection{piece.\+h File Reference}
+\label{piece_8h}\index{piece.h@{piece.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}images/piece.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}entity.\+h\char`\"{}}\newline
+Include dependency graph for piece.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{piece_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{piece_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{piece_8h_a687900430183efae03ab3807bf5627b3}{KBC\+\_\+\+MAKE\+\_\+\+A\+\_\+\+KEY}}~0x1e
+\item 
+\#define \mbox{\hyperlink{piece_8h_ad43eb4599e5f5388805bdbdebe3f63ec}{KBC\+\_\+\+BREAK\+\_\+\+A\+\_\+\+KEY}}~0x9e
+\item 
+\#define \mbox{\hyperlink{piece_8h_a9a2cad348a257265e8958c1d68040ab8}{KBC\+\_\+\+MAKE\+\_\+\+S\+\_\+\+KEY}}~0x1F
+\item 
+\#define \mbox{\hyperlink{piece_8h_ae73016210782f930968569edb0326176}{KBC\+\_\+\+BREAK\+\_\+\+S\+\_\+\+KEY}}~0x9f
+\item 
+\#define \mbox{\hyperlink{piece_8h_a9987e67b0b3e39595ae67ef188ce7461}{KBC\+\_\+\+MAKE\+\_\+\+D\+\_\+\+KEY}}~0x20
+\item 
+\#define \mbox{\hyperlink{piece_8h_a57c39cbebad1d963ab1f50f624173e66}{KBC\+\_\+\+BREAK\+\_\+\+D\+\_\+\+KEY}}~0xa0
+\item 
+\#define \mbox{\hyperlink{piece_8h_a2fd8374d45c97ba859a12c77b6335ccd}{KBC\+\_\+\+MAKE\+\_\+\+W\+\_\+\+KEY}}~0x11
+\item 
+\#define \mbox{\hyperlink{piece_8h_aa3f6590ea9d3a4b82f492ff28dfbb99a}{KBC\+\_\+\+BREAK\+\_\+\+W\+\_\+\+KEY}}~0x91
+\item 
+\#define \mbox{\hyperlink{piece_8h_a676da8c31ae01d15043d961a68efff24}{KBC\+\_\+\+MAKE\+\_\+\+UP\+\_\+\+KEY}}~0x48
+\item 
+\#define \mbox{\hyperlink{piece_8h_ac66d5e9c721ccd6988d1faee7ae328f6}{KBC\+\_\+\+BREAK\+\_\+\+UP\+\_\+\+KEY}}~0x\+C8
+\item 
+\#define \mbox{\hyperlink{piece_8h_ae217451ec61168482130059ee373b3fa}{KBC\+\_\+\+MAKE\+\_\+\+DOWN\+\_\+\+KEY}}~0x50
+\item 
+\#define \mbox{\hyperlink{piece_8h_aa45732bd33835053d7f4fec33c610350}{KBC\+\_\+\+BREAK\+\_\+\+DOWN\+\_\+\+KEY}}~0x\+D0
+\item 
+\#define \mbox{\hyperlink{piece_8h_a7576de7ee0b3edab313b15ea96608da6}{UPPER\+\_\+\+LIMIT}}~470
+\item 
+\#define \mbox{\hyperlink{piece_8h_afa04ca945e503aec752b4c9034388edd}{LOWER\+\_\+\+LIMIT}}~40
+\item 
+\#define \mbox{\hyperlink{piece_8h_aa4b515fe088a4844edb891e4fe3aeab9}{KEY\+\_\+\+STATE\+\_\+\+PRESSED}}~1
+\item 
+\#define \mbox{\hyperlink{piece_8h_a12bf41c47f17c7629ea09f8679fe2895}{KEY\+\_\+\+STATE\+\_\+\+RELEASED}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{piece_8h_a81f1f154d07f9a6a1b04be0f6faa7eb2}{move\+\_\+piece1\+\_\+up}} ()
+\begin{DoxyCompactList}\small\item\em Moves the piece 1 up. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{piece_8h_aca58fe7bb7f7871a733113f29352ff59}{move\+\_\+piece1\+\_\+down}} ()
+\begin{DoxyCompactList}\small\item\em Moves the piece 1 down. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{piece_8h_a5361ff1de40c0c9ad099bcfb51a98fe9}{move\+\_\+piece2\+\_\+up}} ()
+\begin{DoxyCompactList}\small\item\em Moves the piece 2 up. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{piece_8h_a47571a8f1ee3162d39ca1d40d9153af2}{move\+\_\+piece2\+\_\+down}} ()
+\begin{DoxyCompactList}\small\item\em Moves the piece 2 down. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{piece_8h_a4e873d0ce296f61059c03f938c6869ba}{draw\+\_\+piece\+\_\+1}} ()
+\begin{DoxyCompactList}\small\item\em Draws the piece 1. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{piece_8h_ac55fec6aec96ccb3e43fbd0d6d63ff93}{draw\+\_\+piece\+\_\+2}} ()
+\begin{DoxyCompactList}\small\item\em Draws the piece 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{piece_8h_ad43eb4599e5f5388805bdbdebe3f63ec}\label{piece_8h_ad43eb4599e5f5388805bdbdebe3f63ec}} 
+\index{piece.h@{piece.h}!KBC\_BREAK\_A\_KEY@{KBC\_BREAK\_A\_KEY}}
+\index{KBC\_BREAK\_A\_KEY@{KBC\_BREAK\_A\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_BREAK\_A\_KEY}{KBC\_BREAK\_A\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+BREAK\+\_\+\+A\+\_\+\+KEY~0x9e}
+
+\mbox{\Hypertarget{piece_8h_a57c39cbebad1d963ab1f50f624173e66}\label{piece_8h_a57c39cbebad1d963ab1f50f624173e66}} 
+\index{piece.h@{piece.h}!KBC\_BREAK\_D\_KEY@{KBC\_BREAK\_D\_KEY}}
+\index{KBC\_BREAK\_D\_KEY@{KBC\_BREAK\_D\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_BREAK\_D\_KEY}{KBC\_BREAK\_D\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+BREAK\+\_\+\+D\+\_\+\+KEY~0xa0}
+
+\mbox{\Hypertarget{piece_8h_aa45732bd33835053d7f4fec33c610350}\label{piece_8h_aa45732bd33835053d7f4fec33c610350}} 
+\index{piece.h@{piece.h}!KBC\_BREAK\_DOWN\_KEY@{KBC\_BREAK\_DOWN\_KEY}}
+\index{KBC\_BREAK\_DOWN\_KEY@{KBC\_BREAK\_DOWN\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_BREAK\_DOWN\_KEY}{KBC\_BREAK\_DOWN\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+BREAK\+\_\+\+DOWN\+\_\+\+KEY~0x\+D0}
+
+\mbox{\Hypertarget{piece_8h_ae73016210782f930968569edb0326176}\label{piece_8h_ae73016210782f930968569edb0326176}} 
+\index{piece.h@{piece.h}!KBC\_BREAK\_S\_KEY@{KBC\_BREAK\_S\_KEY}}
+\index{KBC\_BREAK\_S\_KEY@{KBC\_BREAK\_S\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_BREAK\_S\_KEY}{KBC\_BREAK\_S\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+BREAK\+\_\+\+S\+\_\+\+KEY~0x9f}
+
+\mbox{\Hypertarget{piece_8h_ac66d5e9c721ccd6988d1faee7ae328f6}\label{piece_8h_ac66d5e9c721ccd6988d1faee7ae328f6}} 
+\index{piece.h@{piece.h}!KBC\_BREAK\_UP\_KEY@{KBC\_BREAK\_UP\_KEY}}
+\index{KBC\_BREAK\_UP\_KEY@{KBC\_BREAK\_UP\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_BREAK\_UP\_KEY}{KBC\_BREAK\_UP\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+BREAK\+\_\+\+UP\+\_\+\+KEY~0x\+C8}
+
+\mbox{\Hypertarget{piece_8h_aa3f6590ea9d3a4b82f492ff28dfbb99a}\label{piece_8h_aa3f6590ea9d3a4b82f492ff28dfbb99a}} 
+\index{piece.h@{piece.h}!KBC\_BREAK\_W\_KEY@{KBC\_BREAK\_W\_KEY}}
+\index{KBC\_BREAK\_W\_KEY@{KBC\_BREAK\_W\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_BREAK\_W\_KEY}{KBC\_BREAK\_W\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+BREAK\+\_\+\+W\+\_\+\+KEY~0x91}
+
+\mbox{\Hypertarget{piece_8h_a687900430183efae03ab3807bf5627b3}\label{piece_8h_a687900430183efae03ab3807bf5627b3}} 
+\index{piece.h@{piece.h}!KBC\_MAKE\_A\_KEY@{KBC\_MAKE\_A\_KEY}}
+\index{KBC\_MAKE\_A\_KEY@{KBC\_MAKE\_A\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_MAKE\_A\_KEY}{KBC\_MAKE\_A\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+MAKE\+\_\+\+A\+\_\+\+KEY~0x1e}
+
+\mbox{\Hypertarget{piece_8h_a9987e67b0b3e39595ae67ef188ce7461}\label{piece_8h_a9987e67b0b3e39595ae67ef188ce7461}} 
+\index{piece.h@{piece.h}!KBC\_MAKE\_D\_KEY@{KBC\_MAKE\_D\_KEY}}
+\index{KBC\_MAKE\_D\_KEY@{KBC\_MAKE\_D\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_MAKE\_D\_KEY}{KBC\_MAKE\_D\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+MAKE\+\_\+\+D\+\_\+\+KEY~0x20}
+
+\mbox{\Hypertarget{piece_8h_ae217451ec61168482130059ee373b3fa}\label{piece_8h_ae217451ec61168482130059ee373b3fa}} 
+\index{piece.h@{piece.h}!KBC\_MAKE\_DOWN\_KEY@{KBC\_MAKE\_DOWN\_KEY}}
+\index{KBC\_MAKE\_DOWN\_KEY@{KBC\_MAKE\_DOWN\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_MAKE\_DOWN\_KEY}{KBC\_MAKE\_DOWN\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+MAKE\+\_\+\+DOWN\+\_\+\+KEY~0x50}
+
+\mbox{\Hypertarget{piece_8h_a9a2cad348a257265e8958c1d68040ab8}\label{piece_8h_a9a2cad348a257265e8958c1d68040ab8}} 
+\index{piece.h@{piece.h}!KBC\_MAKE\_S\_KEY@{KBC\_MAKE\_S\_KEY}}
+\index{KBC\_MAKE\_S\_KEY@{KBC\_MAKE\_S\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_MAKE\_S\_KEY}{KBC\_MAKE\_S\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+MAKE\+\_\+\+S\+\_\+\+KEY~0x1F}
+
+\mbox{\Hypertarget{piece_8h_a676da8c31ae01d15043d961a68efff24}\label{piece_8h_a676da8c31ae01d15043d961a68efff24}} 
+\index{piece.h@{piece.h}!KBC\_MAKE\_UP\_KEY@{KBC\_MAKE\_UP\_KEY}}
+\index{KBC\_MAKE\_UP\_KEY@{KBC\_MAKE\_UP\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_MAKE\_UP\_KEY}{KBC\_MAKE\_UP\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+MAKE\+\_\+\+UP\+\_\+\+KEY~0x48}
+
+\mbox{\Hypertarget{piece_8h_a2fd8374d45c97ba859a12c77b6335ccd}\label{piece_8h_a2fd8374d45c97ba859a12c77b6335ccd}} 
+\index{piece.h@{piece.h}!KBC\_MAKE\_W\_KEY@{KBC\_MAKE\_W\_KEY}}
+\index{KBC\_MAKE\_W\_KEY@{KBC\_MAKE\_W\_KEY}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_MAKE\_W\_KEY}{KBC\_MAKE\_W\_KEY}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+MAKE\+\_\+\+W\+\_\+\+KEY~0x11}
+
+\mbox{\Hypertarget{piece_8h_aa4b515fe088a4844edb891e4fe3aeab9}\label{piece_8h_aa4b515fe088a4844edb891e4fe3aeab9}} 
+\index{piece.h@{piece.h}!KEY\_STATE\_PRESSED@{KEY\_STATE\_PRESSED}}
+\index{KEY\_STATE\_PRESSED@{KEY\_STATE\_PRESSED}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_STATE\_PRESSED}{KEY\_STATE\_PRESSED}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+STATE\+\_\+\+PRESSED~1}
+
+\mbox{\Hypertarget{piece_8h_a12bf41c47f17c7629ea09f8679fe2895}\label{piece_8h_a12bf41c47f17c7629ea09f8679fe2895}} 
+\index{piece.h@{piece.h}!KEY\_STATE\_RELEASED@{KEY\_STATE\_RELEASED}}
+\index{KEY\_STATE\_RELEASED@{KEY\_STATE\_RELEASED}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_STATE\_RELEASED}{KEY\_STATE\_RELEASED}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+STATE\+\_\+\+RELEASED~0}
+
+\mbox{\Hypertarget{piece_8h_afa04ca945e503aec752b4c9034388edd}\label{piece_8h_afa04ca945e503aec752b4c9034388edd}} 
+\index{piece.h@{piece.h}!LOWER\_LIMIT@{LOWER\_LIMIT}}
+\index{LOWER\_LIMIT@{LOWER\_LIMIT}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{LOWER\_LIMIT}{LOWER\_LIMIT}}
+{\footnotesize\ttfamily \#define LOWER\+\_\+\+LIMIT~40}
+
+\mbox{\Hypertarget{piece_8h_a7576de7ee0b3edab313b15ea96608da6}\label{piece_8h_a7576de7ee0b3edab313b15ea96608da6}} 
+\index{piece.h@{piece.h}!UPPER\_LIMIT@{UPPER\_LIMIT}}
+\index{UPPER\_LIMIT@{UPPER\_LIMIT}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{UPPER\_LIMIT}{UPPER\_LIMIT}}
+{\footnotesize\ttfamily \#define UPPER\+\_\+\+LIMIT~470}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{piece_8h_a4e873d0ce296f61059c03f938c6869ba}\label{piece_8h_a4e873d0ce296f61059c03f938c6869ba}} 
+\index{piece.h@{piece.h}!draw\_piece\_1@{draw\_piece\_1}}
+\index{draw\_piece\_1@{draw\_piece\_1}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{draw\_piece\_1()}{draw\_piece\_1()}}
+{\footnotesize\ttfamily int draw\+\_\+piece\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the piece 1. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{piece_8h_ac55fec6aec96ccb3e43fbd0d6d63ff93}\label{piece_8h_ac55fec6aec96ccb3e43fbd0d6d63ff93}} 
+\index{piece.h@{piece.h}!draw\_piece\_2@{draw\_piece\_2}}
+\index{draw\_piece\_2@{draw\_piece\_2}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{draw\_piece\_2()}{draw\_piece\_2()}}
+{\footnotesize\ttfamily int draw\+\_\+piece\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the piece 2. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{piece_8h_aca58fe7bb7f7871a733113f29352ff59}\label{piece_8h_aca58fe7bb7f7871a733113f29352ff59}} 
+\index{piece.h@{piece.h}!move\_piece1\_down@{move\_piece1\_down}}
+\index{move\_piece1\_down@{move\_piece1\_down}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{move\_piece1\_down()}{move\_piece1\_down()}}
+{\footnotesize\ttfamily int move\+\_\+piece1\+\_\+down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves the piece 1 down. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{piece_8h_a81f1f154d07f9a6a1b04be0f6faa7eb2}\label{piece_8h_a81f1f154d07f9a6a1b04be0f6faa7eb2}} 
+\index{piece.h@{piece.h}!move\_piece1\_up@{move\_piece1\_up}}
+\index{move\_piece1\_up@{move\_piece1\_up}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{move\_piece1\_up()}{move\_piece1\_up()}}
+{\footnotesize\ttfamily int move\+\_\+piece1\+\_\+up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves the piece 1 up. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{piece_8h_a47571a8f1ee3162d39ca1d40d9153af2}\label{piece_8h_a47571a8f1ee3162d39ca1d40d9153af2}} 
+\index{piece.h@{piece.h}!move\_piece2\_down@{move\_piece2\_down}}
+\index{move\_piece2\_down@{move\_piece2\_down}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{move\_piece2\_down()}{move\_piece2\_down()}}
+{\footnotesize\ttfamily int move\+\_\+piece2\+\_\+down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves the piece 2 down. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{piece_8h_a5361ff1de40c0c9ad099bcfb51a98fe9}\label{piece_8h_a5361ff1de40c0c9ad099bcfb51a98fe9}} 
+\index{piece.h@{piece.h}!move\_piece2\_up@{move\_piece2\_up}}
+\index{move\_piece2\_up@{move\_piece2\_up}!piece.h@{piece.h}}
+\doxysubsubsection{\texorpdfstring{move\_piece2\_up()}{move\_piece2\_up()}}
+{\footnotesize\ttfamily int move\+\_\+piece2\+\_\+up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves the piece 2 up. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}

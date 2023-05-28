@@ -1,0 +1,315 @@
+\hypertarget{ball_8c}{}\doxysection{ball.\+c File Reference}
+\label{ball_8c}\index{ball.c@{ball.c}}
+{\ttfamily \#include \char`\"{}ball.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for ball.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ball_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ball_8c_a9f5404fb16563297e6ed6dc17e959d10}{start\+\_\+ball}} ()
+\begin{DoxyCompactList}\small\item\em Handles the ball start when is goal or the game is starting. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8c_ab7fba3007583d5f76359b23c2ab6bbff}{collision\+\_\+ball\+\_\+piece1}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the ball collided with piece 1 and its zone of collision. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8c_ac71ad87d1ae1a2b66cfc8f8ab4f9664e}{collision\+\_\+ball\+\_\+piece2}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the ball collided with piece 2 and its zone of collision. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8c_a2584b19aa75a55a126bdfeb9cf115692}{goal\+\_\+left\+Piece}} ()
+\begin{DoxyCompactList}\small\item\em Checks if left piece scored goal. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8c_af5f7509be94548608d6d24424b9f2fd1}{goal\+\_\+right\+Piece}} ()
+\begin{DoxyCompactList}\small\item\em Checks if right piece scored goal. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8c_a1a7f2885d7901ebd3f969f2bfc69175c}{ball\+\_\+pos\+\_\+variation}} ()
+\item 
+int \mbox{\hyperlink{ball_8c_a600fdb177cba954c38f6b43e84c75e67}{ball\+\_\+movement}} ()
+\begin{DoxyCompactList}\small\item\em Implement all the useful functions in this class to control the ball movement. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8c_ad2fc6b6c546619f78de864a6cfcfd413}{draw\+\_\+ball}} ()
+\begin{DoxyCompactList}\small\item\em Draws the ball in its position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ball_8c_a4d5fd372772bf7406808f8b27f572a5d}{score}} ()
+\begin{DoxyCompactList}\small\item\em Handles the score in the top of the field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ball_8c_a2d251dbc2a15f6a1e815adbdba049d47}{ball\+\_\+x}} = 390
+\item 
+int \mbox{\hyperlink{ball_8c_afb7bcf260f6b3bb1b1da29d0f413946d}{ball\+\_\+y}} = 290
+\item 
+int \mbox{\hyperlink{ball_8c_a736c6701baf1e374432e9f0e95b7f68f}{ball\+\_\+var\+\_\+y}}
+\item 
+int \mbox{\hyperlink{ball_8c_ac4d8c8f0232a00de9b1168879cdc482b}{ball\+\_\+var\+\_\+x}}
+\item 
+bool \mbox{\hyperlink{ball_8c_a6bfb1d7bdd324f9818bc0f9ba46bb7fb}{start\+Ball}} = true
+\item 
+int \mbox{\hyperlink{ball_8c_afcb838b77280a13912dd779412da5fca}{side\+\_\+start}} =-\/1
+\item 
+bool \mbox{\hyperlink{ball_8c_a1292e042df88fd7461a4dc998912f6d1}{goal}} = false
+\item 
+int \mbox{\hyperlink{ball_8c_a51c1caf1db33d830fb70a4f719b16063}{goal\+\_\+left}} = 0
+\item 
+int \mbox{\hyperlink{ball_8c_af280bc6f71669eca620e3217810ac153}{goal\+\_\+right}} =0
+\item 
+int \mbox{\hyperlink{ball_8c_ab8431b729f617e024d93abd5e7f92767}{piece\+\_\+1\+\_\+x}}
+\item 
+int \mbox{\hyperlink{ball_8c_a6fb6e9e0e606536f68274be22b07e8f9}{piece\+\_\+1\+\_\+y}}
+\item 
+int \mbox{\hyperlink{ball_8c_a7a612cf77786fc7e7cd255a7a8bac85d}{piece\+\_\+2\+\_\+x}}
+\item 
+int \mbox{\hyperlink{ball_8c_ab77b75a2a7317944c56163fe972fb45e}{piece\+\_\+2\+\_\+y}}
+\item 
+bool \mbox{\hyperlink{ball_8c_a013bd709da60cf257b1599a13d8fc516}{not\+\_\+random}} = false
+\item 
+bool \mbox{\hyperlink{ball_8c_ac0becabdf41b268b1a30e3ca0abe0404}{catched\+\_\+left}}
+\item 
+bool \mbox{\hyperlink{ball_8c_aaf3f69c2c136b82417a643094e830276}{catched\+\_\+right}}
+\item 
+int \mbox{\hyperlink{ball_8c_aa08ec88e64e28a30b58e77893b45fd5a}{timer\+\_\+irq\+\_\+counter}}
+\item 
+bool \mbox{\hyperlink{ball_8c_a6fc7cb76955082a095ce870006a27355}{no\+\_\+pos}}
+\item 
+bool \mbox{\hyperlink{ball_8c_ad3105cb2a758c1f96194ffbfcfe947c3}{powerup\+\_\+number\+\_\+bool}}
+\item 
+int \mbox{\hyperlink{ball_8c_afa43aa16b73af0c36532ba9d941299d9}{powerup\+\_\+number}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ball_8c_a600fdb177cba954c38f6b43e84c75e67}\label{ball_8c_a600fdb177cba954c38f6b43e84c75e67}} 
+\index{ball.c@{ball.c}!ball\_movement@{ball\_movement}}
+\index{ball\_movement@{ball\_movement}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{ball\_movement()}{ball\_movement()}}
+{\footnotesize\ttfamily int ball\+\_\+movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implement all the useful functions in this class to control the ball movement. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8c_a1a7f2885d7901ebd3f969f2bfc69175c}\label{ball_8c_a1a7f2885d7901ebd3f969f2bfc69175c}} 
+\index{ball.c@{ball.c}!ball\_pos\_variation@{ball\_pos\_variation}}
+\index{ball\_pos\_variation@{ball\_pos\_variation}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{ball\_pos\_variation()}{ball\_pos\_variation()}}
+{\footnotesize\ttfamily int ball\+\_\+pos\+\_\+variation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ball_8c_ab7fba3007583d5f76359b23c2ab6bbff}\label{ball_8c_ab7fba3007583d5f76359b23c2ab6bbff}} 
+\index{ball.c@{ball.c}!collision\_ball\_piece1@{collision\_ball\_piece1}}
+\index{collision\_ball\_piece1@{collision\_ball\_piece1}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{collision\_ball\_piece1()}{collision\_ball\_piece1()}}
+{\footnotesize\ttfamily int collision\+\_\+ball\+\_\+piece1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the ball collided with piece 1 and its zone of collision. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8c_ac71ad87d1ae1a2b66cfc8f8ab4f9664e}\label{ball_8c_ac71ad87d1ae1a2b66cfc8f8ab4f9664e}} 
+\index{ball.c@{ball.c}!collision\_ball\_piece2@{collision\_ball\_piece2}}
+\index{collision\_ball\_piece2@{collision\_ball\_piece2}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{collision\_ball\_piece2()}{collision\_ball\_piece2()}}
+{\footnotesize\ttfamily int collision\+\_\+ball\+\_\+piece2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the ball collided with piece 2 and its zone of collision. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8c_ad2fc6b6c546619f78de864a6cfcfd413}\label{ball_8c_ad2fc6b6c546619f78de864a6cfcfd413}} 
+\index{ball.c@{ball.c}!draw\_ball@{draw\_ball}}
+\index{draw\_ball@{draw\_ball}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{draw\_ball()}{draw\_ball()}}
+{\footnotesize\ttfamily int draw\+\_\+ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the ball in its position. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8c_a2584b19aa75a55a126bdfeb9cf115692}\label{ball_8c_a2584b19aa75a55a126bdfeb9cf115692}} 
+\index{ball.c@{ball.c}!goal\_leftPiece@{goal\_leftPiece}}
+\index{goal\_leftPiece@{goal\_leftPiece}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{goal\_leftPiece()}{goal\_leftPiece()}}
+{\footnotesize\ttfamily int goal\+\_\+left\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if left piece scored goal. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8c_af5f7509be94548608d6d24424b9f2fd1}\label{ball_8c_af5f7509be94548608d6d24424b9f2fd1}} 
+\index{ball.c@{ball.c}!goal\_rightPiece@{goal\_rightPiece}}
+\index{goal\_rightPiece@{goal\_rightPiece}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{goal\_rightPiece()}{goal\_rightPiece()}}
+{\footnotesize\ttfamily int goal\+\_\+right\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if right piece scored goal. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8c_a4d5fd372772bf7406808f8b27f572a5d}\label{ball_8c_a4d5fd372772bf7406808f8b27f572a5d}} 
+\index{ball.c@{ball.c}!score@{score}}
+\index{score@{score}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{score()}{score()}}
+{\footnotesize\ttfamily int score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles the score in the top of the field. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ball_8c_a9f5404fb16563297e6ed6dc17e959d10}\label{ball_8c_a9f5404fb16563297e6ed6dc17e959d10}} 
+\index{ball.c@{ball.c}!start\_ball@{start\_ball}}
+\index{start\_ball@{start\_ball}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{start\_ball()}{start\_ball()}}
+{\footnotesize\ttfamily int start\+\_\+ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles the ball start when is goal or the game is starting. 
+
+\begin{DoxyReturn}{Returns}
+0 if success, 1 if no success 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ball_8c_ac4d8c8f0232a00de9b1168879cdc482b}\label{ball_8c_ac4d8c8f0232a00de9b1168879cdc482b}} 
+\index{ball.c@{ball.c}!ball\_var\_x@{ball\_var\_x}}
+\index{ball\_var\_x@{ball\_var\_x}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{ball\_var\_x}{ball\_var\_x}}
+{\footnotesize\ttfamily int ball\+\_\+var\+\_\+x}
+
+\mbox{\Hypertarget{ball_8c_a736c6701baf1e374432e9f0e95b7f68f}\label{ball_8c_a736c6701baf1e374432e9f0e95b7f68f}} 
+\index{ball.c@{ball.c}!ball\_var\_y@{ball\_var\_y}}
+\index{ball\_var\_y@{ball\_var\_y}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{ball\_var\_y}{ball\_var\_y}}
+{\footnotesize\ttfamily int ball\+\_\+var\+\_\+y}
+
+\mbox{\Hypertarget{ball_8c_a2d251dbc2a15f6a1e815adbdba049d47}\label{ball_8c_a2d251dbc2a15f6a1e815adbdba049d47}} 
+\index{ball.c@{ball.c}!ball\_x@{ball\_x}}
+\index{ball\_x@{ball\_x}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{ball\_x}{ball\_x}}
+{\footnotesize\ttfamily int ball\+\_\+x = 390}
+
+\mbox{\Hypertarget{ball_8c_afb7bcf260f6b3bb1b1da29d0f413946d}\label{ball_8c_afb7bcf260f6b3bb1b1da29d0f413946d}} 
+\index{ball.c@{ball.c}!ball\_y@{ball\_y}}
+\index{ball\_y@{ball\_y}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{ball\_y}{ball\_y}}
+{\footnotesize\ttfamily int ball\+\_\+y = 290}
+
+\mbox{\Hypertarget{ball_8c_ac0becabdf41b268b1a30e3ca0abe0404}\label{ball_8c_ac0becabdf41b268b1a30e3ca0abe0404}} 
+\index{ball.c@{ball.c}!catched\_left@{catched\_left}}
+\index{catched\_left@{catched\_left}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{catched\_left}{catched\_left}}
+{\footnotesize\ttfamily bool catched\+\_\+left\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{ball_8c_aaf3f69c2c136b82417a643094e830276}\label{ball_8c_aaf3f69c2c136b82417a643094e830276}} 
+\index{ball.c@{ball.c}!catched\_right@{catched\_right}}
+\index{catched\_right@{catched\_right}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{catched\_right}{catched\_right}}
+{\footnotesize\ttfamily bool catched\+\_\+right\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{ball_8c_a1292e042df88fd7461a4dc998912f6d1}\label{ball_8c_a1292e042df88fd7461a4dc998912f6d1}} 
+\index{ball.c@{ball.c}!goal@{goal}}
+\index{goal@{goal}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{goal}{goal}}
+{\footnotesize\ttfamily bool goal = false}
+
+\mbox{\Hypertarget{ball_8c_a51c1caf1db33d830fb70a4f719b16063}\label{ball_8c_a51c1caf1db33d830fb70a4f719b16063}} 
+\index{ball.c@{ball.c}!goal\_left@{goal\_left}}
+\index{goal\_left@{goal\_left}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{goal\_left}{goal\_left}}
+{\footnotesize\ttfamily int goal\+\_\+left = 0}
+
+\mbox{\Hypertarget{ball_8c_af280bc6f71669eca620e3217810ac153}\label{ball_8c_af280bc6f71669eca620e3217810ac153}} 
+\index{ball.c@{ball.c}!goal\_right@{goal\_right}}
+\index{goal\_right@{goal\_right}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{goal\_right}{goal\_right}}
+{\footnotesize\ttfamily int goal\+\_\+right =0}
+
+\mbox{\Hypertarget{ball_8c_a6fc7cb76955082a095ce870006a27355}\label{ball_8c_a6fc7cb76955082a095ce870006a27355}} 
+\index{ball.c@{ball.c}!no\_pos@{no\_pos}}
+\index{no\_pos@{no\_pos}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{no\_pos}{no\_pos}}
+{\footnotesize\ttfamily bool no\+\_\+pos\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{ball_8c_a013bd709da60cf257b1599a13d8fc516}\label{ball_8c_a013bd709da60cf257b1599a13d8fc516}} 
+\index{ball.c@{ball.c}!not\_random@{not\_random}}
+\index{not\_random@{not\_random}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{not\_random}{not\_random}}
+{\footnotesize\ttfamily bool not\+\_\+random = false}
+
+\mbox{\Hypertarget{ball_8c_ab8431b729f617e024d93abd5e7f92767}\label{ball_8c_ab8431b729f617e024d93abd5e7f92767}} 
+\index{ball.c@{ball.c}!piece\_1\_x@{piece\_1\_x}}
+\index{piece\_1\_x@{piece\_1\_x}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{piece\_1\_x}{piece\_1\_x}}
+{\footnotesize\ttfamily int piece\+\_\+1\+\_\+x\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{ball_8c_a6fb6e9e0e606536f68274be22b07e8f9}\label{ball_8c_a6fb6e9e0e606536f68274be22b07e8f9}} 
+\index{ball.c@{ball.c}!piece\_1\_y@{piece\_1\_y}}
+\index{piece\_1\_y@{piece\_1\_y}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{piece\_1\_y}{piece\_1\_y}}
+{\footnotesize\ttfamily int piece\+\_\+1\+\_\+y\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{ball_8c_a7a612cf77786fc7e7cd255a7a8bac85d}\label{ball_8c_a7a612cf77786fc7e7cd255a7a8bac85d}} 
+\index{ball.c@{ball.c}!piece\_2\_x@{piece\_2\_x}}
+\index{piece\_2\_x@{piece\_2\_x}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{piece\_2\_x}{piece\_2\_x}}
+{\footnotesize\ttfamily int piece\+\_\+2\+\_\+x\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{ball_8c_ab77b75a2a7317944c56163fe972fb45e}\label{ball_8c_ab77b75a2a7317944c56163fe972fb45e}} 
+\index{ball.c@{ball.c}!piece\_2\_y@{piece\_2\_y}}
+\index{piece\_2\_y@{piece\_2\_y}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{piece\_2\_y}{piece\_2\_y}}
+{\footnotesize\ttfamily int piece\+\_\+2\+\_\+y\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{ball_8c_afa43aa16b73af0c36532ba9d941299d9}\label{ball_8c_afa43aa16b73af0c36532ba9d941299d9}} 
+\index{ball.c@{ball.c}!powerup\_number@{powerup\_number}}
+\index{powerup\_number@{powerup\_number}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{powerup\_number}{powerup\_number}}
+{\footnotesize\ttfamily int powerup\+\_\+number\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{ball_8c_ad3105cb2a758c1f96194ffbfcfe947c3}\label{ball_8c_ad3105cb2a758c1f96194ffbfcfe947c3}} 
+\index{ball.c@{ball.c}!powerup\_number\_bool@{powerup\_number\_bool}}
+\index{powerup\_number\_bool@{powerup\_number\_bool}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{powerup\_number\_bool}{powerup\_number\_bool}}
+{\footnotesize\ttfamily bool powerup\+\_\+number\+\_\+bool\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{ball_8c_afcb838b77280a13912dd779412da5fca}\label{ball_8c_afcb838b77280a13912dd779412da5fca}} 
+\index{ball.c@{ball.c}!side\_start@{side\_start}}
+\index{side\_start@{side\_start}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{side\_start}{side\_start}}
+{\footnotesize\ttfamily int side\+\_\+start =-\/1}
+
+\mbox{\Hypertarget{ball_8c_a6bfb1d7bdd324f9818bc0f9ba46bb7fb}\label{ball_8c_a6bfb1d7bdd324f9818bc0f9ba46bb7fb}} 
+\index{ball.c@{ball.c}!startBall@{startBall}}
+\index{startBall@{startBall}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{startBall}{startBall}}
+{\footnotesize\ttfamily bool start\+Ball = true}
+
+\mbox{\Hypertarget{ball_8c_aa08ec88e64e28a30b58e77893b45fd5a}\label{ball_8c_aa08ec88e64e28a30b58e77893b45fd5a}} 
+\index{ball.c@{ball.c}!timer\_irq\_counter@{timer\_irq\_counter}}
+\index{timer\_irq\_counter@{timer\_irq\_counter}!ball.c@{ball.c}}
+\doxysubsubsection{\texorpdfstring{timer\_irq\_counter}{timer\_irq\_counter}}
+{\footnotesize\ttfamily int timer\+\_\+irq\+\_\+counter\hspace{0.3cm}{\ttfamily [extern]}}
+

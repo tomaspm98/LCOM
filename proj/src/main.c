@@ -43,7 +43,7 @@ int start(){
     //falta interrupts mouse+rtc+serial port
     if (subscribe_interrupts()) return 1; 
     allocateImgBuffer();
-    allocateDrawBuffer();
+    //allocateDrawBuffer();
 
     return 0;
 }
@@ -53,7 +53,7 @@ int end(){
     //terminar sprites
     //falta interrupts mouse+rtc+serial port
     if (unsubscribe_interrupts()) return 1;
-    freeDrawBuffer();
+    //freeDrawBuffer();
     //desativar interrupts
 
     return 0;
