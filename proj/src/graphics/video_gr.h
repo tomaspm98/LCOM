@@ -47,12 +47,12 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height,
 int (vg_drawline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
 
 /// @brief Displays the image we want by copying from image buffer to the main buffer
-void displayImage();
+void display_image();
 
 /// @brief Sets the buffer with color white (0) and frees its memory
-void freeImBuffer();
+void free_im_buffer();
 
 /// @brief Allocates memory to the image buffer
-void allocateImgBuffer();
+void allocate_img_buffer();
 
 #endif /* _LCOM_VIDEO_GR_H_ */

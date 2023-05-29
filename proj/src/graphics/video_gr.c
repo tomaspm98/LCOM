@@ -92,15 +92,15 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height,
     return 0;
 }
 
-void allocateImgBuffer(){
+void allocate_img_buffer(){
   imBuffer = (uint8_t*)malloc(vbe.XResolution*vbe.YResolution*bytes);
 }
 
-void displayImage(){
+void display_image(){
   memcpy(vram,imBuffer,vbe.XResolution*vbe.YResolution*bytes);
 }
 
-void freeImBuffer(){
+void free_im_buffer(){
   memset(imBuffer,0,vbe.XResolution*vbe.YResolution*bytes);
   free(imBuffer);
 }

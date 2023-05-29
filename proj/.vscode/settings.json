@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "kbc.h": "c",
+        "timer.h": "c",
+        "i8042.h": "c",
+        "mouse.h": "c",
+        "video_gr.h": "c"
+    }
+}

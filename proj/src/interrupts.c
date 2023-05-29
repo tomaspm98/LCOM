@@ -110,8 +110,8 @@ int interrupts(){
                   if (powerup){
                     if (catch_powerup()) return 1;
                   }
-                  displayImage();
-                  freeImBuffer();
+                  display_image();
+                  free_im_buffer();
                 }
                 break;
             default:

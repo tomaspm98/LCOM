@@ -42,7 +42,7 @@ int start(){
     if (vg_init(0x115)) return 1;
     //falta interrupts mouse+rtc+serial port
     if (subscribe_interrupts()) return 1; 
-    allocateImgBuffer();
+    allocate_img_buffer();
     //allocateDrawBuffer();
 
     return 0;
@@ -65,8 +65,5 @@ int (proj_main_loop)(int argc, char *argv[]){
   interrupts();
 
   if (end()) return 1;
-
-  printf("FEZ TUDO");
-
   return 0;
 }

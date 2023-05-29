@@ -9,7 +9,9 @@
 #include "ball.h"
 #include "graphics/video_gr.h"
 #include "colors.h"
+#include "menu.h"
 #include "powerups.h"
+
 
 /// @brief Subscribes the interrupts of all the devices used in the project
 /// @return 0 if success, 1 if no success
